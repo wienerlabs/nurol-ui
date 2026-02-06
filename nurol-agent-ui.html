@@ -1,4 +1,4 @@
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script><style>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script><script src="https://d3js.org/d3.v7.min.js"></script><style>
 body { font-family: 'Inter', sans-serif; }
 </style><script>
 function debounce(func, wait) {
@@ -155,6 +155,20 @@ visibility: hidden !important;
 .cms-loading img {
 opacity: 0 !important;
 }
+@keyframes toast-in { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes toast-out { from { transform: translateX(0); opacity: 1; } to { transform: translateX(120%); opacity: 0; } }
+@keyframes success-check { 0% { stroke-dashoffset: 50; } 100% { stroke-dashoffset: 0; } }
+@keyframes success-circle { 0% { stroke-dashoffset: 166; } 100% { stroke-dashoffset: 0; } }
+@keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 1; } 100% { transform: scale(1.4); opacity: 0; } }
+@keyframes price-flash { 0% { background-color: var(--flash-color); } 100% { background-color: transparent; } }
+@keyframes fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.toast-enter { animation: toast-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.toast-exit { animation: toast-out 0.3s ease-in forwards; }
+.price-flash-up { --flash-color: rgba(16,185,129,0.15); animation: price-flash 0.8s ease-out; }
+.price-flash-down { --flash-color: rgba(239,68,68,0.15); animation: price-flash 0.8s ease-out; }
+.page-fade-in { animation: fade-in 0.3s ease-out forwards; }
+#toast-container { position: fixed; top: 80px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+#toast-container > div { pointer-events: auto; }
 </style>
 
 
@@ -439,7 +453,7 @@ opacity: 0 !important;
                     <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                         <div class="px-6 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
                             <h3 class="text-sm font-medium text-neutral-900 font-sans">Son İşlemler</h3>
-                            <a href="#" class="text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">Tümünü Gör →</a>
+                            <a href="#" class="text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans" onclick="event.preventDefault(); NurolApp.navigateTo('history');">Tümünü Gör →</a>
                         </div>
                         <div id="transactions-list" class="divide-y divide-neutral-100">
                             <div class="px-6 py-4 flex items-center justify-between hover:bg-neutral-50 transition-colors">
@@ -565,58 +579,14 @@ opacity: 0 !important;
                         </div>
                     </div>
 
-                    <!-- Portfolio Distribution -->
+                    <!-- Portfolio Distribution - D3.js Treemap -->
                     <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
-                        <div class="px-5 py-4" style="border-bottom: 2px solid #000000;">
-                            <h3 class="text-sm font-medium text-neutral-900 font-sans">Portföy Dağılımı</h3>
+                        <div class="px-5 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
+                            <h3 class="text-sm font-medium text-neutral-900 font-sans">Varlık Dağılımı</h3>
+                            <span class="text-xs text-neutral-500 font-sans">Treemap</span>
                         </div>
-                        <div class="p-5">
-                            <div class="relative w-32 h-32 mx-auto mb-4">
-                                <svg viewBox="0 0 36 36" class="w-full h-full">
-                                    <circle cx="18" cy="18" r="15.9" fill="none" stroke="#000000" stroke-width="0.5"></circle>
-                                    <circle cx="18" cy="18" r="15.9" fill="none" stroke="#E8FF5A" stroke-width="2" stroke-dasharray="35 65" stroke-dashoffset="25"></circle>
-                                    <circle cx="18" cy="18" r="15.9" fill="none" stroke="#171717" stroke-width="2" stroke-dasharray="25 75" stroke-dashoffset="90"></circle>
-                                    <circle cx="18" cy="18" r="15.9" fill="none" stroke="#525252" stroke-width="2" stroke-dasharray="20 80" stroke-dashoffset="65"></circle>
-                                    <circle cx="18" cy="18" r="15.9" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-dasharray="20 80" stroke-dashoffset="45"></circle>
-                                </svg>
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="text-center">
-                                        <p class="text-lg font-semibold text-neutral-900 font-sans">18</p>
-                                        <p class="text-xs text-neutral-500 font-sans">Fon</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="space-y-2">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-3 h-3 rounded-full" style="background-color: #E8FF5A; border: 2px solid #000000;"></div>
-                                        <span class="text-xs text-neutral-600 font-sans">Hisse</span>
-                                    </div>
-                                    <span class="text-xs font-medium text-neutral-900 font-sans">35%</span>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-3 h-3 bg-neutral-900 rounded-full" style="border: 2px solid #000000;"></div>
-                                        <span class="text-xs text-neutral-600 font-sans">Tahvil</span>
-                                    </div>
-                                    <span class="text-xs font-medium text-neutral-900 font-sans">25%</span>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-3 h-3 bg-neutral-600 rounded-full" style="border: 2px solid #000000;"></div>
-                                        <span class="text-xs text-neutral-600 font-sans">Altın</span>
-                                    </div>
-                                    <span class="text-xs font-medium text-neutral-900 font-sans">20%</span>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-3 h-3 bg-neutral-400 rounded-full" style="border: 2px solid #000000;"></div>
-                                        <span class="text-xs text-neutral-600 font-sans">Diğer</span>
-                                    </div>
-                                    <span class="text-xs font-medium text-neutral-900 font-sans">20%</span>
-                                </div>
-                            </div>
+                        <div class="p-3">
+                            <div id="treemap-chart" style="width: 100%; min-height: 260px;"></div>
                         </div>
                     </div>
 
@@ -1297,6 +1267,58 @@ opacity: 0 !important;
                     </div>
                 </div>
             </div>
+
+            <!-- D3.js Charts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+
+                <!-- Sektör Bazlı Portföy Dağılımı - Stacked Horizontal Bar Chart -->
+                <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
+                    <div class="px-6 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden" style="background-color: #E8FF5A; border: 2px solid #000000;">
+                                <img src="logolar/nurolagent-logo (2).png" alt="Nurol Agent" class="w-7 h-7 object-contain">
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-neutral-900 font-sans">Sektör Bazlı Dağılım</h3>
+                                <p class="text-xs text-neutral-500 font-sans">Varlık türlerine göre</p>
+                            </div>
+                        </div>
+                        <div id="sector-chart-legend" class="flex items-center gap-2 text-xs font-sans"></div>
+                    </div>
+                    <div class="px-4 py-4">
+                        <div id="sector-stacked-chart" style="width: 100%; min-height: 320px;"></div>
+                    </div>
+                    <div class="px-5 py-2.5 flex items-center justify-between" style="background-color: #171717;">
+                        <span class="text-xs text-neutral-400 font-sans">Toplam: <span class="text-white font-bold">₺2.84M</span></span>
+                        <span class="text-xs text-neutral-500 font-sans"><span id="sector-chart-time">--:--</span></span>
+                    </div>
+                </div>
+
+                <!-- Sektör Korelasyon Ağı - D3.js Hierarchical Edge Bundling -->
+                <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
+                    <div class="px-6 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden" style="background-color: #171717; border: 2px solid #000000;">
+                                <img src="logolar/nurolagent-logo (2).png" alt="Nurol Agent" class="w-7 h-7 object-contain">
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-neutral-900 font-sans">Sektör Korelasyon Ağı</h3>
+                                <p class="text-xs text-neutral-500 font-sans">Varlıklar arası ilişki haritası</p>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium" style="background-color: #E8FF5A; border: 1.5px solid #000000;">AI Analiz</span>
+                    </div>
+                    <div class="flex items-center justify-center p-4" style="background: radial-gradient(circle at center, #fafafa 0%, #f0f0f0 100%);">
+                        <div id="edge-bundling-chart" style="width: 100%; max-width: 480px; aspect-ratio: 1;"></div>
+                    </div>
+                    <div class="px-5 py-2.5 flex items-center justify-between" style="background-color: #171717;">
+                        <span class="text-xs text-neutral-400 font-sans">Korelasyon: <span class="text-[#E8FF5A] font-bold">32 bağlantı</span></span>
+                        <span class="text-xs text-neutral-500 font-sans"><span id="edge-chart-time">--:--</span></span>
+                    </div>
+                </div>
+
+            </div>
+
             </div><!-- End Dashboard Page -->
 
             <!-- Portfolio Page -->
@@ -1334,14 +1356,14 @@ opacity: 0 !important;
                 <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                     <div class="px-5 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
                         <h3 class="text-sm font-semibold text-neutral-900 font-sans">Varlıklarım</h3>
-                        <div class="flex gap-2">
-                            <button class="text-xs px-3 py-1.5 rounded-lg font-sans" style="background-color: #E8FF5A; border: 2px solid #000000;">Tümü</button>
-                            <button class="text-xs px-3 py-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 font-sans">Hisseler</button>
-                            <button class="text-xs px-3 py-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 font-sans">Fonlar</button>
+                        <div class="flex gap-2" id="portfolio-filter-btns">
+                            <button class="pf-filter-btn text-xs px-3 py-1.5 rounded-lg font-sans" data-filter="all" style="background-color: #E8FF5A; border: 2px solid #000000;">Tümü</button>
+                            <button class="pf-filter-btn text-xs px-3 py-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 font-sans" data-filter="hisse">Hisseler</button>
+                            <button class="pf-filter-btn text-xs px-3 py-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 font-sans" data-filter="fon">Fonlar</button>
                         </div>
                     </div>
-                    <div class="divide-y divide-neutral-100">
-                        <div class="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors">
+                    <div class="divide-y divide-neutral-100" id="portfolio-holdings">
+                        <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="hisse" data-symbol="THYAO">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-bold">TH</span></div>
                                 <div>
@@ -1354,7 +1376,7 @@ opacity: 0 !important;
                                 <p class="text-xs text-emerald-600 font-sans">+12.4%</p>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors">
+                        <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="hisse" data-symbol="GARAN">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-bold">GA</span></div>
                                 <div>
@@ -1367,7 +1389,7 @@ opacity: 0 !important;
                                 <p class="text-xs text-red-500 font-sans">-2.1%</p>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors">
+                        <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="hisse" data-symbol="ASELS">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-bold">AS</span></div>
                                 <div>
@@ -1380,7 +1402,7 @@ opacity: 0 !important;
                                 <p class="text-xs text-emerald-600 font-sans">+5.8%</p>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors">
+                        <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="hisse" data-symbol="EREGL">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-bold">ER</span></div>
                                 <div>
@@ -1391,6 +1413,32 @@ opacity: 0 !important;
                             <div class="text-right">
                                 <p class="text-sm font-semibold text-neutral-900 font-sans">₺43,360</p>
                                 <p class="text-xs text-emerald-600 font-sans">+3.2%</p>
+                            </div>
+                        </div>
+                        <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="fon" data-symbol="ISFON">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-bold">İŞ</span></div>
+                                <div>
+                                    <p class="text-sm font-semibold text-neutral-900 font-sans">İş Portföy Hisse Fonu</p>
+                                    <p class="text-xs text-neutral-500 font-sans">Fon • ₺180K yatırım</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺207,000</p>
+                                <p class="text-xs text-emerald-600 font-sans">+15.0%</p>
+                            </div>
+                        </div>
+                        <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="fon" data-symbol="AKFON">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-bold">AK</span></div>
+                                <div>
+                                    <p class="text-sm font-semibold text-neutral-900 font-sans">Ak Portföy Tahvil Fonu</p>
+                                    <p class="text-xs text-neutral-500 font-sans">Fon • ₺250K yatırım</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺273,000</p>
+                                <p class="text-xs text-emerald-600 font-sans">+9.2%</p>
                             </div>
                         </div>
                     </div>
@@ -1443,7 +1491,7 @@ opacity: 0 !important;
                             <p class="text-xs text-neutral-500 font-sans mb-2">BIST 30 ağırlıklı, düşük risk</p>
                             <div class="flex items-center justify-between">
                                 <span class="text-lg font-light text-emerald-600 font-google-sans-flex">+18.5%</span>
-                                <button class="text-xs px-3 py-1.5 rounded-lg font-sans hover:opacity-80 transition-opacity" style="background-color: #E8FF5A; border: 2px solid #000000;">Yatırım Yap</button>
+                                <button class="fund-invest-btn text-xs px-3 py-1.5 rounded-lg font-sans hover:opacity-80 transition-opacity" data-fund="TEB Hisse Fonu" data-price="142.50" style="background-color: #E8FF5A; border: 2px solid #000000;">Yatırım Yap</button>
                             </div>
                         </div>
                         <div class="p-4 rounded-xl" style="border: 2px solid #000000;">
@@ -1454,7 +1502,7 @@ opacity: 0 !important;
                             <p class="text-xs text-neutral-500 font-sans mb-2">Karma fon, orta risk</p>
                             <div class="flex items-center justify-between">
                                 <span class="text-lg font-light text-emerald-600 font-google-sans-flex">+12.3%</span>
-                                <button class="text-xs px-3 py-1.5 rounded-lg font-sans hover:opacity-80 transition-opacity" style="background-color: #E8FF5A; border: 2px solid #000000;">Yatırım Yap</button>
+                                <button class="fund-invest-btn text-xs px-3 py-1.5 rounded-lg font-sans hover:opacity-80 transition-opacity" data-fund="Yapı Kredi Portföy" data-price="98.20" style="background-color: #E8FF5A; border: 2px solid #000000;">Yatırım Yap</button>
                             </div>
                         </div>
                     </div>
@@ -1505,16 +1553,16 @@ opacity: 0 !important;
 
                 <!-- History Filters -->
                 <div class="flex items-center gap-4 mb-6">
-                    <div class="flex gap-2 rounded-xl p-1 bg-neutral-100" style="border: 2px solid #000000;">
-                        <button class="text-xs px-4 py-2 rounded-lg font-sans" style="background-color: #E8FF5A;">Tümü</button>
-                        <button class="text-xs px-4 py-2 rounded-lg text-neutral-500 font-sans">Alımlar</button>
-                        <button class="text-xs px-4 py-2 rounded-lg text-neutral-500 font-sans">Satımlar</button>
+                    <div class="flex gap-2 rounded-xl p-1 bg-neutral-100" id="history-filter-btns" style="border: 2px solid #000000;">
+                        <button class="hist-filter-btn text-xs px-4 py-2 rounded-lg font-sans" data-filter="all" style="background-color: #E8FF5A;">Tümü</button>
+                        <button class="hist-filter-btn text-xs px-4 py-2 rounded-lg text-neutral-500 font-sans" data-filter="buy">Alımlar</button>
+                        <button class="hist-filter-btn text-xs px-4 py-2 rounded-lg text-neutral-500 font-sans" data-filter="sell">Satımlar</button>
                     </div>
-                    <select class="text-xs px-3 py-2 rounded-lg bg-white font-sans" style="border: 2px solid #000000;">
-                        <option>Son 7 gün</option>
-                        <option>Son 30 gün</option>
-                        <option>Son 3 ay</option>
-                        <option>Tüm zamanlar</option>
+                    <select id="history-date-filter" class="text-xs px-3 py-2 rounded-lg bg-white font-sans" style="border: 2px solid #000000;">
+                        <option value="7">Son 7 gün</option>
+                        <option value="30">Son 30 gün</option>
+                        <option value="90">Son 3 ay</option>
+                        <option value="all">Tüm zamanlar</option>
                     </select>
                 </div>
 
@@ -1543,8 +1591,8 @@ opacity: 0 !important;
                     <div class="px-5 py-4" style="border-bottom: 2px solid #000000;">
                         <h3 class="text-sm font-semibold text-neutral-900 font-sans">Son İşlemler</h3>
                     </div>
-                    <div class="divide-y divide-neutral-100">
-                        <div class="flex items-center justify-between p-4">
+                    <div class="divide-y divide-neutral-100" id="history-transactions">
+                        <div class="hist-row flex items-center justify-between p-4" data-type="buy">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center" style="border: 2px solid #059669;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
@@ -1559,7 +1607,7 @@ opacity: 0 !important;
                                 <p class="text-xs text-neutral-400 font-sans">Bugün, 14:32</p>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-4">
+                        <div class="hist-row flex items-center justify-between p-4" data-type="sell">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center" style="border: 2px solid #DC2626;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M17 17H7V7"/><path d="m7 17 10-10"/></svg>
@@ -1574,7 +1622,7 @@ opacity: 0 !important;
                                 <p class="text-xs text-neutral-400 font-sans">Bugün, 11:15</p>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-4">
+                        <div class="hist-row flex items-center justify-between p-4" data-type="buy">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center" style="border: 2px solid #059669;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
@@ -1589,7 +1637,7 @@ opacity: 0 !important;
                                 <p class="text-xs text-neutral-400 font-sans">Dün, 16:45</p>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-4">
+                        <div class="hist-row flex items-center justify-between p-4" data-type="buy">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center" style="border: 2px solid #059669;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
@@ -1602,6 +1650,36 @@ opacity: 0 !important;
                             <div class="text-right">
                                 <p class="text-sm font-semibold text-neutral-900 font-sans">₺15,630</p>
                                 <p class="text-xs text-neutral-400 font-sans">2 gün önce</p>
+                            </div>
+                        </div>
+                        <div class="hist-row flex items-center justify-between p-4" data-type="sell">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center" style="border: 2px solid #DC2626;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M17 17H7V7"/><path d="m7 17 10-10"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-neutral-900 font-sans">SISE Satım</p>
+                                    <p class="text-xs text-neutral-500 font-sans">150 adet @ ₺46.20</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺6,930</p>
+                                <p class="text-xs text-neutral-400 font-sans">3 gün önce</p>
+                            </div>
+                        </div>
+                        <div class="hist-row flex items-center justify-between p-4" data-type="buy">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center" style="border: 2px solid #059669;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-neutral-900 font-sans">TUPRS Alım</p>
+                                    <p class="text-xs text-neutral-500 font-sans">80 adet @ ₺142.60</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺11,408</p>
+                                <p class="text-xs text-neutral-400 font-sans">4 gün önce</p>
                             </div>
                         </div>
                     </div>
@@ -1682,17 +1760,20 @@ opacity: 0 !important;
                 <div class="flex items-center gap-2">
                     <img src="logolar/nurolagent-logo.png" alt="Nurol Agent Logo" class="h-6 w-auto">
                     <span class="text-sm font-medium text-neutral-900 font-sans">Nurol Agent</span>
-                    <span class="text-xs text-neutral-400 font-sans">© 2024</span>
+                    <span class="text-xs text-neutral-400 font-sans">© 2025</span>
                 </div>
                 <div class="flex items-center gap-6">
-                    <a href="#" class="text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">Gizlilik</a>
-                    <a href="#" class="text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">Kullanım Şartları</a>
-                    <a href="#" class="text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">Yardım</a>
-                    <a href="#" class="text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">İletişim</a>
+                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">Gizlilik</a>
+                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">Kullanım Şartları</a>
+                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">Yardım</a>
+                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">İletişim</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
 
     <script>
         // ============================================
@@ -1771,6 +1852,13 @@ opacity: 0 !important;
                 'Halk Yatırım', 'Deniz Portföy', 'TEB Özel', 'ING Dinamik'
             ],
 
+            // Format number (e.g. 2840000 → "2.84M", 312000 → "312K")
+            formatNumber: function(num) {
+                if (num >= 1000000) return (num / 1000000).toFixed(2) + 'M';
+                if (num >= 1000) return (num / 1000).toFixed(0) + 'K';
+                return num.toLocaleString('tr-TR');
+            },
+
             // Utility Functions
             utils: {
                 formatCurrency: (amount) => {
@@ -1806,6 +1894,15 @@ opacity: 0 !important;
                 this.initActivityLog();
                 this.initRiskMeter();
                 this.initTwitterFeed();
+                this.initSectorStackedChart();
+                this.initTreemapChart();
+                this.initEdgeBundlingChart();
+                this.initToastSystem();
+                this.initPortfolioFilters();
+                this.initHistoryFilters();
+                this.initFundButtons();
+                this.initFooterLinks();
+                this.initHoldingClicks();
                 console.log('Nurol Agent UI initialized');
             },
 
@@ -2197,6 +2294,9 @@ opacity: 0 !important;
                 const targetPage = document.getElementById(pageMap[page]);
                 if (targetPage) {
                     targetPage.classList.remove('hidden');
+                    targetPage.classList.remove('page-fade-in');
+                    void targetPage.offsetWidth;
+                    targetPage.classList.add('page-fade-in');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
 
@@ -2663,7 +2763,43 @@ opacity: 0 !important;
                 this.renderTransactions();
                 this.addActivityLog(type === 'buy' ? 'trade-buy' : 'trade-sell', `${symbol} ${type === 'buy' ? 'alım' : 'satım'} emri gerçekleşti - ₺${amount.toLocaleString('tr-TR')}`);
                 this.addNotification(`${symbol} ${type === 'buy' ? 'alım' : 'satım'} - ₺${amount.toLocaleString('tr-TR')}`);
-                this.closeTradeModal();
+                this.showTradeSuccess(symbol, amount, type);
+            },
+
+            showTradeSuccess: function(symbol, amount, type) {
+                const modalContent = document.querySelector('#trade-modal .bg-white');
+                if (!modalContent) { this.closeTradeModal(); return; }
+                const label = type === 'buy' ? 'Alım' : 'Satım';
+                const color = type === 'buy' ? '#059669' : '#DC2626';
+                modalContent.innerHTML = `
+                    <div class="flex flex-col items-center justify-center py-12 px-6">
+                        <div class="relative mb-6">
+                            <svg width="80" height="80" viewBox="0 0 80 80">
+                                <circle cx="40" cy="40" r="36" fill="none" stroke="${color}" stroke-width="3" stroke-dasharray="226" stroke-dashoffset="0" style="animation: success-circle 0.6s ease-out forwards;" opacity="0.2"/>
+                                <circle cx="40" cy="40" r="36" fill="none" stroke="${color}" stroke-width="3" stroke-dasharray="226" stroke-dashoffset="226" style="animation: success-circle 0.6s ease-out forwards;"/>
+                                <path d="M24 40 L35 51 L56 30" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="50" stroke-dashoffset="50" style="animation: success-check 0.4s 0.4s ease-out forwards;"/>
+                            </svg>
+                            <div style="position:absolute;inset:0;border-radius:50%;border:2px solid ${color};animation:pulse-ring 1s ease-out;opacity:0;"></div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutral-900 font-sans mb-1">İşlem Başarılı</h3>
+                        <p class="text-sm text-neutral-500 font-sans mb-4">${symbol} ${label} emri gerçekleştirildi</p>
+                        <div class="w-full p-4 rounded-xl mb-6" style="background-color: ${type === 'buy' ? '#F0FDF4' : '#FEF2F2'}; border: 2px solid ${color}20;">
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-neutral-500 font-sans">Tutar</span>
+                                <span class="font-semibold text-neutral-900 font-sans">₺${amount.toLocaleString('tr-TR')}</span>
+                            </div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-neutral-500 font-sans">İşlem</span>
+                                <span class="font-semibold font-sans" style="color:${color}">${label}</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-neutral-500 font-sans">Saat</span>
+                                <span class="font-semibold text-neutral-900 font-sans">${this.utils.formatTime()}</span>
+                            </div>
+                        </div>
+                        <button onclick="NurolApp.closeTradeModal()" class="w-full py-3 text-sm font-medium rounded-xl transition-colors hover:opacity-90" style="background-color: #E8FF5A; border: 2px solid #000000;">Tamam</button>
+                    </div>`;
+                this.showToast(`${symbol} ${label} - ₺${amount.toLocaleString('tr-TR')}`, type === 'buy' ? 'success' : 'info');
             },
 
             // AI Recommendations
@@ -2926,6 +3062,750 @@ opacity: 0 !important;
                 while (container.children.length > 10) {
                     container.removeChild(container.lastChild);
                 }
+            },
+
+            // D3.js Sektör Bazlı Stacked Horizontal Bar Chart
+            initSectorStackedChart: function() {
+                const self = this;
+                // Delay to ensure DOM layout is computed
+                setTimeout(function() { self._renderSectorChart(); }, 300);
+            },
+
+            _renderSectorChart: function() {
+                try {
+                const container = document.getElementById('sector-stacked-chart');
+                if (!container) { console.error('Sector chart container not found'); return; }
+                if (typeof d3 === 'undefined') { console.error('D3.js not loaded'); return; }
+
+                const sectorData = [
+                    { sektor: 'Teknoloji', Hisse: 420000, Fon: 180000, Tahvil: 60000 },
+                    { sektor: 'Finans', Hisse: 380000, Fon: 220000, Tahvil: 140000 },
+                    { sektor: 'Enerji', Hisse: 260000, Fon: 120000, Tahvil: 90000 },
+                    { sektor: 'Sanayi', Hisse: 190000, Fon: 95000, Tahvil: 75000 },
+                    { sektor: 'Sağlık', Hisse: 140000, Fon: 80000, Tahvil: 45000 },
+                    { sektor: 'Gayrimenkul', Hisse: 110000, Fon: 60000, Tahvil: 55000 },
+                    { sektor: 'Telekomünikasyon', Hisse: 85000, Fon: 45000, Tahvil: 30000 },
+                    { sektor: 'Perakende', Hisse: 70000, Fon: 35000, Tahvil: 20000 }
+                ];
+
+                const keys = ['Hisse', 'Fon', 'Tahvil'];
+                const colorMap = { 'Hisse': '#171717', 'Fon': '#E8FF5A', 'Tahvil': '#A3A3A3' };
+
+                const cWidth = container.clientWidth || container.offsetWidth || 800;
+                const width = Math.max(cWidth, 400);
+                const marginTop = 30;
+                const marginRight = 50;
+                const marginBottom = 10;
+                const marginLeft = 140;
+                const height = sectorData.length * 40 + marginTop + marginBottom;
+
+                const series = d3.stack().keys(keys)(sectorData);
+
+                const x = d3.scaleLinear()
+                    .domain([0, d3.max(series, s => d3.max(s, d => d[1]))])
+                    .range([marginLeft, width - marginRight]);
+
+                const y = d3.scaleBand()
+                    .domain(sectorData.map(d => d.sektor))
+                    .range([marginTop, height - marginBottom])
+                    .padding(0.22);
+
+                container.innerHTML = '';
+                container.style.position = 'relative';
+
+                const svg = d3.select(container)
+                    .append('svg')
+                    .attr('width', width)
+                    .attr('height', height)
+                    .attr('viewBox', '0 0 ' + width + ' ' + height)
+                    .style('max-width', '100%')
+                    .style('height', 'auto')
+                    .style('overflow', 'visible');
+
+                // Grid lines
+                const formatVal = function(d) { return '₺' + d3.format('.2s')(d); };
+                svg.append('g')
+                    .attr('transform', 'translate(0,' + marginTop + ')')
+                    .call(d3.axisTop(x).ticks(5).tickFormat(formatVal).tickSize(-(height - marginTop - marginBottom)))
+                    .call(function(g) { g.selectAll('.domain').remove(); })
+                    .call(function(g) { g.selectAll('.tick line').attr('stroke', '#E5E5E5').attr('stroke-dasharray', '3,3'); })
+                    .call(function(g) { g.selectAll('.tick text').attr('fill', '#737373').attr('font-size', '11px').attr('font-family', 'Inter, sans-serif'); });
+
+                // Bar groups
+                const barGroups = svg.append('g')
+                    .selectAll('g')
+                    .data(series)
+                    .join('g')
+                    .attr('fill', function(d) { return colorMap[d.key]; });
+
+                // Create rects (no transition first, add events, then animate)
+                const rects = barGroups.selectAll('rect')
+                    .data(function(D) { return D.map(function(d) { d._key = D.key; return d; }); })
+                    .join('rect')
+                    .attr('x', function(d) { return x(d[0]); })
+                    .attr('y', function(d) { return y(d.data.sektor); })
+                    .attr('height', y.bandwidth())
+                    .attr('rx', 4)
+                    .attr('width', 0)
+                    .style('cursor', 'pointer');
+
+                // Tooltip div
+                const tooltip = d3.select(container)
+                    .append('div')
+                    .style('position', 'absolute')
+                    .style('background', '#171717')
+                    .style('color', '#fff')
+                    .style('padding', '10px 14px')
+                    .style('border-radius', '10px')
+                    .style('font-size', '12px')
+                    .style('font-family', 'Inter, sans-serif')
+                    .style('pointer-events', 'none')
+                    .style('opacity', '0')
+                    .style('border', '2px solid #E8FF5A')
+                    .style('z-index', '50')
+                    .style('transition', 'opacity 0.15s');
+
+                // Bind events BEFORE transition
+                rects
+                    .on('mouseover', function(event, d) {
+                        d3.select(this).attr('opacity', 0.75);
+                        var val = d.data[d._key];
+                        tooltip.html('<div style="font-weight:600;color:#E8FF5A;margin-bottom:4px;">' + d.data.sektor + '</div><div>' + d._key + ': ₺' + val.toLocaleString('tr-TR') + '</div>')
+                            .style('opacity', '1');
+                    })
+                    .on('mousemove', function(event) {
+                        var pos = d3.pointer(event, container);
+                        tooltip.style('left', (pos[0] + 15) + 'px').style('top', (pos[1] - 10) + 'px');
+                    })
+                    .on('mouseout', function() {
+                        d3.select(this).attr('opacity', 1);
+                        tooltip.style('opacity', '0');
+                    });
+
+                // Now animate
+                rects.transition()
+                    .duration(800)
+                    .delay(function(d, i) { return i * 60; })
+                    .attr('width', function(d) { return Math.max(0, x(d[1]) - x(d[0]) - 1); });
+
+                // Value labels
+                svg.append('g')
+                    .selectAll('text')
+                    .data(sectorData)
+                    .join('text')
+                    .attr('x', function(d) { return x(d.Hisse + d.Fon + d.Tahvil) + 8; })
+                    .attr('y', function(d) { return y(d.sektor) + y.bandwidth() / 2; })
+                    .attr('dy', '0.35em')
+                    .attr('fill', '#525252')
+                    .attr('font-size', '11px')
+                    .attr('font-weight', '600')
+                    .attr('font-family', 'Inter, sans-serif')
+                    .text(function(d) { return '₺' + d3.format('.2s')(d.Hisse + d.Fon + d.Tahvil); });
+
+                // Y axis
+                svg.append('g')
+                    .attr('transform', 'translate(' + marginLeft + ',0)')
+                    .call(d3.axisLeft(y).tickSize(0))
+                    .call(function(g) { g.selectAll('.domain').remove(); })
+                    .call(function(g) {
+                        g.selectAll('.tick text')
+                            .attr('fill', '#171717')
+                            .attr('font-size', '12px')
+                            .attr('font-weight', '600')
+                            .attr('font-family', 'Inter, sans-serif');
+                    });
+
+                // Legend
+                var legendEl = document.getElementById('sector-chart-legend');
+                if (legendEl) {
+                    legendEl.innerHTML = keys.map(function(k) {
+                        return '<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded" style="background:' + colorMap[k] + ';border:1px solid #000;"></span><span class="text-neutral-600 font-medium">' + k + '</span></span>';
+                    }).join('');
+                }
+
+                // Time
+                var timeEl = document.getElementById('sector-chart-time');
+                if (timeEl) {
+                    var now = new Date();
+                    timeEl.textContent = now.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+                }
+
+                console.log('Sector stacked chart rendered successfully');
+                } catch(e) {
+                    console.error('Sector chart error:', e);
+                }
+            },
+
+            // D3.js Treemap - Varlık Dağılımı
+            initTreemapChart: function() {
+                var self = this;
+                setTimeout(function() { self._renderTreemap(); }, 400);
+            },
+
+            _renderTreemap: function() {
+                try {
+                var container = document.getElementById('treemap-chart');
+                if (!container) return;
+
+                var w = container.clientWidth || container.offsetWidth || 300;
+                var h = 260;
+
+                var data = {
+                    name: "Portföy",
+                    children: [
+                        { name: "Hisse", children: [
+                            { name: "THYAO", value: 285000, change: "+2.3%" },
+                            { name: "GARAN", value: 198000, change: "-0.8%" },
+                            { name: "ASELS", value: 175000, change: "+1.5%" },
+                            { name: "SISE", value: 142000, change: "+0.4%" },
+                            { name: "KCHOL", value: 120000, change: "+1.1%" }
+                        ]},
+                        { name: "Fon", children: [
+                            { name: "TekFon", value: 220000, change: "+3.1%" },
+                            { name: "DijFon", value: 165000, change: "+2.7%" },
+                            { name: "EneFon", value: 95000, change: "-0.3%" }
+                        ]},
+                        { name: "Tahvil", children: [
+                            { name: "DİBS 2Y", value: 310000, change: "+0.2%" },
+                            { name: "Eurobond", value: 185000, change: "+0.5%" }
+                        ]},
+                        { name: "Altın", children: [
+                            { name: "Gram", value: 280000, change: "+1.8%" },
+                            { name: "Çeyrek", value: 125000, change: "+1.6%" }
+                        ]},
+                        { name: "Diğer", children: [
+                            { name: "Kripto", value: 85000, change: "+5.2%" },
+                            { name: "Döviz", value: 55000, change: "-0.1%" }
+                        ]}
+                    ]
+                };
+
+                var colorMap = {
+                    "Hisse": "#171717", "Fon": "#E8FF5A", "Tahvil": "#737373",
+                    "Altın": "#525252", "Diğer": "#A3A3A3"
+                };
+                var textColorMap = {
+                    "Hisse": "#fff", "Fon": "#171717", "Tahvil": "#fff",
+                    "Altın": "#fff", "Diğer": "#171717"
+                };
+
+                container.innerHTML = '';
+
+                var root = d3.treemap()
+                    .size([w, h])
+                    .padding(2)
+                    .paddingTop(14)
+                    .round(true)
+                (d3.hierarchy(data)
+                    .sum(function(d) { return d.value; })
+                    .sort(function(a, b) { return b.value - a.value; }));
+
+                var svg = d3.select(container).append("svg")
+                    .attr("width", w)
+                    .attr("height", h)
+                    .attr("viewBox", "0 0 " + w + " " + h)
+                    .style("font-family", "Inter, sans-serif");
+
+                // Group headers
+                var groups = root.children || [];
+                groups.forEach(function(group) {
+                    svg.append("text")
+                        .attr("x", group.x0 + 3)
+                        .attr("y", group.y0 + 10)
+                        .text(group.data.name)
+                        .attr("font-size", "9px")
+                        .attr("font-weight", "600")
+                        .attr("fill", "#525252");
+                });
+
+                var leaves = root.leaves();
+
+                // Tooltip
+                var tooltip = d3.select(container).append("div")
+                    .style("position", "absolute")
+                    .style("pointer-events", "none")
+                    .style("background", "#171717")
+                    .style("color", "#fff")
+                    .style("padding", "6px 10px")
+                    .style("border-radius", "8px")
+                    .style("font-size", "11px")
+                    .style("border", "1.5px solid #E8FF5A")
+                    .style("opacity", 0)
+                    .style("z-index", 10)
+                    .style("white-space", "nowrap");
+
+                container.style.position = "relative";
+
+                var cells = svg.selectAll("g.cell")
+                    .data(leaves)
+                    .enter().append("g")
+                    .attr("class", "cell")
+                    .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; });
+
+                cells.append("rect")
+                    .attr("width", function(d) { return Math.max(0, d.x1 - d.x0); })
+                    .attr("height", 0)
+                    .attr("rx", 3)
+                    .attr("fill", function(d) { return colorMap[d.parent.data.name] || "#ccc"; })
+                    .attr("stroke", "#fff")
+                    .attr("stroke-width", 1)
+                    .style("cursor", "pointer")
+                    .on("mouseenter", function(event, d) {
+                        d3.select(this).attr("opacity", 0.8);
+                        var cat = d.parent.data.name;
+                        var pct = (d.value / root.value * 100).toFixed(1);
+                        tooltip.html("<strong>" + d.data.name + "</strong><br/>₺" + d.data.value.toLocaleString('tr-TR') + " · " + pct + "%<br/><span style='color:#E8FF5A'>" + (d.data.change || '') + "</span>");
+                        tooltip.style("opacity", 1);
+                    })
+                    .on("mousemove", function(event) {
+                        var rect = container.getBoundingClientRect();
+                        tooltip.style("left", (event.clientX - rect.left + 10) + "px")
+                               .style("top", (event.clientY - rect.top - 30) + "px");
+                    })
+                    .on("mouseleave", function() {
+                        d3.select(this).attr("opacity", 1);
+                        tooltip.style("opacity", 0);
+                    })
+                    .transition()
+                    .duration(600)
+                    .delay(function(d, i) { return i * 40; })
+                    .attr("height", function(d) { return Math.max(0, d.y1 - d.y0); });
+
+                // Labels
+                cells.append("text")
+                    .attr("x", 4)
+                    .attr("y", 13)
+                    .text(function(d) {
+                        var cellW = d.x1 - d.x0;
+                        return cellW > 35 ? d.data.name : '';
+                    })
+                    .attr("font-size", function(d) { return (d.x1 - d.x0) > 60 ? "9px" : "7px"; })
+                    .attr("font-weight", "600")
+                    .attr("fill", function(d) { return textColorMap[d.parent.data.name] || "#fff"; })
+                    .style("pointer-events", "none")
+                    .attr("opacity", 0)
+                    .transition().delay(700).duration(300).attr("opacity", 1);
+
+                // Value labels
+                cells.append("text")
+                    .attr("x", 4)
+                    .attr("y", 24)
+                    .text(function(d) {
+                        var cellW = d.x1 - d.x0;
+                        var cellH = d.y1 - d.y0;
+                        if (cellW < 50 || cellH < 30) return '';
+                        return (d.value / root.value * 100).toFixed(0) + '%';
+                    })
+                    .attr("font-size", "8px")
+                    .attr("fill", function(d) { return textColorMap[d.parent.data.name] || "#fff"; })
+                    .attr("opacity", 0.7)
+                    .style("pointer-events", "none")
+                    .attr("opacity", 0)
+                    .transition().delay(800).duration(300).attr("opacity", 0.7);
+
+                console.log('Treemap chart rendered successfully');
+                } catch(e) {
+                    console.error('Treemap chart error:', e);
+                }
+            },
+
+            // D3.js Hierarchical Edge Bundling - Sektör Korelasyon Ağı
+            initEdgeBundlingChart: function() {
+                var self = this;
+                setTimeout(function() { self._renderEdgeBundling(); }, 500);
+            },
+
+            _renderEdgeBundling: function() {
+                try {
+                var container = document.getElementById('edge-bundling-chart');
+                if (!container) return;
+
+                var size = Math.min(container.clientWidth || 480, container.clientHeight || 480, 480);
+                var radius = size / 2;
+                var innerRadius = radius * 0.65;
+                var outerRadius = radius * 0.78;
+
+                var sectors = [
+                    { id: "Finans.Garanti", sector: "Finans", name: "GARAN" },
+                    { id: "Finans.İşBank", sector: "Finans", name: "ISCTR" },
+                    { id: "Finans.Akbank", sector: "Finans", name: "AKBNK" },
+                    { id: "Finans.YKredi", sector: "Finans", name: "YKBNK" },
+                    { id: "Teknoloji.Aselsan", sector: "Teknoloji", name: "ASELS" },
+                    { id: "Teknoloji.Logo", sector: "Teknoloji", name: "LOGO" },
+                    { id: "Teknoloji.Netaş", sector: "Teknoloji", name: "NETAS" },
+                    { id: "Havacılık.THY", sector: "Havacılık", name: "THYAO" },
+                    { id: "Havacılık.Pegasus", sector: "Havacılık", name: "PGSUS" },
+                    { id: "Enerji.Tüpraş", sector: "Enerji", name: "TUPRS" },
+                    { id: "Enerji.PetKim", sector: "Enerji", name: "PETKM" },
+                    { id: "Enerji.Aygaz", sector: "Enerji", name: "AYGAZ" },
+                    { id: "Sanayi.Ereğli", sector: "Sanayi", name: "EREGL" },
+                    { id: "Sanayi.Koç", sector: "Sanayi", name: "KCHOL" },
+                    { id: "Sanayi.Şişe", sector: "Sanayi", name: "SISE" },
+                    { id: "Perakende.BİM", sector: "Perakende", name: "BIMAS" },
+                    { id: "Perakende.Migros", sector: "Perakende", name: "MGROS" },
+                    { id: "Telekom.Turkcell", sector: "Telekom", name: "TCELL" }
+                ];
+
+                // Correlations
+                var links = [
+                    ["Finans.Garanti", "Finans.İşBank", 0.92],
+                    ["Finans.Garanti", "Finans.Akbank", 0.88],
+                    ["Finans.İşBank", "Finans.YKredi", 0.85],
+                    ["Finans.Akbank", "Finans.YKredi", 0.83],
+                    ["Teknoloji.Aselsan", "Sanayi.Koç", 0.71],
+                    ["Teknoloji.Aselsan", "Havacılık.THY", 0.65],
+                    ["Havacılık.THY", "Havacılık.Pegasus", 0.78],
+                    ["Enerji.Tüpraş", "Enerji.PetKim", 0.86],
+                    ["Enerji.Tüpraş", "Enerji.Aygaz", 0.72],
+                    ["Sanayi.Ereğli", "Sanayi.Şişe", 0.74],
+                    ["Sanayi.Koç", "Finans.Garanti", 0.62],
+                    ["Perakende.BİM", "Perakende.Migros", 0.81],
+                    ["Finans.Garanti", "Enerji.Tüpraş", 0.55],
+                    ["Teknoloji.Logo", "Teknoloji.Netaş", 0.69],
+                    ["Telekom.Turkcell", "Teknoloji.Logo", 0.58],
+                    ["Sanayi.Ereğli", "Enerji.Tüpraş", 0.63],
+                    ["Havacılık.THY", "Enerji.Tüpraş", 0.57],
+                    ["Finans.İşBank", "Sanayi.Koç", 0.60],
+                    ["Perakende.BİM", "Finans.Akbank", 0.48],
+                    ["Telekom.Turkcell", "Finans.Garanti", 0.52],
+                    ["Sanayi.Şişe", "Enerji.Aygaz", 0.51],
+                    ["Teknoloji.Aselsan", "Telekom.Turkcell", 0.46],
+                    ["Havacılık.Pegasus", "Perakende.Migros", 0.39],
+                    ["Finans.YKredi", "Perakende.BİM", 0.42],
+                    ["Enerji.PetKim", "Sanayi.Şişe", 0.56],
+                    ["Teknoloji.Netaş", "Telekom.Turkcell", 0.64],
+                    ["Sanayi.Koç", "Sanayi.Şişe", 0.77],
+                    ["Finans.Akbank", "Finans.İşBank", 0.90],
+                    ["Havacılık.THY", "Finans.Garanti", 0.53],
+                    ["Enerji.Aygaz", "Perakende.BİM", 0.37],
+                    ["Teknoloji.Logo", "Sanayi.Koç", 0.44],
+                    ["Telekom.Turkcell", "Havacılık.THY", 0.49]
+                ];
+
+                var sectorColors = {
+                    "Finans": "#E8FF5A",
+                    "Teknoloji": "#171717",
+                    "Havacılık": "#525252",
+                    "Enerji": "#737373",
+                    "Sanayi": "#A3A3A3",
+                    "Perakende": "#D4D4D4",
+                    "Telekom": "#404040"
+                };
+
+                container.innerHTML = '';
+
+                var svg = d3.select(container).append("svg")
+                    .attr("width", size)
+                    .attr("height", size)
+                    .attr("viewBox", [-size/2, -size/2, size, size].join(" "))
+                    .style("font-family", "Inter, sans-serif");
+
+                // Build index map
+                var idxMap = {};
+                sectors.forEach(function(s, i) { idxMap[s.id] = i; });
+
+                var n = sectors.length;
+                var angleStep = (2 * Math.PI) / n;
+
+                // Node positions on circle
+                sectors.forEach(function(s, i) {
+                    var angle = i * angleStep - Math.PI / 2;
+                    s.x = Math.cos(angle) * outerRadius;
+                    s.y = Math.sin(angle) * outerRadius;
+                    s.ix = Math.cos(angle) * innerRadius;
+                    s.iy = Math.sin(angle) * innerRadius;
+                    s.angle = angle;
+                });
+
+                // Draw links as quadratic bezier curves through center region
+                var linkGroup = svg.append("g").attr("class", "links");
+
+                links.forEach(function(link, li) {
+                    var srcIdx = idxMap[link[0]];
+                    var tgtIdx = idxMap[link[1]];
+                    if (srcIdx === undefined || tgtIdx === undefined) return;
+
+                    var src = sectors[srcIdx];
+                    var tgt = sectors[tgtIdx];
+                    var strength = link[2];
+
+                    // Curve through center with tension
+                    var tension = 0.65;
+                    var cx = (src.ix + tgt.ix) * (1 - tension) / 2;
+                    var cy = (src.iy + tgt.iy) * (1 - tension) / 2;
+
+                    var pathD = "M" + src.ix + "," + src.iy + " Q" + cx + "," + cy + " " + tgt.ix + "," + tgt.iy;
+
+                    var sameSector = src.sector === tgt.sector;
+                    var strokeColor = sameSector ? sectorColors[src.sector] : "#A3A3A3";
+                    if (sameSector && src.sector === "Finans") strokeColor = "#c8d94d";
+
+                    linkGroup.append("path")
+                        .attr("d", pathD)
+                        .attr("fill", "none")
+                        .attr("stroke", strokeColor)
+                        .attr("stroke-width", Math.max(0.5, strength * 2.5))
+                        .attr("stroke-opacity", 0)
+                        .attr("stroke-linecap", "round")
+                        .transition()
+                        .duration(800)
+                        .delay(li * 25)
+                        .attr("stroke-opacity", Math.max(0.15, strength * 0.5));
+                });
+
+                // Draw nodes
+                var nodeGroup = svg.append("g").attr("class", "nodes");
+
+                sectors.forEach(function(s, i) {
+                    var g = nodeGroup.append("g")
+                        .attr("transform", "translate(" + s.ix + "," + s.iy + ")")
+                        .style("cursor", "pointer");
+
+                    g.append("circle")
+                        .attr("r", 0)
+                        .attr("fill", sectorColors[s.sector] || "#999")
+                        .attr("stroke", "#000")
+                        .attr("stroke-width", 1.5)
+                        .transition()
+                        .duration(500)
+                        .delay(i * 30)
+                        .attr("r", 5);
+
+                    // Label
+                    var angle = s.angle;
+                    var labelRadius = outerRadius + 8;
+                    var lx = Math.cos(angle) * labelRadius;
+                    var ly = Math.sin(angle) * labelRadius;
+                    var degrees = angle * 180 / Math.PI;
+                    var flip = (degrees > 90 || degrees < -90);
+
+                    nodeGroup.append("text")
+                        .attr("x", lx)
+                        .attr("y", ly)
+                        .attr("text-anchor", flip ? "end" : "start")
+                        .attr("dominant-baseline", "middle")
+                        .attr("transform", "rotate(" + (flip ? degrees + 180 : degrees) + "," + lx + "," + ly + ")")
+                        .text(s.name)
+                        .attr("font-size", "9px")
+                        .attr("font-weight", "500")
+                        .attr("fill", "#525252")
+                        .attr("opacity", 0)
+                        .transition()
+                        .delay(600 + i * 30)
+                        .duration(300)
+                        .attr("opacity", 1);
+
+                    // Hover interactions
+                    g.on("mouseenter", function() {
+                        d3.select(this).select("circle").attr("r", 8).attr("stroke-width", 2.5);
+                        linkGroup.selectAll("path").attr("stroke-opacity", 0.05);
+                        // Highlight connected links
+                        links.forEach(function(link, li) {
+                            if (link[0] === s.id || link[1] === s.id) {
+                                linkGroup.selectAll("path").filter(function(d, idx) { return idx === li; })
+                                    .attr("stroke-opacity", 0.8)
+                                    .attr("stroke-width", 3)
+                                    .attr("stroke", "#E8FF5A");
+                            }
+                        });
+                    });
+                    g.on("mouseleave", function() {
+                        d3.select(this).select("circle").attr("r", 5).attr("stroke-width", 1.5);
+                        linkGroup.selectAll("path").each(function(d, idx) {
+                            if (idx < links.length) {
+                                var link = links[idx];
+                                var str = link[2];
+                                var srcS = sectors[idxMap[link[0]]];
+                                var tgtS = sectors[idxMap[link[1]]];
+                                var same = srcS && tgtS && srcS.sector === tgtS.sector;
+                                var col = same ? sectorColors[srcS.sector] : "#A3A3A3";
+                                if (same && srcS.sector === "Finans") col = "#c8d94d";
+                                d3.select(this)
+                                    .attr("stroke-opacity", Math.max(0.15, str * 0.5))
+                                    .attr("stroke-width", Math.max(0.5, str * 2.5))
+                                    .attr("stroke", col);
+                            }
+                        });
+                    });
+                });
+
+                // Sector legend in center
+                var uniqueSectors = [];
+                var seen = {};
+                sectors.forEach(function(s) {
+                    if (!seen[s.sector]) { seen[s.sector] = true; uniqueSectors.push(s.sector); }
+                });
+
+                uniqueSectors.forEach(function(sec, i) {
+                    var ly = -uniqueSectors.length * 7 + i * 14;
+                    svg.append("circle").attr("cx", -25).attr("cy", ly).attr("r", 3)
+                        .attr("fill", sectorColors[sec]);
+                    svg.append("text").attr("x", -18).attr("y", ly)
+                        .attr("dominant-baseline", "middle")
+                        .text(sec)
+                        .attr("font-size", "7px")
+                        .attr("fill", "#737373")
+                        .attr("font-weight", "500");
+                });
+
+                // Update footer time
+                var timeEl = document.getElementById('edge-chart-time');
+                if (timeEl) {
+                    var now = new Date();
+                    timeEl.textContent = now.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+                }
+
+                console.log('Edge bundling chart rendered successfully');
+                } catch(e) {
+                    console.error('Edge bundling chart error:', e);
+                }
+            },
+
+            // ========== TOAST NOTIFICATION SYSTEM ==========
+            showToast: function(message, type) {
+                var container = document.getElementById('toast-container');
+                if (!container) return;
+                var colors = {
+                    success: { bg: '#F0FDF4', border: '#059669', icon: '#059669', text: '#065F46' },
+                    info: { bg: '#FFFDE6', border: '#171717', icon: '#171717', text: '#171717' },
+                    warning: { bg: '#FFF7ED', border: '#EA580C', icon: '#EA580C', text: '#9A3412' },
+                    error: { bg: '#FEF2F2', border: '#DC2626', icon: '#DC2626', text: '#991B1B' }
+                };
+                var c = colors[type] || colors.info;
+                var icons = {
+                    success: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>',
+                    info: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>',
+                    warning: '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+                    error: '<circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>'
+                };
+                var toast = document.createElement('div');
+                toast.className = 'toast-enter';
+                toast.style.cssText = 'display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;min-width:300px;max-width:400px;box-shadow:0 8px 30px rgba(0,0,0,0.12);background:' + c.bg + ';border:2px solid ' + c.border + ';';
+                toast.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="' + c.icon + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + (icons[type] || icons.info) + '</svg><div style="flex:1"><p style="font-size:13px;font-weight:500;color:' + c.text + ';font-family:Inter,sans-serif;margin:0;">' + message + '</p><p style="font-size:11px;color:#737373;font-family:Inter,sans-serif;margin:2px 0 0;">' + this.utils.formatTime() + '</p></div><button onclick="this.parentElement.className=\'toast-exit\';setTimeout(function(){this.parentElement&&this.parentElement.remove()}.bind(this),300)" style="background:none;border:none;cursor:pointer;padding:2px;color:#A3A3A3;font-size:16px;line-height:1;">&times;</button>';
+                container.appendChild(toast);
+                setTimeout(function() {
+                    if (toast.parentElement) {
+                        toast.className = 'toast-exit';
+                        setTimeout(function() { toast.remove(); }, 300);
+                    }
+                }, 4000);
+            },
+
+            initToastSystem: function() {
+                var self = this;
+                var aiAlerts = [
+                    { msg: 'THYAO %2.3 yükseldi - Hedef fiyat güncellendi', type: 'success' },
+                    { msg: 'Yeni AI sinyal: GARAN alım fırsatı tespit edildi', type: 'info' },
+                    { msg: 'BIST 100 direnç seviyesine yaklaşıyor', type: 'warning' },
+                    { msg: 'Portföy risk skoru güncellendi: Orta → Düşük', type: 'success' },
+                    { msg: 'ASELS teknik analiz: Güçlü alım sinyali', type: 'info' },
+                    { msg: 'USD/TRY volatilite uyarısı', type: 'warning' },
+                    { msg: 'Trend Takipçi: EREGL pozisyon kapattı (+%4.2)', type: 'success' },
+                    { msg: 'Momentum Agent: SISE alım emri verdi', type: 'info' },
+                    { msg: 'Günlük kâr hedefi %85 tamamlandı', type: 'success' },
+                    { msg: 'Sektör rotasyonu tespit edildi: Finans → Teknoloji', type: 'info' }
+                ];
+                var idx = 0;
+                setTimeout(function showNext() {
+                    self.showToast(aiAlerts[idx].msg, aiAlerts[idx].type);
+                    self.addNotification(aiAlerts[idx].msg);
+                    idx = (idx + 1) % aiAlerts.length;
+                    setTimeout(showNext, 12000 + Math.random() * 8000);
+                }, 5000);
+            },
+
+            // ========== PORTFOLIO PAGE FILTERS ==========
+            initPortfolioFilters: function() {
+                var self = this;
+                document.querySelectorAll('.pf-filter-btn').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('.pf-filter-btn').forEach(function(b) {
+                            b.style.backgroundColor = '';
+                            b.style.border = '';
+                            b.classList.add('text-neutral-500');
+                        });
+                        btn.style.backgroundColor = '#E8FF5A';
+                        btn.style.border = '2px solid #000000';
+                        btn.classList.remove('text-neutral-500');
+                        var filter = btn.dataset.filter;
+                        document.querySelectorAll('.holding-row').forEach(function(row) {
+                            if (filter === 'all' || row.dataset.type === filter) {
+                                row.style.display = 'flex';
+                            } else {
+                                row.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            },
+
+            // ========== HISTORY PAGE FILTERS ==========
+            initHistoryFilters: function() {
+                var self = this;
+                document.querySelectorAll('.hist-filter-btn').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('.hist-filter-btn').forEach(function(b) {
+                            b.style.backgroundColor = '';
+                            b.classList.add('text-neutral-500');
+                        });
+                        btn.style.backgroundColor = '#E8FF5A';
+                        btn.classList.remove('text-neutral-500');
+                        var filter = btn.dataset.filter;
+                        document.querySelectorAll('.hist-row').forEach(function(row) {
+                            if (filter === 'all' || row.dataset.type === filter) {
+                                row.style.display = 'flex';
+                            } else {
+                                row.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+                var dateFilter = document.getElementById('history-date-filter');
+                if (dateFilter) {
+                    dateFilter.addEventListener('change', function() {
+                        self.showToast('Tarih filtresi güncellendi: ' + dateFilter.options[dateFilter.selectedIndex].text, 'info');
+                    });
+                }
+            },
+
+            // ========== FUNDS PAGE BUTTONS ==========
+            initFundButtons: function() {
+                var self = this;
+                document.querySelectorAll('.fund-invest-btn').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        var fund = btn.dataset.fund;
+                        var price = parseFloat(btn.dataset.price);
+                        self.openTradeModal(fund, price);
+                    });
+                });
+            },
+
+            // ========== FOOTER LINKS ==========
+            initFooterLinks: function() {
+                var self = this;
+                document.querySelectorAll('.footer-link').forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var text = link.textContent.trim();
+                        self.showToast(text + ' sayfası yakında aktif olacak', 'info');
+                    });
+                });
+            },
+
+            // ========== HOLDING CLICKS ==========
+            initHoldingClicks: function() {
+                var self = this;
+                document.querySelectorAll('.holding-row').forEach(function(row) {
+                    row.addEventListener('click', function() {
+                        var symbol = row.dataset.symbol;
+                        var stock = self.state.watchlist.find(function(s) { return s.symbol === symbol; });
+                        if (stock) {
+                            self.openTradeModal(symbol, stock.price);
+                        } else {
+                            self.openTradeModal(symbol, 100);
+                        }
+                    });
+                });
             }
         };
 

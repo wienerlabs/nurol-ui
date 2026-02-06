@@ -238,3 +238,23 @@
   - CSS transform ile smooth animasyon
   - Skora bağlı metrik hesaplamaları
 
+
+
+## Faz 13: D3.js Grafikleri
+
+### Grafik 1: Sektör Bazlı Stacked Horizontal Bar Chart ✅
+- D3.js v7 CDN eklendi (`<head>` tag'ına)
+- HTML container: Dashboard page sonuna, full-width card
+- Proje stili: `border: 2px solid #000000`, `rounded-2xl`, `#E8FF5A` accent
+- Dark footer (`#171717`) toplam portföy ve güncelleme zamanı
+- Mock BIST sektör verisi: Teknoloji, Finans, Enerji, Sanayi, Sağlık, Gayrimenkul, Telekomünikasyon, Perakende
+- Varlık türleri: Hisse (#171717), Fon (#E8FF5A), Tahvil (#A3A3A3)
+- Animasyonlu bar geçişleri (800ms, staggered delay)
+- Hover tooltip: dark theme, sarı border, sektör ve değer bilgisi
+- Grid çizgileri: dashed, açık gri
+- Y-axis: sektör isimleri, bold Inter font
+- Legend: header'da dinamik oluşturulur
+- `initSectorStackedChart()` fonksiyonu NurolApp objesine eklendi
+
+### Grafik 2: Treemap Varlık Dağılımı (BEKLEMEDE)
+### Grafik 3: Korelasyon Ağı (BEKLEMEDE)
