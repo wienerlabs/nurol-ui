@@ -1,5 +1,5 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script><script src="https://d3js.org/d3.v7.min.js"></script><style>
-body { font-family: 'Inter', sans-serif; }
+body { font-family: 'Google Sans Flex', 'Inter', sans-serif; }
 </style><script>
 function debounce(func, wait) {
 let timeout;
@@ -175,8 +175,8 @@ opacity: 0 !important;
         
         
         
-        <link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style></head>
-      <body class="antialiased text-neutral-900 bg-neutral-100 min-h-screen">
+        <link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style></head>
+      <body class="antialiased text-neutral-900 bg-neutral-100 min-h-screen font-google-sans-flex">
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200">
@@ -184,26 +184,26 @@ opacity: 0 !important;
             <div class="flex items-center gap-8">
                 <a href="#" class="flex items-center gap-3">
                     <img src="logolar/nurolagent-logo.png" alt="Nurol Agent Logo" class="h-14 w-auto">
-                    <span class="text-xl font-semibold tracking-tight font-sans">Nurol Agent</span>
+                    <span class="text-xl font-normal tracking-tight font-google-sans-flex">Nurol Agent</span>
                 </a>
                 <div class="hidden md:flex items-center gap-1">
-                    <a href="#" data-page="dashboard" class="nav-link text-sm text-neutral-900 px-3 py-1.5 bg-neutral-100 rounded-lg font-medium font-sans">Dashboard</a>
-                    <a href="#" data-page="portfolio" class="nav-link hover:bg-neutral-50 transition-colors text-sm text-neutral-500 font-sans rounded-lg pt-1.5 pr-3 pb-1.5 pl-3">Portföy</a>
-                    <a href="#" data-page="funds" class="nav-link text-sm text-neutral-500 px-3 py-1.5 hover:bg-neutral-50 rounded-lg transition-colors font-sans">Fonlar</a>
-                    <a href="#" data-page="history" class="nav-link text-sm text-neutral-500 px-3 py-1.5 hover:bg-neutral-50 rounded-lg transition-colors font-sans">Geçmiş</a>
+                    <a href="#" data-page="dashboard" class="nav-link text-sm text-neutral-900 px-3 py-1.5 bg-neutral-100 rounded-lg font-light font-google-sans-flex">Dashboard</a>
+                    <a href="#" data-page="portfolio" class="nav-link hover:bg-neutral-50 transition-colors text-sm text-neutral-500 font-google-sans-flex rounded-lg pt-1.5 pr-3 pb-1.5 pl-3">Portföy</a>
+                    <a href="#" data-page="funds" class="nav-link text-sm text-neutral-500 px-3 py-1.5 hover:bg-neutral-50 rounded-lg transition-colors font-google-sans-flex">Fonlar</a>
+                    <a href="#" data-page="history" class="nav-link text-sm text-neutral-500 px-3 py-1.5 hover:bg-neutral-50 rounded-lg transition-colors font-google-sans-flex">Geçmiş</a>
                 </div>
             </div>
             <div class="flex items-center gap-3">
                 <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-emerald-50 rounded-full">
                     <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span class="text-xs text-emerald-700 font-medium font-sans">3 Agent Aktif</span>
+                    <span class="text-xs text-emerald-700 font-light font-google-sans-flex">3 Agent Aktif</span>
                 </div>
                 <button id="notification-bell" class="p-2 hover:bg-neutral-100 rounded-lg transition-colors relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="bell" aria-hidden="true" class="lucide lucide-bell w-[20px] h-[20px]" data-icon-replaced="true" style="color: rgb(82, 82, 82); width: 20px; height: 20px"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" class=""></path></svg>
-                    <div id="notification-badge" class="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-red-500 rounded-full flex items-center justify-center"><span class="text-white text-[10px] font-bold leading-none">3</span></div>
+                    <div id="notification-badge" class="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-red-500 rounded-full flex items-center justify-center"><span class="text-white text-[10px] font-medium leading-none">3</span></div>
                 </button>
                 <div class="relative">
-                    <div id="user-avatar" class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center text-white text-xs font-medium cursor-pointer font-sans hover:ring-2 hover:ring-neutral-300 transition-all">
+                    <div id="user-avatar" class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center text-white text-xs font-light cursor-pointer font-google-sans-flex hover:ring-2 hover:ring-neutral-300 transition-all">
                         AK
                     </div>
                 </div>
@@ -220,7 +220,7 @@ opacity: 0 !important;
             <!-- Welcome Header -->
             <div class="mb-8">
                 <h1 class="text-2xl font-light text-neutral-900 tracking-tight font-google-sans-flex">Günaydın, Ahmet</h1>
-                <p class="text-base text-neutral-500 mt-1 font-sans">Günlük portföy metrikleriniz hazır.</p>
+                <p class="text-base text-neutral-500 mt-1 font-google-sans-flex">Günlük portföy metrikleriniz hazır.</p>
             </div>
 
             <!-- Top Stats Cards -->
@@ -229,11 +229,11 @@ opacity: 0 !important;
                 <!-- Total Portfolio Card -->
                 <div class="bg-white rounded-2xl p-6 border border-neutral-200 flex items-center justify-between">
                     <div>
-                        <p class="text-xs text-neutral-500 uppercase tracking-wider mb-1 font-sans">Toplam Portföy</p>
+                        <p class="text-xs text-neutral-500 uppercase tracking-wider mb-1 font-google-sans-flex">Toplam Portföy</p>
                         <p class="text-3xl tracking-tight font-google-sans-flex font-light">₺2.84M</p>
                         <div class="flex items-center gap-1 mt-2">
-                            <span class="text-sm text-emerald-600 font-medium font-sans">+12.4%</span>
-                            <span class="text-xs text-neutral-400 font-sans">bu ay</span>
+                            <span class="text-sm text-emerald-600 font-light font-google-sans-flex">+12.4%</span>
+                            <span class="text-xs text-neutral-400 font-google-sans-flex">bu ay</span>
                         </div>
                     </div>
                     <div class="w-20 h-20 rounded-xl overflow-hidden flex items-center justify-center">
@@ -244,13 +244,13 @@ opacity: 0 !important;
                 <!-- Daily Performance Card -->
                 <div class="bg-white rounded-2xl p-6 border border-neutral-200 flex items-center justify-between">
                     <div class="">
-                        <p class="text-xs text-neutral-500 uppercase tracking-wider mb-1 font-sans">Günlük Performans</p>
+                        <p class="text-xs text-neutral-500 uppercase tracking-wider mb-1 font-google-sans-flex">Günlük Performans</p>
                         <div class="flex items-baseline gap-2">
                             <p id="daily-performance" class="text-3xl tracking-tight font-google-sans-flex font-light">+₺48.7K</p>
                         </div>
                         <div class="flex items-center gap-1 mt-2">
-                            <span class="text-sm text-emerald-600 font-medium font-sans">↑12.4%</span>
-                            <span id="daily-trades-count" class="text-xs text-neutral-400 font-sans">24 işlem</span>
+                            <span class="text-sm text-emerald-600 font-light font-google-sans-flex">↑12.4%</span>
+                            <span id="daily-trades-count" class="text-xs text-neutral-400 font-google-sans-flex">24 işlem</span>
                         </div>
                     </div>
                     <div class="flex flex-col items-end">
@@ -264,8 +264,8 @@ opacity: 0 !important;
                         <img src="logolar/nurolagent-logo (2).png" alt="Nurol Agent" class="w-full h-full object-cover">
                     </div>
                     <div class="">
-                        <span class="inline-flex px-2 py-0.5 bg-[#E8FF5A] text-neutral-900 text-xs font-medium rounded-full mb-2 font-sans">Tahmin</span>
-                        <p class="text-sm font-medium text-neutral-900 font-sans">2025 hedefine %16 uzaklıktasınız</p>
+                        <span class="inline-flex px-2 py-0.5 bg-[#E8FF5A] text-neutral-900 text-xs font-light rounded-full mb-2 font-google-sans-flex">Tahmin</span>
+                        <p class="text-sm font-light text-neutral-900 font-google-sans-flex">2025 hedefine %16 uzaklıktasınız</p>
                     </div>
                 </div>
             </div>
@@ -282,12 +282,12 @@ opacity: 0 !important;
                                 <img src="logolar/nurolagent-logo (2).png" alt="Nurol Agent" class="w-10 h-10 object-contain">
                             </div>
                             <div>
-                                <h2 class="text-lg font-semibold text-neutral-900 font-sans tracking-tight">Portföy Performans Trendi</h2>
+                                <h2 class="text-lg font-normal text-neutral-900 font-google-sans-flex tracking-tight">Portföy Performans Trendi</h2>
                                 <div class="flex items-center gap-4 mt-2">
-                                    <span id="chart-current-value" class="text-3xl font-bold text-neutral-900 font-google-sans-flex tracking-tight">₺2.84M</span>
+                                    <span id="chart-current-value" class="text-3xl font-medium text-neutral-900 font-google-sans-flex tracking-tight">₺2.84M</span>
                                     <div class="flex items-center gap-2">
-                                        <span id="chart-change-badge" class="px-3 py-1 text-sm font-bold rounded-lg" style="background-color: #E8FF5A; border: 2px solid #000000;">+12.4%</span>
-                                        <span id="chart-change-amount" class="text-sm font-medium text-neutral-500 font-sans">+₺312K</span>
+                                        <span id="chart-change-badge" class="px-3 py-1 text-sm font-medium rounded-lg" style="background-color: #E8FF5A; border: 2px solid #000000;">+12.4%</span>
+                                        <span id="chart-change-amount" class="text-sm font-light text-neutral-500 font-google-sans-flex">+₺312K</span>
                                     </div>
                                 </div>
                             </div>
@@ -296,12 +296,12 @@ opacity: 0 !important;
                         <!-- Right: Period Buttons & Actions -->
                         <div class="flex items-center gap-3">
                             <div class="flex items-center rounded-xl overflow-hidden bg-neutral-100" style="border: 2px solid #000000;">
-                                <button data-period="1G" class="chart-period-btn px-4 py-2.5 text-xs font-semibold text-neutral-500 hover:bg-neutral-200 transition-all font-sans">1G</button>
-                                <button data-period="1H" class="chart-period-btn px-4 py-2.5 text-xs font-semibold text-neutral-900 font-sans" style="background-color: #E8FF5A;">1H</button>
-                                <button data-period="1A" class="chart-period-btn px-4 py-2.5 text-xs font-semibold text-neutral-500 hover:bg-neutral-200 transition-all font-sans">1A</button>
-                                <button data-period="6A" class="chart-period-btn px-4 py-2.5 text-xs font-semibold text-neutral-500 hover:bg-neutral-200 transition-all font-sans">6A</button>
-                                <button data-period="1Y" class="chart-period-btn px-4 py-2.5 text-xs font-semibold text-neutral-500 hover:bg-neutral-200 transition-all font-sans">1Y</button>
-                                <button data-period="MAX" class="chart-period-btn px-4 py-2.5 text-xs font-semibold text-neutral-500 hover:bg-neutral-200 transition-all font-sans">MAX</button>
+                                <button data-period="1G" class="chart-period-btn px-4 py-2.5 text-xs font-normal text-neutral-500 hover:bg-neutral-200 transition-all font-google-sans-flex">1G</button>
+                                <button data-period="1H" class="chart-period-btn px-4 py-2.5 text-xs font-normal text-neutral-900 font-google-sans-flex" style="background-color: #E8FF5A;">1H</button>
+                                <button data-period="1A" class="chart-period-btn px-4 py-2.5 text-xs font-normal text-neutral-500 hover:bg-neutral-200 transition-all font-google-sans-flex">1A</button>
+                                <button data-period="6A" class="chart-period-btn px-4 py-2.5 text-xs font-normal text-neutral-500 hover:bg-neutral-200 transition-all font-google-sans-flex">6A</button>
+                                <button data-period="1Y" class="chart-period-btn px-4 py-2.5 text-xs font-normal text-neutral-500 hover:bg-neutral-200 transition-all font-google-sans-flex">1Y</button>
+                                <button data-period="MAX" class="chart-period-btn px-4 py-2.5 text-xs font-normal text-neutral-500 hover:bg-neutral-200 transition-all font-google-sans-flex">MAX</button>
                             </div>
                             <button id="chart-fullscreen-btn" class="p-2.5 rounded-xl bg-neutral-900 text-white hover:bg-neutral-800 transition-colors" style="border: 2px solid #000000;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
@@ -313,30 +313,30 @@ opacity: 0 !important;
                 <!-- Chart Stats Row -->
                 <div class="grid grid-cols-5 gap-4 px-6 py-4" style="background-color: #FAFAFA; border-bottom: 2px solid #000000;">
                     <div class="flex flex-col items-center p-3 rounded-xl bg-white" style="border: 2px solid #000000;">
-                        <span class="text-xs text-neutral-500 font-sans font-medium mb-1">Yüksek</span>
-                        <span id="chart-high" class="text-sm font-bold text-neutral-900 font-sans">₺2.92M</span>
+                        <span class="text-xs text-neutral-500 font-google-sans-flex font-light mb-1">Yüksek</span>
+                        <span id="chart-high" class="text-sm font-medium text-neutral-900 font-google-sans-flex">₺2.92M</span>
                         <div class="w-full h-1 mt-2 rounded-full" style="background-color: #E8FF5A;"></div>
                     </div>
                     <div class="flex flex-col items-center p-3 rounded-xl bg-white" style="border: 2px solid #000000;">
-                        <span class="text-xs text-neutral-500 font-sans font-medium mb-1">Düşük</span>
-                        <span id="chart-low" class="text-sm font-bold text-neutral-900 font-sans">₺2.51M</span>
+                        <span class="text-xs text-neutral-500 font-google-sans-flex font-light mb-1">Düşük</span>
+                        <span id="chart-low" class="text-sm font-medium text-neutral-900 font-google-sans-flex">₺2.51M</span>
                         <div class="w-full h-1 mt-2 rounded-full bg-neutral-300"></div>
                     </div>
                     <div class="flex flex-col items-center p-3 rounded-xl bg-white" style="border: 2px solid #000000;">
-                        <span class="text-xs text-neutral-500 font-sans font-medium mb-1">Ortalama</span>
-                        <span id="chart-avg" class="text-sm font-bold text-neutral-900 font-sans">₺2.72M</span>
+                        <span class="text-xs text-neutral-500 font-google-sans-flex font-light mb-1">Ortalama</span>
+                        <span id="chart-avg" class="text-sm font-medium text-neutral-900 font-google-sans-flex">₺2.72M</span>
                         <div class="w-full h-1 mt-2 rounded-full bg-neutral-400"></div>
                     </div>
                     <div class="flex flex-col items-center p-3 rounded-xl bg-white" style="border: 2px solid #000000;">
-                        <span class="text-xs text-neutral-500 font-sans font-medium mb-1">Hacim</span>
-                        <span id="chart-volume" class="text-sm font-bold text-neutral-900 font-sans">₺847K</span>
+                        <span class="text-xs text-neutral-500 font-google-sans-flex font-light mb-1">Hacim</span>
+                        <span id="chart-volume" class="text-sm font-medium text-neutral-900 font-google-sans-flex">₺847K</span>
                         <div class="w-full h-1 mt-2 rounded-full bg-neutral-200"></div>
                     </div>
                     <div class="flex flex-col items-center p-3 rounded-xl" style="background-color: #E8FF5A; border: 2px solid #000000;">
-                        <span class="text-xs text-neutral-700 font-sans font-medium mb-1">Durum</span>
+                        <span class="text-xs text-neutral-700 font-google-sans-flex font-light mb-1">Durum</span>
                         <div class="flex items-center gap-2">
                             <div class="w-2.5 h-2.5 bg-neutral-900 rounded-full animate-pulse"></div>
-                            <span class="text-sm font-bold text-neutral-900 font-sans">Canlı</span>
+                            <span class="text-sm font-medium text-neutral-900 font-google-sans-flex">Canlı</span>
                         </div>
                         <div class="w-full h-1 mt-2 rounded-full bg-neutral-900"></div>
                     </div>
@@ -348,12 +348,12 @@ opacity: 0 !important;
                     <div id="chart-tooltip" class="absolute hidden z-30 px-5 py-4 rounded-2xl shadow-2xl pointer-events-none" style="background-color: #171717; border: 3px solid #E8FF5A; min-width: 160px;">
                         <div class="flex items-center gap-2 mb-2">
                             <div class="w-2 h-2 rounded-full" style="background-color: #E8FF5A;"></div>
-                            <p id="tooltip-date" class="text-sm text-neutral-300 font-sans font-medium"></p>
+                            <p id="tooltip-date" class="text-sm text-neutral-300 font-google-sans-flex font-light"></p>
                         </div>
-                        <p id="tooltip-value" class="text-2xl font-bold text-white font-sans tracking-tight"></p>
+                        <p id="tooltip-value" class="text-2xl font-medium text-white font-google-sans-flex tracking-tight"></p>
                         <div class="flex items-center gap-2 mt-2">
-                            <p id="tooltip-change" class="text-sm font-bold font-sans"></p>
-                            <span class="text-xs text-neutral-500 font-sans">başlangıçtan</span>
+                            <p id="tooltip-change" class="text-sm font-medium font-google-sans-flex"></p>
+                            <span class="text-xs text-neutral-500 font-google-sans-flex">başlangıçtan</span>
                         </div>
                     </div>
 
@@ -373,16 +373,16 @@ opacity: 0 !important;
                     <div class="flex items-center gap-4">
                         <div class="flex items-center gap-2">
                             <div class="w-4 h-1 rounded-full" style="background-color: #E8FF5A;"></div>
-                            <span class="text-xs text-neutral-400 font-sans">Portföy Değeri</span>
+                            <span class="text-xs text-neutral-400 font-google-sans-flex">Portföy Değeri</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <div class="w-4 h-1 rounded-full bg-neutral-600"></div>
-                            <span class="text-xs text-neutral-400 font-sans">BIST 100 Benchmark</span>
+                            <span class="text-xs text-neutral-400 font-google-sans-flex">BIST 100 Benchmark</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-3">
-                        <span class="text-xs text-neutral-500 font-sans">Son güncelleme:</span>
-                        <span id="chart-last-update" class="text-xs font-medium text-white font-sans">Şimdi</span>
+                        <span class="text-xs text-neutral-500 font-google-sans-flex">Son güncelleme:</span>
+                        <span id="chart-last-update" class="text-xs font-light text-white font-google-sans-flex">Şimdi</span>
                     </div>
                 </div>
             </div>
@@ -401,11 +401,11 @@ opacity: 0 !important;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot w-5 h-5 text-neutral-900"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"> 14h2"&gt;</path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
                                 </div>
                                 <div class="">
-                                    <h3 class="text-sm font-medium text-neutral-900 font-sans">TradeAI Asistan</h3>
-                                    <p class="text-xs text-neutral-500 font-sans">BIST Fon Yönetim Agentı</p>
+                                    <h3 class="text-sm font-light text-neutral-900 font-google-sans-flex">TradeAI Asistan</h3>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">BIST Fon Yönetim Agentı</p>
                                 </div>
                             </div>
-                            <span class="px-2 py-1 text-neutral-900 text-xs font-medium rounded-full font-sans" style="background-color: #E8FF5A; border: 2px solid #000000;">Çevrimiçi</span>
+                            <span class="px-2 py-1 text-neutral-900 text-xs font-light rounded-full font-google-sans-flex" style="background-color: #E8FF5A; border: 2px solid #000000;">Çevrimiçi</span>
                         </div>
 
                         <div id="chat-messages" class="flex-1 overflow-y-auto scrollbar-hide pt-6 pr-6 pb-6 pl-6 space-y-4" style="height: 260px">
@@ -416,9 +416,9 @@ opacity: 0 !important;
                                 </div>
                                 <div class="flex-1">
                                     <div class="bg-neutral-100 rounded-2xl rounded-tl-md p-4 max-w-md" style="border: 2px solid #000000;">
-                                        <p class="text-sm text-neutral-700 font-sans">Portföyünüz bugün %1.7 artış gösterdi. TEFAS Teknoloji fonunuzda güçlü momentum var.</p>
+                                        <p class="text-sm text-neutral-700 font-google-sans-flex">Portföyünüz bugün %1.7 artış gösterdi. TEFAS Teknoloji fonunuzda güçlü momentum var.</p>
                                     </div>
-                                    <span class="text-xs text-neutral-400 mt-1 block font-sans">10:32</span>
+                                    <span class="text-xs text-neutral-400 mt-1 block font-google-sans-flex">10:32</span>
                                 </div>
                             </div>
 
@@ -426,13 +426,13 @@ opacity: 0 !important;
                             <div class="flex gap-3">
                                 <div class="w-8 h-8 flex-shrink-0"></div>
                                 <div class="flex flex-wrap gap-2">
-                                    <button class="quick-action-btn px-3 py-1.5 bg-neutral-900 text-white text-xs font-medium rounded-full hover:bg-neutral-800 transition-colors font-sans" style="border: 2px solid #000000;">
+                                    <button class="quick-action-btn px-3 py-1.5 bg-neutral-900 text-white text-xs font-light rounded-full hover:bg-neutral-800 transition-colors font-google-sans-flex" style="border: 2px solid #000000;">
                                         Analiz Detayı
                                     </button>
-                                    <button class="quick-action-btn px-3 py-1.5 text-neutral-900 text-xs font-medium rounded-full hover:bg-neutral-200 transition-colors font-sans" style="background-color: #E8FF5A; border: 2px solid #000000;">
+                                    <button class="quick-action-btn px-3 py-1.5 text-neutral-900 text-xs font-light rounded-full hover:bg-neutral-200 transition-colors font-google-sans-flex" style="background-color: #E8FF5A; border: 2px solid #000000;">
                                         Risk Raporu
                                     </button>
-                                    <button class="quick-action-btn px-3 py-1.5 bg-neutral-100 text-neutral-700 text-xs font-medium rounded-full hover:bg-neutral-200 transition-colors font-sans" style="border: 2px solid #000000;">
+                                    <button class="quick-action-btn px-3 py-1.5 bg-neutral-100 text-neutral-700 text-xs font-light rounded-full hover:bg-neutral-200 transition-colors font-google-sans-flex" style="border: 2px solid #000000;">
                                         Öneri Al
                                     </button>
                                 </div>
@@ -454,8 +454,8 @@ opacity: 0 !important;
                     <!-- Recent Transactions -->
                     <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                         <div class="px-6 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
-                            <h3 class="text-sm font-medium text-neutral-900 font-sans">Son İşlemler</h3>
-                            <a href="#" class="text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans" onclick="event.preventDefault(); NurolApp.navigateTo('history');">Tümünü Gör →</a>
+                            <h3 class="text-sm font-light text-neutral-900 font-google-sans-flex">Son İşlemler</h3>
+                            <a href="#" class="text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-google-sans-flex" onclick="event.preventDefault(); NurolApp.navigateTo('history');">Tümünü Gör →</a>
                         </div>
                         <div id="transactions-list" class="divide-y divide-neutral-100">
                             <div class="px-6 py-4 flex items-center justify-between hover:bg-neutral-50 transition-colors">
@@ -464,13 +464,13 @@ opacity: 0 !important;
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4 text-neutral-900"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
                                     </div>
                                     <div>
-                                        <p class="text-sm font-medium text-neutral-900 font-sans">TEFAS Teknoloji</p>
-                                        <p class="text-xs text-neutral-500 font-sans">Alım • Agent</p>
+                                        <p class="text-sm font-light text-neutral-900 font-google-sans-flex">TEFAS Teknoloji</p>
+                                        <p class="text-xs text-neutral-500 font-google-sans-flex">Alım • Agent</p>
                                     </div>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-sm font-medium text-emerald-600 font-sans">+₺25,000</p>
-                                    <p class="text-xs text-neutral-400 font-sans">12:45</p>
+                                    <p class="text-sm font-light text-emerald-600 font-google-sans-flex">+₺25,000</p>
+                                    <p class="text-xs text-neutral-400 font-google-sans-flex">12:45</p>
                                 </div>
                             </div>
 
@@ -480,13 +480,13 @@ opacity: 0 !important;
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-right w-4 h-4 text-red-500"><path d="m7 7 10 10"></path><path d="M17 7v10H7"></path></svg>
                                     </div>
                                     <div>
-                                        <p class="text-sm font-medium text-neutral-900 font-sans">İş Bankası Hisse</p>
-                                        <p class="text-xs text-neutral-500 font-sans">Satım • Manuel</p>
+                                        <p class="text-sm font-light text-neutral-900 font-google-sans-flex">İş Bankası Hisse</p>
+                                        <p class="text-xs text-neutral-500 font-google-sans-flex">Satım • Manuel</p>
                                     </div>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-sm font-medium text-red-500 font-sans">-₺12,500</p>
-                                    <p class="text-xs text-neutral-400 font-sans">11:20</p>
+                                    <p class="text-sm font-light text-red-500 font-google-sans-flex">-₺12,500</p>
+                                    <p class="text-xs text-neutral-400 font-google-sans-flex">11:20</p>
                                 </div>
                             </div>
 
@@ -496,13 +496,13 @@ opacity: 0 !important;
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4 text-neutral-900"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
                                     </div>
                                     <div class="">
-                                        <p class="text-sm font-medium text-neutral-900 font-sans">Yapı Kredi Altın</p>
-                                        <p class="text-xs text-neutral-500 font-sans">Alım • Agent</p>
+                                        <p class="text-sm font-light text-neutral-900 font-google-sans-flex">Yapı Kredi Altın</p>
+                                        <p class="text-xs text-neutral-500 font-google-sans-flex">Alım • Agent</p>
                                     </div>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-sm font-medium text-emerald-600 font-sans">+₺50,000</p>
-                                    <p class="text-xs text-neutral-400 font-sans">10:05</p>
+                                    <p class="text-sm font-light text-emerald-600 font-google-sans-flex">+₺50,000</p>
+                                    <p class="text-xs text-neutral-400 font-google-sans-flex">10:05</p>
                                 </div>
                             </div>
                         </div>
@@ -515,8 +515,8 @@ opacity: 0 !important;
                     <!-- Active Agents -->
                     <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                         <div class="px-5 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
-                            <h3 class="text-sm font-medium text-neutral-900 font-sans">Aktif Agentlar</h3>
-                            <button id="manage-agents-btn" class="text-xs text-neutral-500 hover:text-neutral-900 font-sans" onclick="NurolApp.showToast('Agent yönetim paneli yakında aktif olacak', 'info')">Yönet</button>
+                            <h3 class="text-sm font-light text-neutral-900 font-google-sans-flex">Aktif Agentlar</h3>
+                            <button id="manage-agents-btn" class="text-xs text-neutral-500 hover:text-neutral-900 font-google-sans-flex" onclick="NurolApp.showToast('Agent yönetim paneli yakında aktif olacak', 'info')">Yönet</button>
                         </div>
                         <div id="agents-list" class="p-4 space-y-3">
                             <!-- Agent 1: Trend Takipçi -->
@@ -527,15 +527,15 @@ opacity: 0 !important;
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up w-4 h-4 text-white"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>
                                         </div>
                                         <div>
-                                            <p class="text-xs font-medium text-neutral-900 font-sans">Trend Takipçi</p>
-                                            <p class="text-xs text-neutral-500 font-sans">Momentum</p>
+                                            <p class="text-xs font-light text-neutral-900 font-google-sans-flex">Trend Takipçi</p>
+                                            <p class="text-xs text-neutral-500 font-google-sans-flex">Momentum</p>
                                         </div>
                                     </div>
                                     <button data-agent-id="1" class="agent-toggle w-3 h-3 rounded-full cursor-pointer hover:scale-110 transition-transform" id="agent-1-status" style="background-color: #E8FF5A; border: 2px solid #000000;" title="Tıkla: Aç/Kapat"></button>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-neutral-500 font-sans">8 işlem</span>
-                                    <span class="text-emerald-600 font-medium font-sans">+₺12,450</span>
+                                    <span class="text-neutral-500 font-google-sans-flex">8 işlem</span>
+                                    <span class="text-emerald-600 font-light font-google-sans-flex">+₺12,450</span>
                                 </div>
                             </div>
 
@@ -547,15 +547,15 @@ opacity: 0 !important;
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield w-4 h-4 text-neutral-900"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
                                         </div>
                                         <div>
-                                            <p class="text-xs font-medium text-neutral-900 font-sans">Risk Yöneticisi</p>
-                                            <p class="text-xs text-neutral-500 font-sans">Koruma</p>
+                                            <p class="text-xs font-light text-neutral-900 font-google-sans-flex">Risk Yöneticisi</p>
+                                            <p class="text-xs text-neutral-500 font-google-sans-flex">Koruma</p>
                                         </div>
                                     </div>
                                     <button data-agent-id="2" class="agent-toggle w-3 h-3 rounded-full cursor-pointer hover:scale-110 transition-transform" id="agent-2-status" style="background-color: #E8FF5A; border: 2px solid #000000;" title="Tıkla: Aç/Kapat"></button>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-neutral-500 font-sans">4 fon</span>
-                                    <span class="text-blue-600 font-medium font-sans">Düşük risk</span>
+                                    <span class="text-neutral-500 font-google-sans-flex">4 fon</span>
+                                    <span class="text-blue-600 font-light font-google-sans-flex">Düşük risk</span>
                                 </div>
                             </div>
 
@@ -567,15 +567,15 @@ opacity: 0 !important;
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-4 h-4 text-white"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
                                         </div>
                                         <div>
-                                            <p class="text-xs font-medium text-neutral-900 font-sans">Zamanlayıcı</p>
-                                            <p class="text-xs text-neutral-500 font-sans">DCA</p>
+                                            <p class="text-xs font-light text-neutral-900 font-google-sans-flex">Zamanlayıcı</p>
+                                            <p class="text-xs text-neutral-500 font-google-sans-flex">DCA</p>
                                         </div>
                                     </div>
                                     <button data-agent-id="3" class="agent-toggle w-3 h-3 rounded-full cursor-pointer hover:scale-110 transition-transform" id="agent-3-status" style="background-color: #E8FF5A; border: 2px solid #000000;" title="Tıkla: Aç/Kapat"></button>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-neutral-500 font-sans">Sonraki: 14:00</span>
-                                    <span class="text-purple-600 font-medium font-sans">₺5K/gün</span>
+                                    <span class="text-neutral-500 font-google-sans-flex">Sonraki: 14:00</span>
+                                    <span class="text-purple-600 font-light font-google-sans-flex">₺5K/gün</span>
                                 </div>
                             </div>
                         </div>
@@ -584,8 +584,8 @@ opacity: 0 !important;
                     <!-- Portfolio Distribution - D3.js Treemap -->
                     <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                         <div class="px-5 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
-                            <h3 class="text-sm font-medium text-neutral-900 font-sans">Varlık Dağılımı</h3>
-                            <span class="text-xs text-neutral-500 font-sans">Treemap</span>
+                            <h3 class="text-sm font-light text-neutral-900 font-google-sans-flex">Varlık Dağılımı</h3>
+                            <span class="text-xs text-neutral-500 font-google-sans-flex">Treemap</span>
                         </div>
                         <div class="p-3">
                             <div id="treemap-chart" style="width: 100%; min-height: 260px;"></div>
@@ -595,35 +595,35 @@ opacity: 0 !important;
                     <!-- Market Status -->
                     <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                         <div class="px-5 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
-                            <h3 class="text-sm font-medium text-neutral-900 font-sans">Piyasa</h3>
+                            <h3 class="text-sm font-light text-neutral-900 font-google-sans-flex">Piyasa</h3>
                             <div id="market-status-badge" class="flex items-center gap-1 px-2 py-1 rounded-full" style="background-color: #E8FF5A; border: 2px solid #000000;">
                                 <div class="w-2 h-2 bg-neutral-900 rounded-full animate-pulse"></div>
-                                <span class="text-xs text-neutral-900 font-medium font-sans">Açık</span>
+                                <span class="text-xs text-neutral-900 font-light font-google-sans-flex">Açık</span>
                             </div>
                         </div>
                         <div class="p-4 space-y-3">
                             <div id="market-bist100" class="flex items-center justify-between p-3 bg-neutral-50 rounded-xl" style="border: 2px solid #000000;">
                                 <div>
-                                    <p class="text-xs text-neutral-500 font-sans">BIST 100</p>
-                                    <p class="value text-sm font-medium text-neutral-900 font-sans">9,847.32</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">BIST 100</p>
+                                    <p class="value text-sm font-light text-neutral-900 font-google-sans-flex">9,847.32</p>
                                 </div>
-                                <span class="change text-xs text-neutral-900 font-medium px-2 py-1 rounded-full font-sans" style="background-color: #E8FF5A; border: 2px solid #000000;">+1.24%</span>
+                                <span class="change text-xs text-neutral-900 font-light px-2 py-1 rounded-full font-google-sans-flex" style="background-color: #E8FF5A; border: 2px solid #000000;">+1.24%</span>
                             </div>
 
                             <div id="market-usdtry" class="flex items-center justify-between p-3 bg-neutral-50 rounded-xl" style="border: 2px solid #000000;">
                                 <div>
-                                    <p class="text-xs text-neutral-500 font-sans">USD/TRY</p>
-                                    <p class="value text-sm font-medium text-neutral-900 font-sans">32.45</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">USD/TRY</p>
+                                    <p class="value text-sm font-light text-neutral-900 font-google-sans-flex">32.45</p>
                                 </div>
-                                <span class="change text-xs text-red-500 font-medium bg-red-50 px-2 py-1 rounded-full font-sans" style="border: 2px solid #000000;">-0.32%</span>
+                                <span class="change text-xs text-red-500 font-light bg-red-50 px-2 py-1 rounded-full font-google-sans-flex" style="border: 2px solid #000000;">-0.32%</span>
                             </div>
 
                             <div id="market-gold" class="flex items-center justify-between p-3 bg-neutral-50 rounded-xl" style="border: 2px solid #000000;">
                                 <div>
-                                    <p class="text-xs text-neutral-500 font-sans">Gram Altın</p>
-                                    <p class="value text-sm font-medium text-neutral-900 font-sans">₺2,485</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">Gram Altın</p>
+                                    <p class="value text-sm font-light text-neutral-900 font-google-sans-flex">₺2,485</p>
                                 </div>
-                                <span class="change text-xs text-neutral-900 font-medium px-2 py-1 rounded-full font-sans" style="background-color: #E8FF5A; border: 2px solid #000000;">+0.87%</span>
+                                <span class="change text-xs text-neutral-900 font-light px-2 py-1 rounded-full font-google-sans-flex" style="background-color: #E8FF5A; border: 2px solid #000000;">+0.87%</span>
                             </div>
                         </div>
                     </div>
@@ -636,68 +636,68 @@ opacity: 0 !important;
                 <!-- Watchlist / İzleme Listesi -->
                 <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                     <div class="px-5 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
-                        <h3 class="text-sm font-medium text-neutral-900 font-sans">İzleme Listesi</h3>
-                        <button id="add-watchlist-btn" class="text-xs px-2 py-1 rounded-full font-sans hover:opacity-80 transition-opacity" style="background-color: #E8FF5A; border: 2px solid #000000;">+ Ekle</button>
+                        <h3 class="text-sm font-light text-neutral-900 font-google-sans-flex">İzleme Listesi</h3>
+                        <button id="add-watchlist-btn" class="text-xs px-2 py-1 rounded-full font-google-sans-flex hover:opacity-80 transition-opacity" style="background-color: #E8FF5A; border: 2px solid #000000;">+ Ekle</button>
                     </div>
                     <div id="watchlist-container" class="p-4 space-y-2 max-h-64 overflow-y-auto">
                         <div class="watchlist-item flex items-center justify-between p-3 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer" style="border: 2px solid #000000;" data-symbol="THYAO">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 bg-neutral-900 rounded-lg flex items-center justify-center" style="border: 2px solid #000000;">
-                                    <span class="text-white text-xs font-bold">TH</span>
+                                    <span class="text-white text-xs font-medium">TH</span>
                                 </div>
                                 <div>
-                                    <p class="text-xs font-medium text-neutral-900 font-sans">THYAO</p>
-                                    <p class="text-xs text-neutral-500 font-sans">Türk Hava Yolları</p>
+                                    <p class="text-xs font-light text-neutral-900 font-google-sans-flex">THYAO</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">Türk Hava Yolları</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-medium text-neutral-900 font-sans">₺287.40</p>
-                                <p class="text-xs text-emerald-600 font-medium font-sans">+2.34%</p>
+                                <p class="text-sm font-light text-neutral-900 font-google-sans-flex">₺287.40</p>
+                                <p class="text-xs text-emerald-600 font-light font-google-sans-flex">+2.34%</p>
                             </div>
                         </div>
                         <div class="watchlist-item flex items-center justify-between p-3 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer" style="border: 2px solid #000000;" data-symbol="GARAN">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;">
-                                    <span class="text-neutral-900 text-xs font-bold">GA</span>
+                                    <span class="text-neutral-900 text-xs font-medium">GA</span>
                                 </div>
                                 <div>
-                                    <p class="text-xs font-medium text-neutral-900 font-sans">GARAN</p>
-                                    <p class="text-xs text-neutral-500 font-sans">Garanti BBVA</p>
+                                    <p class="text-xs font-light text-neutral-900 font-google-sans-flex">GARAN</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">Garanti BBVA</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-medium text-neutral-900 font-sans">₺98.75</p>
-                                <p class="text-xs text-red-500 font-medium font-sans">-0.82%</p>
+                                <p class="text-sm font-light text-neutral-900 font-google-sans-flex">₺98.75</p>
+                                <p class="text-xs text-red-500 font-light font-google-sans-flex">-0.82%</p>
                             </div>
                         </div>
                         <div class="watchlist-item flex items-center justify-between p-3 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer" style="border: 2px solid #000000;" data-symbol="ASELS">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 bg-neutral-900 rounded-lg flex items-center justify-center" style="border: 2px solid #000000;">
-                                    <span class="text-white text-xs font-bold">AS</span>
+                                    <span class="text-white text-xs font-medium">AS</span>
                                 </div>
                                 <div>
-                                    <p class="text-xs font-medium text-neutral-900 font-sans">ASELS</p>
-                                    <p class="text-xs text-neutral-500 font-sans">Aselsan</p>
+                                    <p class="text-xs font-light text-neutral-900 font-google-sans-flex">ASELS</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">Aselsan</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-medium text-neutral-900 font-sans">₺54.20</p>
-                                <p class="text-xs text-emerald-600 font-medium font-sans">+1.15%</p>
+                                <p class="text-sm font-light text-neutral-900 font-google-sans-flex">₺54.20</p>
+                                <p class="text-xs text-emerald-600 font-light font-google-sans-flex">+1.15%</p>
                             </div>
                         </div>
                         <div class="watchlist-item flex items-center justify-between p-3 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer" style="border: 2px solid #000000;" data-symbol="SISE">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;">
-                                    <span class="text-neutral-900 text-xs font-bold">SI</span>
+                                    <span class="text-neutral-900 text-xs font-medium">SI</span>
                                 </div>
                                 <div>
-                                    <p class="text-xs font-medium text-neutral-900 font-sans">SISE</p>
-                                    <p class="text-xs text-neutral-500 font-sans">Şişecam</p>
+                                    <p class="text-xs font-light text-neutral-900 font-google-sans-flex">SISE</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">Şişecam</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-medium text-neutral-900 font-sans">₺45.80</p>
-                                <p class="text-xs text-emerald-600 font-medium font-sans">+0.44%</p>
+                                <p class="text-sm font-light text-neutral-900 font-google-sans-flex">₺45.80</p>
+                                <p class="text-xs text-emerald-600 font-light font-google-sans-flex">+0.44%</p>
                             </div>
                         </div>
                     </div>
@@ -712,17 +712,17 @@ opacity: 0 !important;
                                 <div class="w-7 h-7 rounded-lg flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
                                 </div>
-                                <h3 class="text-sm font-semibold text-neutral-900 font-sans">AI Sinyalleri</h3>
+                                <h3 class="text-sm font-normal text-neutral-900 font-google-sans-flex">AI Sinyalleri</h3>
                             </div>
                             <div class="flex items-center gap-1.5">
                                 <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                                <span class="text-xs text-neutral-500 font-sans">Canlı</span>
+                                <span class="text-xs text-neutral-500 font-google-sans-flex">Canlı</span>
                             </div>
                         </div>
                         <div class="flex gap-1 rounded-xl p-1 bg-neutral-100" style="border: 2px solid #000000;">
-                            <button id="signal-tab-all" class="signal-tab flex-1 text-xs font-medium py-1.5 rounded-lg transition-colors font-sans" style="background-color: #E8FF5A;" data-filter="all">Tümü</button>
-                            <button id="signal-tab-buy" class="signal-tab flex-1 text-xs font-medium py-1.5 rounded-lg text-neutral-500 transition-colors font-sans" data-filter="buy">Alım</button>
-                            <button id="signal-tab-sell" class="signal-tab flex-1 text-xs font-medium py-1.5 rounded-lg text-neutral-500 transition-colors font-sans" data-filter="sell">Satım</button>
+                            <button id="signal-tab-all" class="signal-tab flex-1 text-xs font-light py-1.5 rounded-lg transition-colors font-google-sans-flex" style="background-color: #E8FF5A;" data-filter="all">Tümü</button>
+                            <button id="signal-tab-buy" class="signal-tab flex-1 text-xs font-light py-1.5 rounded-lg text-neutral-500 transition-colors font-google-sans-flex" data-filter="buy">Alım</button>
+                            <button id="signal-tab-sell" class="signal-tab flex-1 text-xs font-light py-1.5 rounded-lg text-neutral-500 transition-colors font-google-sans-flex" data-filter="sell">Satım</button>
                         </div>
                     </div>
 
@@ -735,33 +735,33 @@ opacity: 0 !important;
                                 <div class="flex-1 p-3">
                                     <div class="flex items-center justify-between mb-2">
                                         <div class="flex items-center gap-2">
-                                            <span class="text-sm font-bold text-neutral-900 font-sans">THYAO</span>
-                                            <span class="text-xs px-1.5 py-0.5 font-medium rounded bg-emerald-100 text-emerald-700 font-sans">Güçlü Alım</span>
+                                            <span class="text-sm font-medium text-neutral-900 font-google-sans-flex">THYAO</span>
+                                            <span class="text-xs px-1.5 py-0.5 font-light rounded bg-emerald-100 text-emerald-700 font-google-sans-flex">Güçlü Alım</span>
                                         </div>
-                                        <span class="text-xs text-neutral-400 font-sans">2dk önce</span>
+                                        <span class="text-xs text-neutral-400 font-google-sans-flex">2dk önce</span>
                                     </div>
                                     <div class="flex items-center gap-4 mb-2">
                                         <div>
-                                            <span class="text-xs text-neutral-500 font-sans">Fiyat</span>
-                                            <p class="text-sm font-semibold text-neutral-900 font-sans">₺287.40</p>
+                                            <span class="text-xs text-neutral-500 font-google-sans-flex">Fiyat</span>
+                                            <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺287.40</p>
                                         </div>
                                         <div>
-                                            <span class="text-xs text-neutral-500 font-sans">Hedef</span>
-                                            <p class="text-sm font-semibold text-emerald-600 font-sans">₺312.00</p>
+                                            <span class="text-xs text-neutral-500 font-google-sans-flex">Hedef</span>
+                                            <p class="text-sm font-normal text-emerald-600 font-google-sans-flex">₺312.00</p>
                                         </div>
                                         <div>
-                                            <span class="text-xs text-neutral-500 font-sans">Potansiyel</span>
-                                            <p class="text-sm font-semibold text-emerald-600 font-sans">+8.5%</p>
+                                            <span class="text-xs text-neutral-500 font-google-sans-flex">Potansiyel</span>
+                                            <p class="text-sm font-normal text-emerald-600 font-google-sans-flex">+8.5%</p>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-2 mb-2">
-                                        <span class="text-xs text-neutral-500 font-sans">Güven:</span>
+                                        <span class="text-xs text-neutral-500 font-google-sans-flex">Güven:</span>
                                         <div class="flex-1 h-1.5 bg-neutral-200 rounded-full overflow-hidden">
                                             <div class="h-full rounded-full" style="width: 87%; background-color: #E8FF5A;"></div>
                                         </div>
-                                        <span class="text-xs font-semibold text-neutral-900 font-sans">87%</span>
+                                        <span class="text-xs font-normal text-neutral-900 font-google-sans-flex">87%</span>
                                     </div>
-                                    <button class="trade-btn w-full py-2 text-xs font-semibold rounded-lg transition-all hover:scale-[1.02]" style="background-color: #E8FF5A; border: 2px solid #000000;" data-action="buy" data-symbol="THYAO">
+                                    <button class="trade-btn w-full py-2 text-xs font-normal rounded-lg transition-all hover:scale-[1.02]" style="background-color: #E8FF5A; border: 2px solid #000000;" data-action="buy" data-symbol="THYAO">
                                         Al →
                                     </button>
                                 </div>
@@ -775,33 +775,33 @@ opacity: 0 !important;
                                 <div class="flex-1 p-3">
                                     <div class="flex items-center justify-between mb-2">
                                         <div class="flex items-center gap-2">
-                                            <span class="text-sm font-bold text-neutral-900 font-sans">EREGL</span>
-                                            <span class="text-xs px-1.5 py-0.5 font-medium rounded bg-red-100 text-red-700 font-sans">Satım</span>
+                                            <span class="text-sm font-medium text-neutral-900 font-google-sans-flex">EREGL</span>
+                                            <span class="text-xs px-1.5 py-0.5 font-light rounded bg-red-100 text-red-700 font-google-sans-flex">Satım</span>
                                         </div>
-                                        <span class="text-xs text-neutral-400 font-sans">8dk önce</span>
+                                        <span class="text-xs text-neutral-400 font-google-sans-flex">8dk önce</span>
                                     </div>
                                     <div class="flex items-center gap-4 mb-2">
                                         <div>
-                                            <span class="text-xs text-neutral-500 font-sans">Fiyat</span>
-                                            <p class="text-sm font-semibold text-neutral-900 font-sans">₺54.20</p>
+                                            <span class="text-xs text-neutral-500 font-google-sans-flex">Fiyat</span>
+                                            <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺54.20</p>
                                         </div>
                                         <div>
-                                            <span class="text-xs text-neutral-500 font-sans">Stop</span>
-                                            <p class="text-sm font-semibold text-red-500 font-sans">₺48.50</p>
+                                            <span class="text-xs text-neutral-500 font-google-sans-flex">Stop</span>
+                                            <p class="text-sm font-normal text-red-500 font-google-sans-flex">₺48.50</p>
                                         </div>
                                         <div>
-                                            <span class="text-xs text-neutral-500 font-sans">Risk</span>
-                                            <p class="text-sm font-semibold text-red-500 font-sans">-10.5%</p>
+                                            <span class="text-xs text-neutral-500 font-google-sans-flex">Risk</span>
+                                            <p class="text-sm font-normal text-red-500 font-google-sans-flex">-10.5%</p>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-2 mb-2">
-                                        <span class="text-xs text-neutral-500 font-sans">Güven:</span>
+                                        <span class="text-xs text-neutral-500 font-google-sans-flex">Güven:</span>
                                         <div class="flex-1 h-1.5 bg-neutral-200 rounded-full overflow-hidden">
                                             <div class="h-full bg-red-400 rounded-full" style="width: 72%;"></div>
                                         </div>
-                                        <span class="text-xs font-semibold text-neutral-900 font-sans">72%</span>
+                                        <span class="text-xs font-normal text-neutral-900 font-google-sans-flex">72%</span>
                                     </div>
-                                    <button class="trade-btn w-full py-2 text-xs font-semibold rounded-lg transition-all hover:scale-[1.02] bg-neutral-900 text-white" style="border: 2px solid #000000;" data-action="sell" data-symbol="EREGL">
+                                    <button class="trade-btn w-full py-2 text-xs font-normal rounded-lg transition-all hover:scale-[1.02] bg-neutral-900 text-white" style="border: 2px solid #000000;" data-action="sell" data-symbol="EREGL">
                                         Sat →
                                     </button>
                                 </div>
@@ -815,33 +815,33 @@ opacity: 0 !important;
                                 <div class="flex-1 p-3">
                                     <div class="flex items-center justify-between mb-2">
                                         <div class="flex items-center gap-2">
-                                            <span class="text-sm font-bold text-neutral-900 font-sans">GARAN</span>
-                                            <span class="text-xs px-1.5 py-0.5 font-medium rounded bg-emerald-100 text-emerald-700 font-sans">Alım</span>
+                                            <span class="text-sm font-medium text-neutral-900 font-google-sans-flex">GARAN</span>
+                                            <span class="text-xs px-1.5 py-0.5 font-light rounded bg-emerald-100 text-emerald-700 font-google-sans-flex">Alım</span>
                                         </div>
-                                        <span class="text-xs text-neutral-400 font-sans">15dk önce</span>
+                                        <span class="text-xs text-neutral-400 font-google-sans-flex">15dk önce</span>
                                     </div>
                                     <div class="flex items-center gap-4 mb-2">
                                         <div>
-                                            <span class="text-xs text-neutral-500 font-sans">Fiyat</span>
-                                            <p class="text-sm font-semibold text-neutral-900 font-sans">₺98.75</p>
+                                            <span class="text-xs text-neutral-500 font-google-sans-flex">Fiyat</span>
+                                            <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺98.75</p>
                                         </div>
                                         <div>
-                                            <span class="text-xs text-neutral-500 font-sans">Hedef</span>
-                                            <p class="text-sm font-semibold text-emerald-600 font-sans">₺108.00</p>
+                                            <span class="text-xs text-neutral-500 font-google-sans-flex">Hedef</span>
+                                            <p class="text-sm font-normal text-emerald-600 font-google-sans-flex">₺108.00</p>
                                         </div>
                                         <div>
-                                            <span class="text-xs text-neutral-500 font-sans">Potansiyel</span>
-                                            <p class="text-sm font-semibold text-emerald-600 font-sans">+9.4%</p>
+                                            <span class="text-xs text-neutral-500 font-google-sans-flex">Potansiyel</span>
+                                            <p class="text-sm font-normal text-emerald-600 font-google-sans-flex">+9.4%</p>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-2 mb-2">
-                                        <span class="text-xs text-neutral-500 font-sans">Güven:</span>
+                                        <span class="text-xs text-neutral-500 font-google-sans-flex">Güven:</span>
                                         <div class="flex-1 h-1.5 bg-neutral-200 rounded-full overflow-hidden">
                                             <div class="h-full rounded-full" style="width: 79%; background-color: #E8FF5A;"></div>
                                         </div>
-                                        <span class="text-xs font-semibold text-neutral-900 font-sans">79%</span>
+                                        <span class="text-xs font-normal text-neutral-900 font-google-sans-flex">79%</span>
                                     </div>
-                                    <button class="trade-btn w-full py-2 text-xs font-semibold rounded-lg transition-all hover:scale-[1.02]" style="background-color: #E8FF5A; border: 2px solid #000000;" data-action="buy" data-symbol="GARAN">
+                                    <button class="trade-btn w-full py-2 text-xs font-normal rounded-lg transition-all hover:scale-[1.02]" style="background-color: #E8FF5A; border: 2px solid #000000;" data-action="buy" data-symbol="GARAN">
                                         Al →
                                     </button>
                                 </div>
@@ -854,83 +854,83 @@ opacity: 0 !important;
                 <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                     <div class="px-5 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
                         <div class="flex items-center gap-2">
-                            <button id="gainers-tab" class="tab-btn text-xs font-medium px-3 py-1 rounded-lg bg-neutral-900 text-white" data-tab="gainers">Yükselenler</button>
-                            <button id="losers-tab" class="tab-btn text-xs font-medium px-3 py-1 rounded-lg text-neutral-500 hover:bg-neutral-100" data-tab="losers">Düşenler</button>
+                            <button id="gainers-tab" class="tab-btn text-xs font-light px-3 py-1 rounded-lg bg-neutral-900 text-white" data-tab="gainers">Yükselenler</button>
+                            <button id="losers-tab" class="tab-btn text-xs font-light px-3 py-1 rounded-lg text-neutral-500 hover:bg-neutral-100" data-tab="losers">Düşenler</button>
                         </div>
-                        <span class="text-xs text-neutral-400 font-sans">BIST 100</span>
+                        <span class="text-xs text-neutral-400 font-google-sans-flex">BIST 100</span>
                     </div>
                     <div id="gainers-list" class="p-4 space-y-2">
                         <div class="flex items-center justify-between p-2 hover:bg-neutral-50 rounded-lg transition-colors">
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-emerald-600 w-4">1</span>
-                                <span class="text-xs font-medium text-neutral-900 font-sans">KOZAL</span>
+                                <span class="text-xs font-medium text-emerald-600 w-4">1</span>
+                                <span class="text-xs font-light text-neutral-900 font-google-sans-flex">KOZAL</span>
                             </div>
-                            <span class="text-xs font-medium text-emerald-600 px-2 py-0.5 rounded-full" style="background-color: #D1FAE5;">+9.87%</span>
+                            <span class="text-xs font-light text-emerald-600 px-2 py-0.5 rounded-full" style="background-color: #D1FAE5;">+9.87%</span>
                         </div>
                         <div class="flex items-center justify-between p-2 hover:bg-neutral-50 rounded-lg transition-colors">
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-emerald-600 w-4">2</span>
-                                <span class="text-xs font-medium text-neutral-900 font-sans">PGSUS</span>
+                                <span class="text-xs font-medium text-emerald-600 w-4">2</span>
+                                <span class="text-xs font-light text-neutral-900 font-google-sans-flex">PGSUS</span>
                             </div>
-                            <span class="text-xs font-medium text-emerald-600 px-2 py-0.5 rounded-full" style="background-color: #D1FAE5;">+7.23%</span>
+                            <span class="text-xs font-light text-emerald-600 px-2 py-0.5 rounded-full" style="background-color: #D1FAE5;">+7.23%</span>
                         </div>
                         <div class="flex items-center justify-between p-2 hover:bg-neutral-50 rounded-lg transition-colors">
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-emerald-600 w-4">3</span>
-                                <span class="text-xs font-medium text-neutral-900 font-sans">TUPRS</span>
+                                <span class="text-xs font-medium text-emerald-600 w-4">3</span>
+                                <span class="text-xs font-light text-neutral-900 font-google-sans-flex">TUPRS</span>
                             </div>
-                            <span class="text-xs font-medium text-emerald-600 px-2 py-0.5 rounded-full" style="background-color: #D1FAE5;">+5.45%</span>
+                            <span class="text-xs font-light text-emerald-600 px-2 py-0.5 rounded-full" style="background-color: #D1FAE5;">+5.45%</span>
                         </div>
                         <div class="flex items-center justify-between p-2 hover:bg-neutral-50 rounded-lg transition-colors">
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-emerald-600 w-4">4</span>
-                                <span class="text-xs font-medium text-neutral-900 font-sans">SAHOL</span>
+                                <span class="text-xs font-medium text-emerald-600 w-4">4</span>
+                                <span class="text-xs font-light text-neutral-900 font-google-sans-flex">SAHOL</span>
                             </div>
-                            <span class="text-xs font-medium text-emerald-600 px-2 py-0.5 rounded-full" style="background-color: #D1FAE5;">+4.12%</span>
+                            <span class="text-xs font-light text-emerald-600 px-2 py-0.5 rounded-full" style="background-color: #D1FAE5;">+4.12%</span>
                         </div>
                         <div class="flex items-center justify-between p-2 hover:bg-neutral-50 rounded-lg transition-colors">
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-emerald-600 w-4">5</span>
-                                <span class="text-xs font-medium text-neutral-900 font-sans">KCHOL</span>
+                                <span class="text-xs font-medium text-emerald-600 w-4">5</span>
+                                <span class="text-xs font-light text-neutral-900 font-google-sans-flex">KCHOL</span>
                             </div>
-                            <span class="text-xs font-medium text-emerald-600 px-2 py-0.5 rounded-full" style="background-color: #D1FAE5;">+3.89%</span>
+                            <span class="text-xs font-light text-emerald-600 px-2 py-0.5 rounded-full" style="background-color: #D1FAE5;">+3.89%</span>
                         </div>
                     </div>
                     <div id="losers-list" class="p-4 space-y-2 hidden">
                         <div class="flex items-center justify-between p-2 hover:bg-neutral-50 rounded-lg transition-colors">
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-red-500 w-4">1</span>
-                                <span class="text-xs font-medium text-neutral-900 font-sans">VESTL</span>
+                                <span class="text-xs font-medium text-red-500 w-4">1</span>
+                                <span class="text-xs font-light text-neutral-900 font-google-sans-flex">VESTL</span>
                             </div>
-                            <span class="text-xs font-medium text-red-500 px-2 py-0.5 rounded-full" style="background-color: #FEE2E2;">-6.54%</span>
+                            <span class="text-xs font-light text-red-500 px-2 py-0.5 rounded-full" style="background-color: #FEE2E2;">-6.54%</span>
                         </div>
                         <div class="flex items-center justify-between p-2 hover:bg-neutral-50 rounded-lg transition-colors">
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-red-500 w-4">2</span>
-                                <span class="text-xs font-medium text-neutral-900 font-sans">ARCLK</span>
+                                <span class="text-xs font-medium text-red-500 w-4">2</span>
+                                <span class="text-xs font-light text-neutral-900 font-google-sans-flex">ARCLK</span>
                             </div>
-                            <span class="text-xs font-medium text-red-500 px-2 py-0.5 rounded-full" style="background-color: #FEE2E2;">-4.21%</span>
+                            <span class="text-xs font-light text-red-500 px-2 py-0.5 rounded-full" style="background-color: #FEE2E2;">-4.21%</span>
                         </div>
                         <div class="flex items-center justify-between p-2 hover:bg-neutral-50 rounded-lg transition-colors">
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-red-500 w-4">3</span>
-                                <span class="text-xs font-medium text-neutral-900 font-sans">TOASO</span>
+                                <span class="text-xs font-medium text-red-500 w-4">3</span>
+                                <span class="text-xs font-light text-neutral-900 font-google-sans-flex">TOASO</span>
                             </div>
-                            <span class="text-xs font-medium text-red-500 px-2 py-0.5 rounded-full" style="background-color: #FEE2E2;">-3.87%</span>
+                            <span class="text-xs font-light text-red-500 px-2 py-0.5 rounded-full" style="background-color: #FEE2E2;">-3.87%</span>
                         </div>
                         <div class="flex items-center justify-between p-2 hover:bg-neutral-50 rounded-lg transition-colors">
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-red-500 w-4">4</span>
-                                <span class="text-xs font-medium text-neutral-900 font-sans">FROTO</span>
+                                <span class="text-xs font-medium text-red-500 w-4">4</span>
+                                <span class="text-xs font-light text-neutral-900 font-google-sans-flex">FROTO</span>
                             </div>
-                            <span class="text-xs font-medium text-red-500 px-2 py-0.5 rounded-full" style="background-color: #FEE2E2;">-2.95%</span>
+                            <span class="text-xs font-light text-red-500 px-2 py-0.5 rounded-full" style="background-color: #FEE2E2;">-2.95%</span>
                         </div>
                         <div class="flex items-center justify-between p-2 hover:bg-neutral-50 rounded-lg transition-colors">
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-red-500 w-4">5</span>
-                                <span class="text-xs font-medium text-neutral-900 font-sans">BIMAS</span>
+                                <span class="text-xs font-medium text-red-500 w-4">5</span>
+                                <span class="text-xs font-light text-neutral-900 font-google-sans-flex">BIMAS</span>
                             </div>
-                            <span class="text-xs font-medium text-red-500 px-2 py-0.5 rounded-full" style="background-color: #FEE2E2;">-2.33%</span>
+                            <span class="text-xs font-light text-red-500 px-2 py-0.5 rounded-full" style="background-color: #FEE2E2;">-2.33%</span>
                         </div>
                     </div>
                 </div>
@@ -944,10 +944,10 @@ opacity: 0 !important;
                     <div class="px-5 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
                         <div class="flex items-center gap-2">
                             <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                            <h3 class="text-sm font-medium text-neutral-900 font-sans">Agent Aktivite Logu</h3>
+                            <h3 class="text-sm font-light text-neutral-900 font-google-sans-flex">Agent Aktivite Logu</h3>
                         </div>
                         <div class="flex items-center gap-2">
-                            <select id="agent-log-filter" class="text-xs bg-neutral-100 rounded-lg px-2 py-1 font-sans" style="border: 2px solid #000000;">
+                            <select id="agent-log-filter" class="text-xs bg-neutral-100 rounded-lg px-2 py-1 font-google-sans-flex" style="border: 2px solid #000000;">
                                 <option value="all">Tümü</option>
                                 <option value="trade">İşlemler</option>
                                 <option value="analysis">Analizler</option>
@@ -962,11 +962,11 @@ opacity: 0 !important;
                             </div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <span class="text-sm font-semibold text-neutral-900 font-sans">Trend Takipçi</span>
-                                    <span class="text-xs text-neutral-500 font-sans font-medium">12:45:32</span>
+                                    <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">Trend Takipçi</span>
+                                    <span class="text-xs text-neutral-500 font-google-sans-flex font-light">12:45:32</span>
                                 </div>
-                                <p class="text-xs text-neutral-600 font-sans mt-1">THYAO alım emri gerçekleşti - ₺25,000</p>
-                                <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-medium" style="background-color: #E8FF5A; border: 1px solid #000000;">ALIM</span>
+                                <p class="text-xs text-neutral-600 font-google-sans-flex mt-1">THYAO alım emri gerçekleşti - ₺25,000</p>
+                                <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-light" style="background-color: #E8FF5A; border: 1px solid #000000;">ALIM</span>
                             </div>
                         </div>
                         <div class="log-entry flex items-start gap-3 p-3 bg-neutral-50 rounded-xl" data-type="analysis" style="border: 2px solid #000000;">
@@ -975,11 +975,11 @@ opacity: 0 !important;
                             </div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <span class="text-sm font-semibold text-neutral-900 font-sans">Risk Yöneticisi</span>
-                                    <span class="text-xs text-neutral-500 font-sans font-medium">12:42:18</span>
+                                    <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">Risk Yöneticisi</span>
+                                    <span class="text-xs text-neutral-500 font-google-sans-flex font-light">12:42:18</span>
                                 </div>
-                                <p class="text-xs text-neutral-600 font-sans mt-1">Portföy risk analizi tamamlandı - Seviye: Düşük</p>
-                                <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-medium bg-neutral-200 text-neutral-700" style="border: 1px solid #000000;">ANALİZ</span>
+                                <p class="text-xs text-neutral-600 font-google-sans-flex mt-1">Portföy risk analizi tamamlandı - Seviye: Düşük</p>
+                                <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-light bg-neutral-200 text-neutral-700" style="border: 1px solid #000000;">ANALİZ</span>
                             </div>
                         </div>
                         <div class="log-entry flex items-start gap-3 p-3 bg-neutral-50 rounded-xl" data-type="alert" style="border: 2px solid #000000;">
@@ -988,11 +988,11 @@ opacity: 0 !important;
                             </div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <span class="text-sm font-semibold text-neutral-900 font-sans">Sistem</span>
-                                    <span class="text-xs text-neutral-500 font-sans font-medium">12:38:05</span>
+                                    <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">Sistem</span>
+                                    <span class="text-xs text-neutral-500 font-google-sans-flex font-light">12:38:05</span>
                                 </div>
-                                <p class="text-xs text-neutral-600 font-sans mt-1">BIST 100 volatilite uyarısı - Normal seviyenin üzerinde</p>
-                                <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-medium bg-neutral-900 text-white" style="border: 1px solid #000000;">UYARI</span>
+                                <p class="text-xs text-neutral-600 font-google-sans-flex mt-1">BIST 100 volatilite uyarısı - Normal seviyenin üzerinde</p>
+                                <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-light bg-neutral-900 text-white" style="border: 1px solid #000000;">UYARI</span>
                             </div>
                         </div>
                         <div class="log-entry flex items-start gap-3 p-3 bg-neutral-50 rounded-xl" data-type="analysis" style="border: 2px solid #000000;">
@@ -1001,11 +1001,11 @@ opacity: 0 !important;
                             </div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <span class="text-sm font-semibold text-neutral-900 font-sans">Zamanlayıcı</span>
-                                    <span class="text-xs text-neutral-500 font-sans font-medium">12:30:00</span>
+                                    <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">Zamanlayıcı</span>
+                                    <span class="text-xs text-neutral-500 font-google-sans-flex font-light">12:30:00</span>
                                 </div>
-                                <p class="text-xs text-neutral-600 font-sans mt-1">DCA işlemi planlandı - Sonraki: 14:00</p>
-                                <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-medium bg-neutral-200 text-neutral-700" style="border: 1px solid #000000;">PLANLI</span>
+                                <p class="text-xs text-neutral-600 font-google-sans-flex mt-1">DCA işlemi planlandı - Sonraki: 14:00</p>
+                                <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-light bg-neutral-200 text-neutral-700" style="border: 1px solid #000000;">PLANLI</span>
                             </div>
                         </div>
                         <div class="log-entry flex items-start gap-3 p-3 bg-neutral-50 rounded-xl" data-type="trade" style="border: 2px solid #000000;">
@@ -1014,11 +1014,11 @@ opacity: 0 !important;
                             </div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
-                                    <span class="text-sm font-semibold text-neutral-900 font-sans">Trend Takipçi</span>
-                                    <span class="text-xs text-neutral-500 font-sans font-medium">12:15:44</span>
+                                    <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">Trend Takipçi</span>
+                                    <span class="text-xs text-neutral-500 font-google-sans-flex font-light">12:15:44</span>
                                 </div>
-                                <p class="text-xs text-neutral-600 font-sans mt-1">EREGL satım emri gerçekleşti - ₺18,500</p>
-                                <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-medium bg-neutral-900 text-white" style="border: 1px solid #000000;">SATIM</span>
+                                <p class="text-xs text-neutral-600 font-google-sans-flex mt-1">EREGL satım emri gerçekleşti - ₺18,500</p>
+                                <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-light bg-neutral-900 text-white" style="border: 1px solid #000000;">SATIM</span>
                             </div>
                         </div>
                     </div>
@@ -1032,11 +1032,11 @@ opacity: 0 !important;
                                 <div class="w-7 h-7 bg-neutral-900 rounded-lg flex items-center justify-center" style="border: 2px solid #000000;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                                 </div>
-                                <h3 class="text-sm font-semibold text-neutral-900 font-sans">Piyasa Haberleri</h3>
+                                <h3 class="text-sm font-normal text-neutral-900 font-google-sans-flex">Piyasa Haberleri</h3>
                             </div>
                             <div class="flex items-center gap-1.5">
                                 <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                                <span class="text-xs text-neutral-500 font-sans">Canlı</span>
+                                <span class="text-xs text-neutral-500 font-google-sans-flex">Canlı</span>
                             </div>
                         </div>
                     </div>
@@ -1045,17 +1045,17 @@ opacity: 0 !important;
                         <div class="tweet-item p-3 rounded-xl transition-colors hover:bg-neutral-50" style="border: 2px solid #000000;">
                             <div class="flex items-start gap-3">
                                 <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;">
-                                    <span class="text-xs font-bold">BB</span>
+                                    <span class="text-xs font-medium">BB</span>
                                 </div>
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center gap-2 mb-1">
-                                        <span class="text-sm font-semibold text-neutral-900 font-sans">Bloomberg Türkiye</span>
+                                        <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">Bloomberg Türkiye</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#1D9BF0"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/></svg>
-                                        <span class="text-xs text-neutral-400 font-sans">3dk</span>
+                                        <span class="text-xs text-neutral-400 font-google-sans-flex">3dk</span>
                                     </div>
-                                    <p class="text-xs text-neutral-700 font-sans leading-relaxed">📈 <span class="font-semibold">#THYAO</span> hissesi güçlü talep ile %2.5 yükseldi. Analistler hedef fiyatı ₺310'a revize etti. <span class="text-blue-500">#BIST100</span></p>
+                                    <p class="text-xs text-neutral-700 font-google-sans-flex leading-relaxed">📈 <span class="font-normal">#THYAO</span> hissesi güçlü talep ile %2.5 yükseldi. Analistler hedef fiyatı ₺310'a revize etti. <span class="text-blue-500">#BIST100</span></p>
                                     <div class="flex items-center gap-3 mt-2">
-                                        <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-sans">Pozitif</span>
+                                        <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-google-sans-flex">Pozitif</span>
                                     </div>
                                 </div>
                             </div>
@@ -1064,16 +1064,16 @@ opacity: 0 !important;
                         <div class="tweet-item p-3 rounded-xl transition-colors hover:bg-neutral-50" style="border: 2px solid #000000;">
                             <div class="flex items-start gap-3">
                                 <div class="w-8 h-8 bg-neutral-900 rounded-full flex-shrink-0 flex items-center justify-center" style="border: 2px solid #000000;">
-                                    <span class="text-xs font-bold text-white">FT</span>
+                                    <span class="text-xs font-medium text-white">FT</span>
                                 </div>
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center gap-2 mb-1">
-                                        <span class="text-sm font-semibold text-neutral-900 font-sans">Finans Twitter</span>
-                                        <span class="text-xs text-neutral-400 font-sans">12dk</span>
+                                        <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">Finans Twitter</span>
+                                        <span class="text-xs text-neutral-400 font-google-sans-flex">12dk</span>
                                     </div>
-                                    <p class="text-xs text-neutral-700 font-sans leading-relaxed">⚠️ TCMB faiz kararı öncesi piyasalarda temkinli hava. USD/TRY 32.50 seviyesinde dalgalanıyor. <span class="text-blue-500">#DolarTL</span></p>
+                                    <p class="text-xs text-neutral-700 font-google-sans-flex leading-relaxed">⚠️ TCMB faiz kararı öncesi piyasalarda temkinli hava. USD/TRY 32.50 seviyesinde dalgalanıyor. <span class="text-blue-500">#DolarTL</span></p>
                                     <div class="flex items-center gap-3 mt-2">
-                                        <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 font-sans">Nötr</span>
+                                        <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 font-google-sans-flex">Nötr</span>
                                     </div>
                                 </div>
                             </div>
@@ -1082,17 +1082,17 @@ opacity: 0 !important;
                         <div class="tweet-item p-3 rounded-xl transition-colors hover:bg-neutral-50" style="border: 2px solid #000000;">
                             <div class="flex items-start gap-3">
                                 <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;">
-                                    <span class="text-xs font-bold">EA</span>
+                                    <span class="text-xs font-medium">EA</span>
                                 </div>
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center gap-2 mb-1">
-                                        <span class="text-sm font-semibold text-neutral-900 font-sans">Ekonomi Analiz</span>
+                                        <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">Ekonomi Analiz</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#1D9BF0"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/></svg>
-                                        <span class="text-xs text-neutral-400 font-sans">25dk</span>
+                                        <span class="text-xs text-neutral-400 font-google-sans-flex">25dk</span>
                                     </div>
-                                    <p class="text-xs text-neutral-700 font-sans leading-relaxed">🔴 <span class="font-semibold">#EREGL</span> için kar satışı baskısı. Teknik göstergeler aşırı alım bölgesinde. Kısa vadeli düzeltme beklentisi. <span class="text-blue-500">#Borsa</span></p>
+                                    <p class="text-xs text-neutral-700 font-google-sans-flex leading-relaxed">🔴 <span class="font-normal">#EREGL</span> için kar satışı baskısı. Teknik göstergeler aşırı alım bölgesinde. Kısa vadeli düzeltme beklentisi. <span class="text-blue-500">#Borsa</span></p>
                                     <div class="flex items-center gap-3 mt-2">
-                                        <span class="text-xs px-2 py-0.5 rounded-full bg-red-100 text-red-700 font-sans">Negatif</span>
+                                        <span class="text-xs px-2 py-0.5 rounded-full bg-red-100 text-red-700 font-google-sans-flex">Negatif</span>
                                     </div>
                                 </div>
                             </div>
@@ -1101,16 +1101,16 @@ opacity: 0 !important;
                         <div class="tweet-item p-3 rounded-xl transition-colors hover:bg-neutral-50" style="border: 2px solid #000000;">
                             <div class="flex items-start gap-3">
                                 <div class="w-8 h-8 bg-neutral-900 rounded-full flex-shrink-0 flex items-center justify-center" style="border: 2px solid #000000;">
-                                    <span class="text-xs font-bold text-white">BH</span>
+                                    <span class="text-xs font-medium text-white">BH</span>
                                 </div>
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center gap-2 mb-1">
-                                        <span class="text-sm font-semibold text-neutral-900 font-sans">Borsa Haberleri</span>
-                                        <span class="text-xs text-neutral-400 font-sans">42dk</span>
+                                        <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">Borsa Haberleri</span>
+                                        <span class="text-xs text-neutral-400 font-google-sans-flex">42dk</span>
                                     </div>
-                                    <p class="text-xs text-neutral-700 font-sans leading-relaxed">💰 <span class="font-semibold">#GARAN</span> bilançosu beklentilerin üzerinde! Net kâr %45 arttı. Hisse açılışta %3 primli. <span class="text-blue-500">#BankaSektörü</span></p>
+                                    <p class="text-xs text-neutral-700 font-google-sans-flex leading-relaxed">💰 <span class="font-normal">#GARAN</span> bilançosu beklentilerin üzerinde! Net kâr %45 arttı. Hisse açılışta %3 primli. <span class="text-blue-500">#BankaSektörü</span></p>
                                     <div class="flex items-center gap-3 mt-2">
-                                        <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-sans">Pozitif</span>
+                                        <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-google-sans-flex">Pozitif</span>
                                     </div>
                                 </div>
                             </div>
@@ -1127,13 +1127,13 @@ opacity: 0 !important;
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
                             </div>
                             <div>
-                                <h3 class="text-sm font-semibold text-neutral-900 font-sans">Risk Analizi</h3>
-                                <p class="text-xs text-neutral-500 font-sans">Gerçek zamanlı izleme</p>
+                                <h3 class="text-sm font-normal text-neutral-900 font-google-sans-flex">Risk Analizi</h3>
+                                <p class="text-xs text-neutral-500 font-google-sans-flex">Gerçek zamanlı izleme</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-2">
                             <div class="w-2 h-2 rounded-full animate-pulse" style="background-color: #E8FF5A;"></div>
-                            <span id="risk-update-time" class="text-xs text-neutral-500 font-sans">Şimdi</span>
+                            <span id="risk-update-time" class="text-xs text-neutral-500 font-google-sans-flex">Şimdi</span>
                         </div>
                     </div>
 
@@ -1196,7 +1196,7 @@ opacity: 0 !important;
                                 </svg>
 
                                 <!-- Labels under gauge -->
-                                <div class="absolute bottom-0 left-0 right-0 flex justify-between px-2 text-xs font-medium text-neutral-400 font-sans">
+                                <div class="absolute bottom-0 left-0 right-0 flex justify-between px-2 text-xs font-light text-neutral-400 font-google-sans-flex">
                                     <span>Düşük</span>
                                     <span>Yüksek</span>
                                 </div>
@@ -1209,9 +1209,9 @@ opacity: 0 !important;
                                 <div id="risk-level-icon" class="w-5 h-5 rounded-full flex items-center justify-center" style="background-color: #171717;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8FF5A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                                 </div>
-                                <span id="risk-level-text" class="text-lg font-bold text-neutral-900 font-sans tracking-tight">DÜŞÜK</span>
+                                <span id="risk-level-text" class="text-lg font-medium text-neutral-900 font-google-sans-flex tracking-tight">DÜŞÜK</span>
                             </div>
-                            <p id="risk-score" class="text-sm text-neutral-500 font-sans mt-2">Risk Skoru: <span class="font-bold text-neutral-900">28</span>/100</p>
+                            <p id="risk-score" class="text-sm text-neutral-500 font-google-sans-flex mt-2">Risk Skoru: <span class="font-medium text-neutral-900">28</span>/100</p>
                         </div>
                     </div>
 
@@ -1219,40 +1219,40 @@ opacity: 0 !important;
                     <div class="grid grid-cols-2 gap-3 p-4" style="background-color: #171717;">
                         <div class="p-4 rounded-xl bg-neutral-800" style="border: 2px solid #333;">
                             <div class="flex items-center justify-between mb-2">
-                                <p class="text-xs text-neutral-400 font-sans font-medium">Volatilite</p>
+                                <p class="text-xs text-neutral-400 font-google-sans-flex font-light">Volatilite</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8FF5A" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                             </div>
-                            <p id="risk-volatility" class="text-xl font-bold text-white font-sans">12.3%</p>
+                            <p id="risk-volatility" class="text-xl font-medium text-white font-google-sans-flex">12.3%</p>
                             <div class="w-full h-1.5 bg-neutral-700 rounded-full mt-3 overflow-hidden">
                                 <div id="risk-volatility-bar" class="h-full rounded-full transition-all duration-1000" style="width: 25%; background: linear-gradient(90deg, #22C55E, #E8FF5A);"></div>
                             </div>
                         </div>
                         <div class="p-4 rounded-xl bg-neutral-800" style="border: 2px solid #333;">
                             <div class="flex items-center justify-between mb-2">
-                                <p class="text-xs text-neutral-400 font-sans font-medium">Sharpe Oranı</p>
+                                <p class="text-xs text-neutral-400 font-google-sans-flex font-light">Sharpe Oranı</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8FF5A" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
                             </div>
-                            <p id="risk-sharpe" class="text-xl font-bold text-white font-sans">1.45</p>
+                            <p id="risk-sharpe" class="text-xl font-medium text-white font-google-sans-flex">1.45</p>
                             <div class="w-full h-1.5 bg-neutral-700 rounded-full mt-3 overflow-hidden">
                                 <div id="risk-sharpe-bar" class="h-full rounded-full transition-all duration-1000" style="width: 72%; background: linear-gradient(90deg, #E8FF5A, #22C55E);"></div>
                             </div>
                         </div>
                         <div class="p-4 rounded-xl bg-neutral-800" style="border: 2px solid #333;">
                             <div class="flex items-center justify-between mb-2">
-                                <p class="text-xs text-neutral-400 font-sans font-medium">Max Drawdown</p>
+                                <p class="text-xs text-neutral-400 font-google-sans-flex font-light">Max Drawdown</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M21 12h-4l-3-9-3 9h-4"/></svg>
                             </div>
-                            <p id="risk-drawdown" class="text-xl font-bold text-white font-sans">-8.5%</p>
+                            <p id="risk-drawdown" class="text-xl font-medium text-white font-google-sans-flex">-8.5%</p>
                             <div class="w-full h-1.5 bg-neutral-700 rounded-full mt-3 overflow-hidden">
                                 <div id="risk-drawdown-bar" class="h-full rounded-full transition-all duration-1000" style="width: 35%; background: linear-gradient(90deg, #EAB308, #EF4444);"></div>
                             </div>
                         </div>
                         <div class="p-4 rounded-xl bg-neutral-800" style="border: 2px solid #333;">
                             <div class="flex items-center justify-between mb-2">
-                                <p class="text-xs text-neutral-400 font-sans font-medium">Beta</p>
+                                <p class="text-xs text-neutral-400 font-google-sans-flex font-light">Beta</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8FF5A" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                             </div>
-                            <p id="risk-beta" class="text-xl font-bold text-white font-sans">0.85</p>
+                            <p id="risk-beta" class="text-xl font-medium text-white font-google-sans-flex">0.85</p>
                             <div class="w-full h-1.5 bg-neutral-700 rounded-full mt-3 overflow-hidden">
                                 <div id="risk-beta-bar" class="h-full rounded-full transition-all duration-1000" style="width: 42%; background: linear-gradient(90deg, #22C55E, #84CC16);"></div>
                             </div>
@@ -1263,9 +1263,9 @@ opacity: 0 !important;
                     <div class="px-5 py-3 flex items-center justify-between" style="background-color: #E8FF5A; border-top: 2px solid #000000;">
                         <div class="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
-                            <span class="text-xs font-semibold text-neutral-900 font-sans">Portföy Koruması Aktif</span>
+                            <span class="text-xs font-normal text-neutral-900 font-google-sans-flex">Portföy Koruması Aktif</span>
                         </div>
-                        <button onclick="NurolApp.showToast('Portföy koruması: Stop-loss %5, Trailing stop aktif, Hedge oranı %15', 'info')" class="text-xs font-medium text-neutral-700 font-sans hover:text-neutral-900 transition-colors">Detaylar →</button>
+                        <button onclick="NurolApp.showToast('Portföy koruması: Stop-loss %5, Trailing stop aktif, Hedge oranı %15', 'info')" class="text-xs font-light text-neutral-700 font-google-sans-flex hover:text-neutral-900 transition-colors">Detaylar →</button>
                     </div>
                 </div>
             </div>
@@ -1281,18 +1281,18 @@ opacity: 0 !important;
                                 <img src="logolar/nurolagent-logo (2).png" alt="Nurol Agent" class="w-7 h-7 object-contain">
                             </div>
                             <div>
-                                <h3 class="text-sm font-semibold text-neutral-900 font-sans">Sektör Bazlı Dağılım</h3>
-                                <p class="text-xs text-neutral-500 font-sans">Varlık türlerine göre</p>
+                                <h3 class="text-sm font-normal text-neutral-900 font-google-sans-flex">Sektör Bazlı Dağılım</h3>
+                                <p class="text-xs text-neutral-500 font-google-sans-flex">Varlık türlerine göre</p>
                             </div>
                         </div>
-                        <div id="sector-chart-legend" class="flex items-center gap-2 text-xs font-sans"></div>
+                        <div id="sector-chart-legend" class="flex items-center gap-2 text-xs font-google-sans-flex"></div>
                     </div>
                     <div class="px-4 py-4">
                         <div id="sector-stacked-chart" style="width: 100%; min-height: 320px;"></div>
                     </div>
                     <div class="px-5 py-2.5 flex items-center justify-between" style="background-color: #171717;">
-                        <span class="text-xs text-neutral-400 font-sans">Toplam: <span class="text-white font-bold">₺2.84M</span></span>
-                        <span class="text-xs text-neutral-500 font-sans"><span id="sector-chart-time">--:--</span></span>
+                        <span class="text-xs text-neutral-400 font-google-sans-flex">Toplam: <span class="text-white font-medium">₺2.84M</span></span>
+                        <span class="text-xs text-neutral-500 font-google-sans-flex"><span id="sector-chart-time">--:--</span></span>
                     </div>
                 </div>
 
@@ -1304,18 +1304,18 @@ opacity: 0 !important;
                                 <img src="logolar/nurolagent-logo (2).png" alt="Nurol Agent" class="w-7 h-7 object-contain">
                             </div>
                             <div>
-                                <h3 class="text-sm font-semibold text-neutral-900 font-sans">Sektör Korelasyon Ağı</h3>
-                                <p class="text-xs text-neutral-500 font-sans">Varlıklar arası ilişki haritası</p>
+                                <h3 class="text-sm font-normal text-neutral-900 font-google-sans-flex">Sektör Korelasyon Ağı</h3>
+                                <p class="text-xs text-neutral-500 font-google-sans-flex">Varlıklar arası ilişki haritası</p>
                             </div>
                         </div>
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium" style="background-color: #E8FF5A; border: 1.5px solid #000000;">AI Analiz</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-light" style="background-color: #E8FF5A; border: 1.5px solid #000000;">AI Analiz</span>
                     </div>
                     <div class="flex items-center justify-center p-4" style="background: radial-gradient(circle at center, #fafafa 0%, #f0f0f0 100%);">
                         <div id="edge-bundling-chart" style="width: 100%; max-width: 480px; aspect-ratio: 1;"></div>
                     </div>
                     <div class="px-5 py-2.5 flex items-center justify-between" style="background-color: #171717;">
-                        <span class="text-xs text-neutral-400 font-sans">Korelasyon: <span class="text-[#E8FF5A] font-bold">32 bağlantı</span></span>
-                        <span class="text-xs text-neutral-500 font-sans"><span id="edge-chart-time">--:--</span></span>
+                        <span class="text-xs text-neutral-400 font-google-sans-flex">Korelasyon: <span class="text-[#E8FF5A] font-medium">32 bağlantı</span></span>
+                        <span class="text-xs text-neutral-500 font-google-sans-flex"><span id="edge-chart-time">--:--</span></span>
                     </div>
                 </div>
 
@@ -1328,9 +1328,9 @@ opacity: 0 !important;
                 <div class="mb-8 flex items-center justify-between">
                     <div>
                         <h1 class="text-2xl font-light text-neutral-900 tracking-tight font-google-sans-flex">Portföy Detayları</h1>
-                        <p class="text-base text-neutral-500 mt-1 font-sans">Tüm yatırımlarınızın detaylı görünümü</p>
+                        <p class="text-base text-neutral-500 mt-1 font-google-sans-flex">Tüm yatırımlarınızın detaylı görünümü</p>
                     </div>
-                    <button onclick="NurolApp.showToast('Portföy raporu hazırlanıyor...', 'success')" class="text-xs px-4 py-2 rounded-lg font-sans hover:opacity-80 transition-opacity flex items-center gap-1.5" style="background-color: #E8FF5A; border: 2px solid #000000;">
+                    <button onclick="NurolApp.showToast('Portföy raporu hazırlanıyor...', 'success')" class="text-xs px-4 py-2 rounded-lg font-google-sans-flex hover:opacity-80 transition-opacity flex items-center gap-1.5" style="background-color: #E8FF5A; border: 2px solid #000000;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Rapor İndir
                     </button>
@@ -1339,114 +1339,114 @@ opacity: 0 !important;
                 <!-- Portfolio Summary -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
                     <div class="bg-white rounded-2xl p-5" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Toplam Değer</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Toplam Değer</p>
                         <p class="text-2xl font-light text-neutral-900 font-google-sans-flex mt-1">₺2.84M</p>
-                        <p class="text-xs text-emerald-600 font-medium font-sans mt-2">+₺312K bugün</p>
+                        <p class="text-xs text-emerald-600 font-light font-google-sans-flex mt-2">+₺312K bugün</p>
                     </div>
                     <div class="bg-white rounded-2xl p-5" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Hisse Senedi</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Hisse Senedi</p>
                         <p class="text-2xl font-light text-neutral-900 font-google-sans-flex mt-1">₺1.92M</p>
-                        <p class="text-xs text-neutral-400 font-sans mt-2">%67.6 oran</p>
+                        <p class="text-xs text-neutral-400 font-google-sans-flex mt-2">%67.6 oran</p>
                     </div>
                     <div class="bg-white rounded-2xl p-5" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Yatırım Fonları</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Yatırım Fonları</p>
                         <p class="text-2xl font-light text-neutral-900 font-google-sans-flex mt-1">₺680K</p>
-                        <p class="text-xs text-neutral-400 font-sans mt-2">%23.9 oran</p>
+                        <p class="text-xs text-neutral-400 font-google-sans-flex mt-2">%23.9 oran</p>
                     </div>
                     <div class="bg-white rounded-2xl p-5" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Nakit</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Nakit</p>
                         <p class="text-2xl font-light text-neutral-900 font-google-sans-flex mt-1">₺240K</p>
-                        <p class="text-xs text-neutral-400 font-sans mt-2">%8.5 oran</p>
+                        <p class="text-xs text-neutral-400 font-google-sans-flex mt-2">%8.5 oran</p>
                     </div>
                 </div>
 
                 <!-- Holdings Table -->
                 <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                     <div class="px-5 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
-                        <h3 class="text-sm font-semibold text-neutral-900 font-sans">Varlıklarım</h3>
+                        <h3 class="text-sm font-normal text-neutral-900 font-google-sans-flex">Varlıklarım</h3>
                         <div class="flex gap-2" id="portfolio-filter-btns">
-                            <button class="pf-filter-btn text-xs px-3 py-1.5 rounded-lg font-sans" data-filter="all" style="background-color: #E8FF5A; border: 2px solid #000000;">Tümü</button>
-                            <button class="pf-filter-btn text-xs px-3 py-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 font-sans" data-filter="hisse">Hisseler</button>
-                            <button class="pf-filter-btn text-xs px-3 py-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 font-sans" data-filter="fon">Fonlar</button>
+                            <button class="pf-filter-btn text-xs px-3 py-1.5 rounded-lg font-google-sans-flex" data-filter="all" style="background-color: #E8FF5A; border: 2px solid #000000;">Tümü</button>
+                            <button class="pf-filter-btn text-xs px-3 py-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 font-google-sans-flex" data-filter="hisse">Hisseler</button>
+                            <button class="pf-filter-btn text-xs px-3 py-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100 font-google-sans-flex" data-filter="fon">Fonlar</button>
                         </div>
                     </div>
                     <div class="divide-y divide-neutral-100" id="portfolio-holdings">
                         <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="hisse" data-symbol="THYAO">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-bold">TH</span></div>
+                                <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-medium">TH</span></div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">THYAO</p>
-                                    <p class="text-xs text-neutral-500 font-sans">250 adet</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">THYAO</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">250 adet</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺71,850</p>
-                                <p class="text-xs text-emerald-600 font-sans">+12.4%</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺71,850</p>
+                                <p class="text-xs text-emerald-600 font-google-sans-flex">+12.4%</p>
                             </div>
                         </div>
                         <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="hisse" data-symbol="GARAN">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-bold">GA</span></div>
+                                <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-medium">GA</span></div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">GARAN</p>
-                                    <p class="text-xs text-neutral-500 font-sans">500 adet</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">GARAN</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">500 adet</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺49,375</p>
-                                <p class="text-xs text-red-500 font-sans">-2.1%</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺49,375</p>
+                                <p class="text-xs text-red-500 font-google-sans-flex">-2.1%</p>
                             </div>
                         </div>
                         <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="hisse" data-symbol="ASELS">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-bold">AS</span></div>
+                                <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-medium">AS</span></div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">ASELS</p>
-                                    <p class="text-xs text-neutral-500 font-sans">1,200 adet</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">ASELS</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">1,200 adet</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺65,040</p>
-                                <p class="text-xs text-emerald-600 font-sans">+5.8%</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺65,040</p>
+                                <p class="text-xs text-emerald-600 font-google-sans-flex">+5.8%</p>
                             </div>
                         </div>
                         <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="hisse" data-symbol="EREGL">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-bold">ER</span></div>
+                                <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-medium">ER</span></div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">EREGL</p>
-                                    <p class="text-xs text-neutral-500 font-sans">800 adet</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">EREGL</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">800 adet</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺43,360</p>
-                                <p class="text-xs text-emerald-600 font-sans">+3.2%</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺43,360</p>
+                                <p class="text-xs text-emerald-600 font-google-sans-flex">+3.2%</p>
                             </div>
                         </div>
                         <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="fon" data-symbol="ISFON">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-bold">İŞ</span></div>
+                                <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-medium">İŞ</span></div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">İş Portföy Hisse Fonu</p>
-                                    <p class="text-xs text-neutral-500 font-sans">Fon • ₺180K yatırım</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">İş Portföy Hisse Fonu</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">Fon • ₺180K yatırım</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺207,000</p>
-                                <p class="text-xs text-emerald-600 font-sans">+15.0%</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺207,000</p>
+                                <p class="text-xs text-emerald-600 font-google-sans-flex">+15.0%</p>
                             </div>
                         </div>
                         <div class="holding-row flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" data-type="fon" data-symbol="AKFON">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-bold">AK</span></div>
+                                <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-medium">AK</span></div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">Ak Portföy Tahvil Fonu</p>
-                                    <p class="text-xs text-neutral-500 font-sans">Fon • ₺250K yatırım</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">Ak Portföy Tahvil Fonu</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">Fon • ₺250K yatırım</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺273,000</p>
-                                <p class="text-xs text-emerald-600 font-sans">+9.2%</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺273,000</p>
+                                <p class="text-xs text-emerald-600 font-google-sans-flex">+9.2%</p>
                             </div>
                         </div>
                     </div>
@@ -1457,25 +1457,25 @@ opacity: 0 !important;
             <div id="page-funds" class="page-content hidden">
                 <div class="mb-8">
                     <h1 class="text-2xl font-light text-neutral-900 tracking-tight font-google-sans-flex">Yatırım Fonları</h1>
-                    <p class="text-base text-neutral-500 mt-1 font-sans">AI destekli fon önerileri ve portföy</p>
+                    <p class="text-base text-neutral-500 mt-1 font-google-sans-flex">AI destekli fon önerileri ve portföy</p>
                 </div>
 
                 <!-- Fund Stats -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     <div class="bg-white rounded-2xl p-5" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Toplam Fon Yatırımı</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Toplam Fon Yatırımı</p>
                         <p class="text-2xl font-light text-neutral-900 font-google-sans-flex mt-1">₺680,000</p>
-                        <p class="text-xs text-emerald-600 font-medium font-sans mt-2">+8.2% bu ay</p>
+                        <p class="text-xs text-emerald-600 font-light font-google-sans-flex mt-2">+8.2% bu ay</p>
                     </div>
                     <div class="bg-white rounded-2xl p-5" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Aktif Fon Sayısı</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Aktif Fon Sayısı</p>
                         <p class="text-2xl font-light text-neutral-900 font-google-sans-flex mt-1">4</p>
-                        <p class="text-xs text-neutral-400 font-sans mt-2">3 hisse, 1 tahvil</p>
+                        <p class="text-xs text-neutral-400 font-google-sans-flex mt-2">3 hisse, 1 tahvil</p>
                     </div>
                     <div class="bg-white rounded-2xl p-5" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Ort. Getiri</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Ort. Getiri</p>
                         <p class="text-2xl font-light text-emerald-600 font-google-sans-flex mt-1">+15.4%</p>
-                        <p class="text-xs text-neutral-400 font-sans mt-2">yıllık</p>
+                        <p class="text-xs text-neutral-400 font-google-sans-flex mt-2">yıllık</p>
                     </div>
                 </div>
 
@@ -1486,31 +1486,31 @@ opacity: 0 !important;
                             <div class="w-6 h-6 rounded-lg flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
                             </div>
-                            <h3 class="text-sm font-semibold text-neutral-900 font-sans">AI Fon Önerileri</h3>
+                            <h3 class="text-sm font-normal text-neutral-900 font-google-sans-flex">AI Fon Önerileri</h3>
                         </div>
-                        <span class="text-xs px-2 py-1 rounded-full font-sans" style="background-color: #E8FF5A; border: 2px solid #000000;">Güncel</span>
+                        <span class="text-xs px-2 py-1 rounded-full font-google-sans-flex" style="background-color: #E8FF5A; border: 2px solid #000000;">Güncel</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
                         <div class="p-4 rounded-xl" style="border: 2px solid #000000;">
                             <div class="flex items-center justify-between mb-3">
-                                <span class="text-sm font-semibold text-neutral-900 font-sans">TEB Hisse Fonu</span>
-                                <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-sans">Önerilen</span>
+                                <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">TEB Hisse Fonu</span>
+                                <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-google-sans-flex">Önerilen</span>
                             </div>
-                            <p class="text-xs text-neutral-500 font-sans mb-2">BIST 30 ağırlıklı, düşük risk</p>
+                            <p class="text-xs text-neutral-500 font-google-sans-flex mb-2">BIST 30 ağırlıklı, düşük risk</p>
                             <div class="flex items-center justify-between">
                                 <span class="text-lg font-light text-emerald-600 font-google-sans-flex">+18.5%</span>
-                                <button class="fund-invest-btn text-xs px-3 py-1.5 rounded-lg font-sans hover:opacity-80 transition-opacity" data-fund="TEB Hisse Fonu" data-price="142.50" style="background-color: #E8FF5A; border: 2px solid #000000;">Yatırım Yap</button>
+                                <button class="fund-invest-btn text-xs px-3 py-1.5 rounded-lg font-google-sans-flex hover:opacity-80 transition-opacity" data-fund="TEB Hisse Fonu" data-price="142.50" style="background-color: #E8FF5A; border: 2px solid #000000;">Yatırım Yap</button>
                             </div>
                         </div>
                         <div class="p-4 rounded-xl" style="border: 2px solid #000000;">
                             <div class="flex items-center justify-between mb-3">
-                                <span class="text-sm font-semibold text-neutral-900 font-sans">Yapı Kredi Portföy</span>
-                                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-sans">Dengeli</span>
+                                <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">Yapı Kredi Portföy</span>
+                                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-google-sans-flex">Dengeli</span>
                             </div>
-                            <p class="text-xs text-neutral-500 font-sans mb-2">Karma fon, orta risk</p>
+                            <p class="text-xs text-neutral-500 font-google-sans-flex mb-2">Karma fon, orta risk</p>
                             <div class="flex items-center justify-between">
                                 <span class="text-lg font-light text-emerald-600 font-google-sans-flex">+12.3%</span>
-                                <button class="fund-invest-btn text-xs px-3 py-1.5 rounded-lg font-sans hover:opacity-80 transition-opacity" data-fund="Yapı Kredi Portföy" data-price="98.20" style="background-color: #E8FF5A; border: 2px solid #000000;">Yatırım Yap</button>
+                                <button class="fund-invest-btn text-xs px-3 py-1.5 rounded-lg font-google-sans-flex hover:opacity-80 transition-opacity" data-fund="Yapı Kredi Portföy" data-price="98.20" style="background-color: #E8FF5A; border: 2px solid #000000;">Yatırım Yap</button>
                             </div>
                         </div>
                     </div>
@@ -1519,33 +1519,33 @@ opacity: 0 !important;
                 <!-- My Funds -->
                 <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                     <div class="px-5 py-4" style="border-bottom: 2px solid #000000;">
-                        <h3 class="text-sm font-semibold text-neutral-900 font-sans">Fonlarım</h3>
+                        <h3 class="text-sm font-normal text-neutral-900 font-google-sans-flex">Fonlarım</h3>
                     </div>
                     <div class="divide-y divide-neutral-100">
                         <div class="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" onclick="NurolApp.openTradeModal('İş Portföy Hisse', 115.00)">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-bold">İŞ</span></div>
+                                <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-medium">İŞ</span></div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">İş Portföy Hisse Fonu</p>
-                                    <p class="text-xs text-neutral-500 font-sans">₺180,000 yatırım</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">İş Portföy Hisse Fonu</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">₺180,000 yatırım</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺207,000</p>
-                                <p class="text-xs text-emerald-600 font-sans">+15.0%</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺207,000</p>
+                                <p class="text-xs text-emerald-600 font-google-sans-flex">+15.0%</p>
                             </div>
                         </div>
                         <div class="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" onclick="NurolApp.openTradeModal('Ak Portföy Tahvil', 109.20)">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-bold">AK</span></div>
+                                <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-medium">AK</span></div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">Ak Portföy Tahvil Fonu</p>
-                                    <p class="text-xs text-neutral-500 font-sans">₺250,000 yatırım</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">Ak Portföy Tahvil Fonu</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">₺250,000 yatırım</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺273,000</p>
-                                <p class="text-xs text-emerald-600 font-sans">+9.2%</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺273,000</p>
+                                <p class="text-xs text-emerald-600 font-google-sans-flex">+9.2%</p>
                             </div>
                         </div>
                     </div>
@@ -1557,9 +1557,9 @@ opacity: 0 !important;
                 <div class="mb-8 flex items-center justify-between">
                     <div>
                         <h1 class="text-2xl font-light text-neutral-900 tracking-tight font-google-sans-flex">İşlem Geçmişi</h1>
-                        <p class="text-base text-neutral-500 mt-1 font-sans">Tüm alım-satım işlemleriniz</p>
+                        <p class="text-base text-neutral-500 mt-1 font-google-sans-flex">Tüm alım-satım işlemleriniz</p>
                     </div>
-                    <button onclick="NurolApp.showToast('İşlem raporu PDF olarak hazırlanıyor...', 'success')" class="text-xs px-4 py-2 rounded-lg font-sans hover:opacity-80 transition-opacity flex items-center gap-1.5" style="background-color: #E8FF5A; border: 2px solid #000000;">
+                    <button onclick="NurolApp.showToast('İşlem raporu PDF olarak hazırlanıyor...', 'success')" class="text-xs px-4 py-2 rounded-lg font-google-sans-flex hover:opacity-80 transition-opacity flex items-center gap-1.5" style="background-color: #E8FF5A; border: 2px solid #000000;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Rapor İndir
                     </button>
@@ -1568,11 +1568,11 @@ opacity: 0 !important;
                 <!-- History Filters -->
                 <div class="flex items-center gap-4 mb-6">
                     <div class="flex gap-2 rounded-xl p-1 bg-neutral-100" id="history-filter-btns" style="border: 2px solid #000000;">
-                        <button class="hist-filter-btn text-xs px-4 py-2 rounded-lg font-sans" data-filter="all" style="background-color: #E8FF5A;">Tümü</button>
-                        <button class="hist-filter-btn text-xs px-4 py-2 rounded-lg text-neutral-500 font-sans" data-filter="buy">Alımlar</button>
-                        <button class="hist-filter-btn text-xs px-4 py-2 rounded-lg text-neutral-500 font-sans" data-filter="sell">Satımlar</button>
+                        <button class="hist-filter-btn text-xs px-4 py-2 rounded-lg font-google-sans-flex" data-filter="all" style="background-color: #E8FF5A;">Tümü</button>
+                        <button class="hist-filter-btn text-xs px-4 py-2 rounded-lg text-neutral-500 font-google-sans-flex" data-filter="buy">Alımlar</button>
+                        <button class="hist-filter-btn text-xs px-4 py-2 rounded-lg text-neutral-500 font-google-sans-flex" data-filter="sell">Satımlar</button>
                     </div>
-                    <select id="history-date-filter" class="text-xs px-3 py-2 rounded-lg bg-white font-sans" style="border: 2px solid #000000;">
+                    <select id="history-date-filter" class="text-xs px-3 py-2 rounded-lg bg-white font-google-sans-flex" style="border: 2px solid #000000;">
                         <option value="7">Son 7 gün</option>
                         <option value="30">Son 30 gün</option>
                         <option value="90">Son 3 ay</option>
@@ -1583,19 +1583,19 @@ opacity: 0 !important;
                 <!-- History Stats -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
                     <div class="bg-white rounded-2xl p-4" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Toplam İşlem</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Toplam İşlem</p>
                         <p class="text-xl font-light text-neutral-900 font-google-sans-flex mt-1">47</p>
                     </div>
                     <div class="bg-white rounded-2xl p-4" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Başarılı</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Başarılı</p>
                         <p class="text-xl font-light text-emerald-600 font-google-sans-flex mt-1">45</p>
                     </div>
                     <div class="bg-white rounded-2xl p-4" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Hacim</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Hacim</p>
                         <p class="text-xl font-light text-neutral-900 font-google-sans-flex mt-1">₺1.2M</p>
                     </div>
                     <div class="bg-white rounded-2xl p-4" style="border: 2px solid #000000;">
-                        <p class="text-xs text-neutral-500 font-sans">Net Kâr</p>
+                        <p class="text-xs text-neutral-500 font-google-sans-flex">Net Kâr</p>
                         <p class="text-xl font-light text-emerald-600 font-google-sans-flex mt-1">+₺184K</p>
                     </div>
                 </div>
@@ -1603,7 +1603,7 @@ opacity: 0 !important;
                 <!-- Transactions List -->
                 <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                     <div class="px-5 py-4" style="border-bottom: 2px solid #000000;">
-                        <h3 class="text-sm font-semibold text-neutral-900 font-sans">Son İşlemler</h3>
+                        <h3 class="text-sm font-normal text-neutral-900 font-google-sans-flex">Son İşlemler</h3>
                     </div>
                     <div class="divide-y divide-neutral-100" id="history-transactions">
                         <div class="hist-row flex items-center justify-between p-4" data-type="buy">
@@ -1612,13 +1612,13 @@ opacity: 0 !important;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">THYAO Alım</p>
-                                    <p class="text-xs text-neutral-500 font-sans">50 adet @ ₺285.40</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">THYAO Alım</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">50 adet @ ₺285.40</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺14,270</p>
-                                <p class="text-xs text-neutral-400 font-sans">Bugün, 14:32</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺14,270</p>
+                                <p class="text-xs text-neutral-400 font-google-sans-flex">Bugün, 14:32</p>
                             </div>
                         </div>
                         <div class="hist-row flex items-center justify-between p-4" data-type="sell">
@@ -1627,13 +1627,13 @@ opacity: 0 !important;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M17 17H7V7"/><path d="m7 17 10-10"/></svg>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">EREGL Satım</p>
-                                    <p class="text-xs text-neutral-500 font-sans">200 adet @ ₺54.80</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">EREGL Satım</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">200 adet @ ₺54.80</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺10,960</p>
-                                <p class="text-xs text-neutral-400 font-sans">Bugün, 11:15</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺10,960</p>
+                                <p class="text-xs text-neutral-400 font-google-sans-flex">Bugün, 11:15</p>
                             </div>
                         </div>
                         <div class="hist-row flex items-center justify-between p-4" data-type="buy">
@@ -1642,13 +1642,13 @@ opacity: 0 !important;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">GARAN Alım</p>
-                                    <p class="text-xs text-neutral-500 font-sans">100 adet @ ₺97.50</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">GARAN Alım</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">100 adet @ ₺97.50</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺9,750</p>
-                                <p class="text-xs text-neutral-400 font-sans">Dün, 16:45</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺9,750</p>
+                                <p class="text-xs text-neutral-400 font-google-sans-flex">Dün, 16:45</p>
                             </div>
                         </div>
                         <div class="hist-row flex items-center justify-between p-4" data-type="buy">
@@ -1657,13 +1657,13 @@ opacity: 0 !important;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">ASELS Alım</p>
-                                    <p class="text-xs text-neutral-500 font-sans">300 adet @ ₺52.10</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">ASELS Alım</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">300 adet @ ₺52.10</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺15,630</p>
-                                <p class="text-xs text-neutral-400 font-sans">2 gün önce</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺15,630</p>
+                                <p class="text-xs text-neutral-400 font-google-sans-flex">2 gün önce</p>
                             </div>
                         </div>
                         <div class="hist-row flex items-center justify-between p-4" data-type="sell">
@@ -1672,13 +1672,13 @@ opacity: 0 !important;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M17 17H7V7"/><path d="m7 17 10-10"/></svg>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">SISE Satım</p>
-                                    <p class="text-xs text-neutral-500 font-sans">150 adet @ ₺46.20</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">SISE Satım</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">150 adet @ ₺46.20</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺6,930</p>
-                                <p class="text-xs text-neutral-400 font-sans">3 gün önce</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺6,930</p>
+                                <p class="text-xs text-neutral-400 font-google-sans-flex">3 gün önce</p>
                             </div>
                         </div>
                         <div class="hist-row flex items-center justify-between p-4" data-type="buy">
@@ -1687,13 +1687,13 @@ opacity: 0 !important;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-semibold text-neutral-900 font-sans">TUPRS Alım</p>
-                                    <p class="text-xs text-neutral-500 font-sans">80 adet @ ₺142.60</p>
+                                    <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">TUPRS Alım</p>
+                                    <p class="text-xs text-neutral-500 font-google-sans-flex">80 adet @ ₺142.60</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <p class="text-sm font-semibold text-neutral-900 font-sans">₺11,408</p>
-                                <p class="text-xs text-neutral-400 font-sans">4 gün önce</p>
+                                <p class="text-sm font-normal text-neutral-900 font-google-sans-flex">₺11,408</p>
+                                <p class="text-xs text-neutral-400 font-google-sans-flex">4 gün önce</p>
                             </div>
                         </div>
                     </div>
@@ -1709,7 +1709,7 @@ opacity: 0 !important;
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md">
             <div class="bg-white rounded-2xl overflow-hidden mx-4" style="border: 2px solid #000000;">
                 <div class="px-6 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
-                    <h3 id="trade-modal-title" class="text-sm font-medium text-neutral-900 font-sans">Hızlı İşlem</h3>
+                    <h3 id="trade-modal-title" class="text-sm font-light text-neutral-900 font-google-sans-flex">Hızlı İşlem</h3>
                     <button id="trade-modal-close" class="p-1 hover:bg-neutral-100 rounded-lg transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
@@ -1717,49 +1717,49 @@ opacity: 0 !important;
                 <div class="p-6">
                     <div class="flex items-center gap-4 mb-6 p-4 bg-neutral-50 rounded-xl" style="border: 2px solid #000000;">
                         <div class="w-12 h-12 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;">
-                            <span id="trade-modal-symbol-icon" class="text-white text-sm font-bold">TH</span>
+                            <span id="trade-modal-symbol-icon" class="text-white text-sm font-medium">TH</span>
                         </div>
                         <div>
-                            <p id="trade-modal-symbol" class="text-lg font-medium text-neutral-900 font-sans">THYAO</p>
-                            <p id="trade-modal-price" class="text-sm text-neutral-500 font-sans">Güncel Fiyat: ₺287.40</p>
+                            <p id="trade-modal-symbol" class="text-lg font-light text-neutral-900 font-google-sans-flex">THYAO</p>
+                            <p id="trade-modal-price" class="text-sm text-neutral-500 font-google-sans-flex">Güncel Fiyat: ₺287.40</p>
                         </div>
                     </div>
 
                     <div class="space-y-4">
                         <div>
-                            <label class="text-xs text-neutral-500 font-sans mb-1 block">İşlem Tipi</label>
+                            <label class="text-xs text-neutral-500 font-google-sans-flex mb-1 block">İşlem Tipi</label>
                             <div class="flex gap-2">
-                                <button id="trade-type-buy" class="flex-1 py-2 text-sm font-medium rounded-lg transition-colors" style="background-color: #E8FF5A; border: 2px solid #000000;">Alım</button>
-                                <button id="trade-type-sell" class="flex-1 py-2 text-sm font-medium rounded-lg bg-neutral-100 text-neutral-700 transition-colors" style="border: 2px solid #000000;">Satım</button>
+                                <button id="trade-type-buy" class="flex-1 py-2 text-sm font-light rounded-lg transition-colors" style="background-color: #E8FF5A; border: 2px solid #000000;">Alım</button>
+                                <button id="trade-type-sell" class="flex-1 py-2 text-sm font-light rounded-lg bg-neutral-100 text-neutral-700 transition-colors" style="border: 2px solid #000000;">Satım</button>
                             </div>
                         </div>
 
                         <div>
-                            <label class="text-xs text-neutral-500 font-sans mb-1 block">Miktar (₺)</label>
+                            <label class="text-xs text-neutral-500 font-google-sans-flex mb-1 block">Miktar (₺)</label>
                             <input id="trade-amount" type="number" placeholder="10,000" class="w-full px-4 py-3 bg-neutral-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900/10" style="border: 2px solid #000000;">
                         </div>
 
                         <div class="flex gap-2">
-                            <button class="trade-preset-btn flex-1 py-2 text-xs font-medium rounded-lg bg-neutral-100 hover:bg-neutral-200 transition-colors" style="border: 2px solid #000000;" data-amount="5000">₺5K</button>
-                            <button class="trade-preset-btn flex-1 py-2 text-xs font-medium rounded-lg bg-neutral-100 hover:bg-neutral-200 transition-colors" style="border: 2px solid #000000;" data-amount="10000">₺10K</button>
-                            <button class="trade-preset-btn flex-1 py-2 text-xs font-medium rounded-lg bg-neutral-100 hover:bg-neutral-200 transition-colors" style="border: 2px solid #000000;" data-amount="25000">₺25K</button>
-                            <button class="trade-preset-btn flex-1 py-2 text-xs font-medium rounded-lg bg-neutral-100 hover:bg-neutral-200 transition-colors" style="border: 2px solid #000000;" data-amount="50000">₺50K</button>
+                            <button class="trade-preset-btn flex-1 py-2 text-xs font-light rounded-lg bg-neutral-100 hover:bg-neutral-200 transition-colors" style="border: 2px solid #000000;" data-amount="5000">₺5K</button>
+                            <button class="trade-preset-btn flex-1 py-2 text-xs font-light rounded-lg bg-neutral-100 hover:bg-neutral-200 transition-colors" style="border: 2px solid #000000;" data-amount="10000">₺10K</button>
+                            <button class="trade-preset-btn flex-1 py-2 text-xs font-light rounded-lg bg-neutral-100 hover:bg-neutral-200 transition-colors" style="border: 2px solid #000000;" data-amount="25000">₺25K</button>
+                            <button class="trade-preset-btn flex-1 py-2 text-xs font-light rounded-lg bg-neutral-100 hover:bg-neutral-200 transition-colors" style="border: 2px solid #000000;" data-amount="50000">₺50K</button>
                         </div>
 
                         <div class="p-3 bg-neutral-50 rounded-xl" style="border: 2px solid #000000;">
                             <div class="flex justify-between text-xs mb-1">
-                                <span class="text-neutral-500 font-sans">Tahmini Adet</span>
-                                <span id="trade-estimated-shares" class="text-neutral-900 font-medium font-sans">~34.8 adet</span>
+                                <span class="text-neutral-500 font-google-sans-flex">Tahmini Adet</span>
+                                <span id="trade-estimated-shares" class="text-neutral-900 font-light font-google-sans-flex">~34.8 adet</span>
                             </div>
                             <div class="flex justify-between text-xs">
-                                <span class="text-neutral-500 font-sans">Komisyon</span>
-                                <span class="text-neutral-900 font-medium font-sans">₺0 (Sıfır komisyon)</span>
+                                <span class="text-neutral-500 font-google-sans-flex">Komisyon</span>
+                                <span class="text-neutral-900 font-light font-google-sans-flex">₺0 (Sıfır komisyon)</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="px-6 pb-6">
-                    <button id="trade-confirm-btn" class="w-full py-3 text-sm font-medium rounded-xl transition-colors hover:opacity-90" style="background-color: #E8FF5A; border: 2px solid #000000;">
+                    <button id="trade-confirm-btn" class="w-full py-3 text-sm font-light rounded-xl transition-colors hover:opacity-90" style="background-color: #E8FF5A; border: 2px solid #000000;">
                         İşlemi Onayla
                     </button>
                 </div>
@@ -1773,14 +1773,14 @@ opacity: 0 !important;
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-2">
                     <img src="logolar/nurolagent-logo.png" alt="Nurol Agent Logo" class="h-6 w-auto">
-                    <span class="text-sm font-medium text-neutral-900 font-sans">Nurol Agent</span>
-                    <span class="text-xs text-neutral-400 font-sans">© 2025</span>
+                    <span class="text-sm font-light text-neutral-900 font-google-sans-flex">Nurol Agent</span>
+                    <span class="text-xs text-neutral-400 font-google-sans-flex">© 2025</span>
                 </div>
                 <div class="flex items-center gap-6">
-                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">Gizlilik</a>
-                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">Kullanım Şartları</a>
-                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">Yardım</a>
-                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-sans">İletişim</a>
+                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-google-sans-flex">Gizlilik</a>
+                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-google-sans-flex">Kullanım Şartları</a>
+                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-google-sans-flex">Yardım</a>
+                    <a href="#" class="footer-link text-xs text-neutral-500 hover:text-neutral-900 transition-colors font-google-sans-flex">İletişim</a>
                 </div>
             </div>
         </div>
@@ -1971,20 +1971,20 @@ opacity: 0 !important;
                         </div>
                         <div class="flex-1">
                             <div class="bg-neutral-100 rounded-2xl rounded-tl-md p-4 max-w-md" style="border: 2px solid #000000;">
-                                <p class="text-sm text-neutral-700 font-sans">${text}</p>
+                                <p class="text-sm text-neutral-700 font-google-sans-flex">${text}</p>
                             </div>
-                            <span class="text-xs text-neutral-400 mt-1 block font-sans">${time}</span>
+                            <span class="text-xs text-neutral-400 mt-1 block font-google-sans-flex">${time}</span>
                         </div>
                     </div>
                 ` : `
                     <div class="flex gap-3 justify-end chat-message-new">
                         <div class="flex-1 flex flex-col items-end">
                             <div class="bg-neutral-900 text-white rounded-2xl rounded-tr-md p-4 max-w-md" style="border: 2px solid #000000;">
-                                <p class="text-sm font-sans">${text}</p>
+                                <p class="text-sm font-google-sans-flex">${text}</p>
                             </div>
-                            <span class="text-xs text-neutral-400 mt-1 block font-sans">${time}</span>
+                            <span class="text-xs text-neutral-400 mt-1 block font-google-sans-flex">${time}</span>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center text-white text-xs font-medium flex-shrink-0">AK</div>
+                        <div class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center text-white text-xs font-light flex-shrink-0">AK</div>
                     </div>
                 `;
 
@@ -2212,13 +2212,13 @@ opacity: 0 !important;
                                 </svg>
                             </div>
                             <div>
-                                <p class="text-sm font-medium text-neutral-900 font-sans">${tx.name}</p>
-                                <p class="text-xs text-neutral-500 font-sans">${tx.type === 'buy' ? 'Alım' : 'Satım'} • ${tx.source}</p>
+                                <p class="text-sm font-light text-neutral-900 font-google-sans-flex">${tx.name}</p>
+                                <p class="text-xs text-neutral-500 font-google-sans-flex">${tx.type === 'buy' ? 'Alım' : 'Satım'} • ${tx.source}</p>
                             </div>
                         </div>
                         <div class="text-right">
-                            <p class="text-sm font-medium ${tx.type === 'buy' ? 'text-emerald-600' : 'text-red-500'} font-sans">${tx.type === 'buy' ? '+' : '-'}₺${tx.amount.toLocaleString('tr-TR')}</p>
-                            <p class="text-xs text-neutral-400 font-sans">${tx.time}</p>
+                            <p class="text-sm font-light ${tx.type === 'buy' ? 'text-emerald-600' : 'text-red-500'} font-google-sans-flex">${tx.type === 'buy' ? '+' : '-'}₺${tx.amount.toLocaleString('tr-TR')}</p>
+                            <p class="text-xs text-neutral-400 font-google-sans-flex">${tx.time}</p>
                         </div>
                     </div>
                 `).join('');
@@ -2269,13 +2269,13 @@ opacity: 0 !important;
                 const html = `
                     <div id="notification-panel" class="absolute top-12 right-0 w-80 bg-white rounded-xl shadow-xl z-50" style="border: 2px solid #000000;">
                         <div class="px-4 py-3 border-b border-neutral-200">
-                            <h4 class="text-sm font-medium text-neutral-900 font-sans">Bildirimler</h4>
+                            <h4 class="text-sm font-light text-neutral-900 font-google-sans-flex">Bildirimler</h4>
                         </div>
                         <div class="max-h-64 overflow-y-auto">
                             ${this.state.notifications.slice(0, 5).map(n => `
                                 <div class="px-4 py-3 hover:bg-neutral-50 border-b border-neutral-100 ${n.read ? '' : 'bg-neutral-50'}">
-                                    <p class="text-sm text-neutral-700 font-sans">${n.text}</p>
-                                    <p class="text-xs text-neutral-400 mt-1 font-sans">${n.time}</p>
+                                    <p class="text-sm text-neutral-700 font-google-sans-flex">${n.text}</p>
+                                    <p class="text-xs text-neutral-400 mt-1 font-google-sans-flex">${n.time}</p>
                                 </div>
                             `).join('')}
                         </div>
@@ -2309,12 +2309,12 @@ opacity: 0 !important;
 
                 // Update nav links
                 document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('bg-neutral-100', 'text-neutral-900', 'font-medium');
+                    link.classList.remove('bg-neutral-100', 'text-neutral-900', 'font-light');
                     link.classList.add('text-neutral-500');
                 });
                 const activeLink = document.querySelector(`[data-page="${page}"]`);
                 if (activeLink) {
-                    activeLink.classList.add('bg-neutral-100', 'text-neutral-900', 'font-medium');
+                    activeLink.classList.add('bg-neutral-100', 'text-neutral-900', 'font-light');
                     activeLink.classList.remove('text-neutral-500');
                 }
 
@@ -2657,7 +2657,7 @@ opacity: 0 !important;
                 const changeAmountEl = document.getElementById('chart-change-amount');
                 if (changeAmountEl) {
                     changeAmountEl.textContent = (changeAmount >= 0 ? '+' : '') + '₺' + this.formatNumber(Math.abs(changeAmount));
-                    changeAmountEl.className = 'text-sm font-medium font-sans ' + (changeAmount >= 0 ? 'text-emerald-600' : 'text-red-500');
+                    changeAmountEl.className = 'text-sm font-light font-google-sans-flex ' + (changeAmount >= 0 ? 'text-emerald-600' : 'text-red-500');
                 }
             },
 
@@ -2699,16 +2699,16 @@ opacity: 0 !important;
                     <div class="watchlist-item flex items-center justify-between p-3 bg-neutral-50 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer" style="border: 2px solid #000000;" data-symbol="${stock.symbol}">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 ${i % 2 === 0 ? 'bg-neutral-900' : ''} rounded-lg flex items-center justify-center" style="${i % 2 === 0 ? 'border: 2px solid #000000;' : 'background-color: #E8FF5A; border: 2px solid #000000;'}">
-                                <span class="${i % 2 === 0 ? 'text-white' : 'text-neutral-900'} text-xs font-bold">${stock.symbol.substring(0, 2)}</span>
+                                <span class="${i % 2 === 0 ? 'text-white' : 'text-neutral-900'} text-xs font-medium">${stock.symbol.substring(0, 2)}</span>
                             </div>
                             <div>
-                                <p class="text-xs font-medium text-neutral-900 font-sans">${stock.symbol}</p>
-                                <p class="text-xs text-neutral-500 font-sans">${stock.name}</p>
+                                <p class="text-xs font-light text-neutral-900 font-google-sans-flex">${stock.symbol}</p>
+                                <p class="text-xs text-neutral-500 font-google-sans-flex">${stock.name}</p>
                             </div>
                         </div>
                         <div class="text-right">
-                            <p class="text-sm font-medium text-neutral-900 font-sans">₺${stock.price.toFixed(2)}</p>
-                            <p class="text-xs ${stock.change >= 0 ? 'text-emerald-600' : 'text-red-500'} font-medium font-sans">${stock.change >= 0 ? '+' : ''}${stock.change.toFixed(2)}%</p>
+                            <p class="text-sm font-light text-neutral-900 font-google-sans-flex">₺${stock.price.toFixed(2)}</p>
+                            <p class="text-xs ${stock.change >= 0 ? 'text-emerald-600' : 'text-red-500'} font-light font-google-sans-flex">${stock.change >= 0 ? '+' : ''}${stock.change.toFixed(2)}%</p>
                         </div>
                     </div>
                 `).join('');
@@ -2827,23 +2827,23 @@ opacity: 0 !important;
                             </svg>
                             <div style="position:absolute;inset:0;border-radius:50%;border:2px solid ${color};animation:pulse-ring 1s ease-out;opacity:0;"></div>
                         </div>
-                        <h3 class="text-lg font-semibold text-neutral-900 font-sans mb-1">İşlem Başarılı</h3>
-                        <p class="text-sm text-neutral-500 font-sans mb-4">${symbol} ${label} emri gerçekleştirildi</p>
+                        <h3 class="text-lg font-normal text-neutral-900 font-google-sans-flex mb-1">İşlem Başarılı</h3>
+                        <p class="text-sm text-neutral-500 font-google-sans-flex mb-4">${symbol} ${label} emri gerçekleştirildi</p>
                         <div class="w-full p-4 rounded-xl mb-6" style="background-color: ${type === 'buy' ? '#F0FDF4' : '#FEF2F2'}; border: 2px solid ${color}20;">
                             <div class="flex justify-between text-sm mb-2">
-                                <span class="text-neutral-500 font-sans">Tutar</span>
-                                <span class="font-semibold text-neutral-900 font-sans">₺${amount.toLocaleString('tr-TR')}</span>
+                                <span class="text-neutral-500 font-google-sans-flex">Tutar</span>
+                                <span class="font-normal text-neutral-900 font-google-sans-flex">₺${amount.toLocaleString('tr-TR')}</span>
                             </div>
                             <div class="flex justify-between text-sm mb-2">
-                                <span class="text-neutral-500 font-sans">İşlem</span>
-                                <span class="font-semibold font-sans" style="color:${color}">${label}</span>
+                                <span class="text-neutral-500 font-google-sans-flex">İşlem</span>
+                                <span class="font-normal font-google-sans-flex" style="color:${color}">${label}</span>
                             </div>
                             <div class="flex justify-between text-sm">
-                                <span class="text-neutral-500 font-sans">Saat</span>
-                                <span class="font-semibold text-neutral-900 font-sans">${this.utils.formatTime()}</span>
+                                <span class="text-neutral-500 font-google-sans-flex">Saat</span>
+                                <span class="font-normal text-neutral-900 font-google-sans-flex">${this.utils.formatTime()}</span>
                             </div>
                         </div>
-                        <button onclick="NurolApp.closeTradeModal()" class="w-full py-3 text-sm font-medium rounded-xl transition-colors hover:opacity-90" style="background-color: #E8FF5A; border: 2px solid #000000;">Tamam</button>
+                        <button onclick="NurolApp.closeTradeModal()" class="w-full py-3 text-sm font-light rounded-xl transition-colors hover:opacity-90" style="background-color: #E8FF5A; border: 2px solid #000000;">Tamam</button>
                     </div>`;
                 this.showToast(`${symbol} ${label} - ₺${amount.toLocaleString('tr-TR')}`, type === 'buy' ? 'success' : 'info');
             },
@@ -2952,11 +2952,11 @@ opacity: 0 !important;
                         </div>
                         <div class="flex-1">
                             <div class="flex items-center justify-between">
-                                <span class="text-sm font-semibold text-neutral-900 font-sans">${type.includes('trade') ? 'Trend Takipçi' : 'Sistem'}</span>
-                                <span class="text-xs text-neutral-500 font-sans font-medium">${this.utils.formatTime()}</span>
+                                <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">${type.includes('trade') ? 'Trend Takipçi' : 'Sistem'}</span>
+                                <span class="text-xs text-neutral-500 font-google-sans-flex font-light">${this.utils.formatTime()}</span>
                             </div>
-                            <p class="text-xs text-neutral-600 font-sans mt-1">${message}</p>
-                            <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-medium ${s.badgeText}" style="background-color: ${s.badgeBg}; border: 1px solid #000000;">${s.badge}</span>
+                            <p class="text-xs text-neutral-600 font-google-sans-flex mt-1">${message}</p>
+                            <span class="inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-light ${s.badgeText}" style="background-color: ${s.badgeBg}; border: 1px solid #000000;">${s.badge}</span>
                         </div>
                     </div>
                 `;
@@ -3007,7 +3007,7 @@ opacity: 0 !important;
                 if (levelText) levelText.textContent = level;
                 if (levelBadge) levelBadge.style.backgroundColor = badgeBg;
                 if (levelIcon) levelIcon.innerHTML = iconSvg;
-                if (scoreText) scoreText.innerHTML = `Risk Skoru: <span class="font-bold text-neutral-900">${score}</span>/100`;
+                if (scoreText) scoreText.innerHTML = `Risk Skoru: <span class="font-medium text-neutral-900">${score}</span>/100`;
                 if (updateTime) updateTime.textContent = this.utils.formatTime();
 
                 // Update metrics with animations
@@ -3083,16 +3083,16 @@ opacity: 0 !important;
                     <div class="tweet-item p-3 rounded-xl transition-colors hover:bg-neutral-50 animate-pulse" style="border: 2px solid #000000; animation: fadeIn 0.5s ease-out;">
                         <div class="flex items-start gap-3">
                             <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="${bgColor} border: 2px solid #000000;">
-                                <span class="text-xs font-bold ${textColor}">${tweet.handle}</span>
+                                <span class="text-xs font-medium ${textColor}">${tweet.handle}</span>
                             </div>
                             <div class="flex-1 min-w-0">
                                 <div class="flex items-center gap-2 mb-1">
-                                    <span class="text-sm font-semibold text-neutral-900 font-sans">${tweet.user}</span>
-                                    <span class="text-xs text-neutral-400 font-sans">${tweet.time}</span>
+                                    <span class="text-sm font-normal text-neutral-900 font-google-sans-flex">${tweet.user}</span>
+                                    <span class="text-xs text-neutral-400 font-google-sans-flex">${tweet.time}</span>
                                 </div>
-                                <p class="text-xs text-neutral-700 font-sans leading-relaxed">${tweet.content}</p>
+                                <p class="text-xs text-neutral-700 font-google-sans-flex leading-relaxed">${tweet.content}</p>
                                 <div class="flex items-center gap-3 mt-2">
-                                    <span class="text-xs px-2 py-0.5 rounded-full ${sentimentClass} font-sans">${tweet.sentiment}</span>
+                                    <span class="text-xs px-2 py-0.5 rounded-full ${sentimentClass} font-google-sans-flex">${tweet.sentiment}</span>
                                 </div>
                             </div>
                         </div>
@@ -3265,7 +3265,7 @@ opacity: 0 !important;
                 var legendEl = document.getElementById('sector-chart-legend');
                 if (legendEl) {
                     legendEl.innerHTML = keys.map(function(k) {
-                        return '<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded" style="background:' + colorMap[k] + ';border:1px solid #000;"></span><span class="text-neutral-600 font-medium">' + k + '</span></span>';
+                        return '<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded" style="background:' + colorMap[k] + ';border:1px solid #000;"></span><span class="text-neutral-600 font-light">' + k + '</span></span>';
                     }).join('');
                 }
 
@@ -3865,15 +3865,15 @@ opacity: 0 !important;
                     menu.id = 'user-menu-dropdown';
                     menu.className = 'absolute top-10 right-0 w-56 bg-white rounded-xl shadow-xl z-50';
                     menu.style.cssText = 'border: 2px solid #000000;';
-                    menu.innerHTML = '<div class="px-4 py-3" style="border-bottom:2px solid #000000;"><p class="text-sm font-semibold text-neutral-900 font-sans">Ahmet Kaya</p><p class="text-xs text-neutral-500 font-sans">ahmet.kaya@nurol.com</p></div>'
+                    menu.innerHTML = '<div class="px-4 py-3" style="border-bottom:2px solid #000000;"><p class="text-sm font-normal text-neutral-900 font-google-sans-flex">Ahmet Kaya</p><p class="text-xs text-neutral-500 font-google-sans-flex">ahmet.kaya@nurol.com</p></div>'
                         + '<div class="py-1">'
-                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-sans" data-action="profile">👤 Profilim</a>'
-                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-sans" data-action="settings">⚙️ Ayarlar</a>'
-                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-sans" data-action="api">🔑 API Anahtarları</a>'
-                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-sans" data-action="reports">📊 Raporlar</a>'
+                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-google-sans-flex" data-action="profile">👤 Profilim</a>'
+                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-google-sans-flex" data-action="settings">⚙️ Ayarlar</a>'
+                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-google-sans-flex" data-action="api">🔑 API Anahtarları</a>'
+                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-google-sans-flex" data-action="reports">📊 Raporlar</a>'
                         + '</div>'
                         + '<div style="border-top:2px solid #000000;">'
-                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 font-sans" data-action="logout">🚪 Çıkış Yap</a>'
+                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 font-google-sans-flex" data-action="logout">🚪 Çıkış Yap</a>'
                         + '</div>';
                     avatar.parentElement.appendChild(menu);
                     menu.querySelectorAll('.user-menu-item').forEach(function(item) {

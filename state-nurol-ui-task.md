@@ -174,7 +174,7 @@
 - **Yeni Header Tasarımı**
   - Büyük chart ikonu (14x14, #E8FF5A arka plan, siyah border)
   - Daha büyük değer gösterimi (text-3xl)
-  - Değişim tutarı eklendi (+₺312K)
+  - Değişim tutarı eklendi (+$312K)
   - Period butonları yeniden tasarlandı (bg-neutral-100)
   - Fullscreen butonu karanlık tema
 
