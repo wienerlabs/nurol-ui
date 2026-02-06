@@ -200,10 +200,12 @@ opacity: 0 !important;
                 </div>
                 <button id="notification-bell" class="p-2 hover:bg-neutral-100 rounded-lg transition-colors relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="bell" aria-hidden="true" class="lucide lucide-bell w-[20px] h-[20px]" data-icon-replaced="true" style="color: rgb(82, 82, 82); width: 20px; height: 20px"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" class=""></path></svg>
-                    <div id="notification-badge" class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full"></div>
+                    <div id="notification-badge" class="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-red-500 rounded-full flex items-center justify-center"><span class="text-white text-[10px] font-bold leading-none">3</span></div>
                 </button>
-                <div class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center text-white text-xs font-medium cursor-pointer font-sans">
-                    AK
+                <div class="relative">
+                    <div id="user-avatar" class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center text-white text-xs font-medium cursor-pointer font-sans hover:ring-2 hover:ring-neutral-300 transition-all">
+                        AK
+                    </div>
                 </div>
             </div>
         </div>
@@ -263,7 +265,7 @@ opacity: 0 !important;
                     </div>
                     <div class="">
                         <span class="inline-flex px-2 py-0.5 bg-[#E8FF5A] text-neutral-900 text-xs font-medium rounded-full mb-2 font-sans">Tahmin</span>
-                        <p class="text-sm font-medium text-neutral-900 font-sans">2024 hedefine %16 uzaklıktasınız</p>
+                        <p class="text-sm font-medium text-neutral-900 font-sans">2025 hedefine %16 uzaklıktasınız</p>
                     </div>
                 </div>
             </div>
@@ -514,7 +516,7 @@ opacity: 0 !important;
                     <div class="bg-white rounded-2xl overflow-hidden" style="border: 2px solid #000000;">
                         <div class="px-5 py-4 flex items-center justify-between" style="border-bottom: 2px solid #000000;">
                             <h3 class="text-sm font-medium text-neutral-900 font-sans">Aktif Agentlar</h3>
-                            <button id="manage-agents-btn" class="text-xs text-neutral-500 hover:text-neutral-900 font-sans">Yönet</button>
+                            <button id="manage-agents-btn" class="text-xs text-neutral-500 hover:text-neutral-900 font-sans" onclick="NurolApp.showToast('Agent yönetim paneli yakında aktif olacak', 'info')">Yönet</button>
                         </div>
                         <div id="agents-list" class="p-4 space-y-3">
                             <!-- Agent 1: Trend Takipçi -->
@@ -1263,7 +1265,7 @@ opacity: 0 !important;
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
                             <span class="text-xs font-semibold text-neutral-900 font-sans">Portföy Koruması Aktif</span>
                         </div>
-                        <button class="text-xs font-medium text-neutral-700 font-sans hover:text-neutral-900 transition-colors">Detaylar →</button>
+                        <button onclick="NurolApp.showToast('Portföy koruması: Stop-loss %5, Trailing stop aktif, Hedge oranı %15', 'info')" class="text-xs font-medium text-neutral-700 font-sans hover:text-neutral-900 transition-colors">Detaylar →</button>
                     </div>
                 </div>
             </div>
@@ -1323,9 +1325,15 @@ opacity: 0 !important;
 
             <!-- Portfolio Page -->
             <div id="page-portfolio" class="page-content hidden">
-                <div class="mb-8">
-                    <h1 class="text-2xl font-light text-neutral-900 tracking-tight font-google-sans-flex">Portföy Detayları</h1>
-                    <p class="text-base text-neutral-500 mt-1 font-sans">Tüm yatırımlarınızın detaylı görünümü</p>
+                <div class="mb-8 flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-light text-neutral-900 tracking-tight font-google-sans-flex">Portföy Detayları</h1>
+                        <p class="text-base text-neutral-500 mt-1 font-sans">Tüm yatırımlarınızın detaylı görünümü</p>
+                    </div>
+                    <button onclick="NurolApp.showToast('Portföy raporu hazırlanıyor...', 'success')" class="text-xs px-4 py-2 rounded-lg font-sans hover:opacity-80 transition-opacity flex items-center gap-1.5" style="background-color: #E8FF5A; border: 2px solid #000000;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Rapor İndir
+                    </button>
                 </div>
 
                 <!-- Portfolio Summary -->
@@ -1514,7 +1522,7 @@ opacity: 0 !important;
                         <h3 class="text-sm font-semibold text-neutral-900 font-sans">Fonlarım</h3>
                     </div>
                     <div class="divide-y divide-neutral-100">
-                        <div class="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors">
+                        <div class="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" onclick="NurolApp.openTradeModal('İş Portföy Hisse', 115.00)">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background-color: #E8FF5A; border: 2px solid #000000;"><span class="text-neutral-900 text-xs font-bold">İŞ</span></div>
                                 <div>
@@ -1527,7 +1535,7 @@ opacity: 0 !important;
                                 <p class="text-xs text-emerald-600 font-sans">+15.0%</p>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors">
+                        <div class="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors cursor-pointer" onclick="NurolApp.openTradeModal('Ak Portföy Tahvil', 109.20)">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center" style="border: 2px solid #000000;"><span class="text-white text-xs font-bold">AK</span></div>
                                 <div>
@@ -1546,9 +1554,15 @@ opacity: 0 !important;
 
             <!-- History Page -->
             <div id="page-history" class="page-content hidden">
-                <div class="mb-8">
-                    <h1 class="text-2xl font-light text-neutral-900 tracking-tight font-google-sans-flex">İşlem Geçmişi</h1>
-                    <p class="text-base text-neutral-500 mt-1 font-sans">Tüm alım-satım işlemleriniz</p>
+                <div class="mb-8 flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-light text-neutral-900 tracking-tight font-google-sans-flex">İşlem Geçmişi</h1>
+                        <p class="text-base text-neutral-500 mt-1 font-sans">Tüm alım-satım işlemleriniz</p>
+                    </div>
+                    <button onclick="NurolApp.showToast('İşlem raporu PDF olarak hazırlanıyor...', 'success')" class="text-xs px-4 py-2 rounded-lg font-sans hover:opacity-80 transition-opacity flex items-center gap-1.5" style="background-color: #E8FF5A; border: 2px solid #000000;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Rapor İndir
+                    </button>
                 </div>
 
                 <!-- History Filters -->
@@ -1903,6 +1917,7 @@ opacity: 0 !important;
                 this.initFundButtons();
                 this.initFooterLinks();
                 this.initHoldingClicks();
+                this.initUserMenu();
                 console.log('Nurol Agent UI initialized');
             },
 
@@ -2040,13 +2055,22 @@ opacity: 0 !important;
                 this.renderMarketData();
             },
 
+            flashPrice: function(el, isUp) {
+                if (!el) return;
+                el.classList.remove('price-flash-up', 'price-flash-down');
+                void el.offsetWidth;
+                el.classList.add(isUp ? 'price-flash-up' : 'price-flash-down');
+            },
+
             renderMarketData: function() {
                 const state = this.state.market;
 
                 // BIST 100
                 const bist = document.querySelector('#market-bist100');
                 if (bist) {
-                    bist.querySelector('.value').textContent = state.bist100.value.toFixed(2);
+                    var valEl = bist.querySelector('.value');
+                    valEl.textContent = state.bist100.value.toFixed(2);
+                    this.flashPrice(valEl, state.bist100.change >= 0);
                     const changeEl = bist.querySelector('.change');
                     const isPositive = state.bist100.change >= 0;
                     changeEl.textContent = (isPositive ? '+' : '') + state.bist100.change.toFixed(2) + '%';
@@ -2057,7 +2081,9 @@ opacity: 0 !important;
                 // USD/TRY
                 const usd = document.querySelector('#market-usdtry');
                 if (usd) {
-                    usd.querySelector('.value').textContent = state.usdtry.value.toFixed(2);
+                    var valEl2 = usd.querySelector('.value');
+                    valEl2.textContent = state.usdtry.value.toFixed(2);
+                    this.flashPrice(valEl2, state.usdtry.change >= 0);
                     const changeEl = usd.querySelector('.change');
                     const isPositive = state.usdtry.change >= 0;
                     changeEl.textContent = (isPositive ? '+' : '') + state.usdtry.change.toFixed(2) + '%';
@@ -2068,7 +2094,9 @@ opacity: 0 !important;
                 // Gold
                 const gold = document.querySelector('#market-gold');
                 if (gold) {
-                    gold.querySelector('.value').textContent = '₺' + state.gold.value.toLocaleString('tr-TR');
+                    var valEl3 = gold.querySelector('.value');
+                    valEl3.textContent = '₺' + state.gold.value.toLocaleString('tr-TR');
+                    this.flashPrice(valEl3, state.gold.change >= 0);
                     const changeEl = gold.querySelector('.change');
                     const isPositive = state.gold.change >= 0;
                     changeEl.textContent = (isPositive ? '+' : '') + state.gold.change.toFixed(2) + '%';
@@ -2225,7 +2253,9 @@ opacity: 0 !important;
                 const badge = document.querySelector('#notification-badge');
                 const unread = this.state.notifications.filter(n => !n.read).length;
                 if (badge) {
-                    badge.style.display = unread > 0 ? 'block' : 'none';
+                    badge.style.display = unread > 0 ? 'flex' : 'none';
+                    var span = badge.querySelector('span');
+                    if (span) span.textContent = unread > 9 ? '9+' : unread;
                 }
             },
 
@@ -2641,7 +2671,14 @@ opacity: 0 !important;
                     });
                 });
                 document.querySelector('#add-watchlist-btn')?.addEventListener('click', () => {
-                    this.addNotification('Yeni hisse ekleme özelliği yakında aktif olacak');
+                    this.showToast('Yeni hisse ekleme özelliği yakında aktif olacak', 'info');
+                });
+                document.querySelectorAll('.watchlist-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        var sym = item.dataset.symbol;
+                        var stock = this.state.watchlist.find(s => s.symbol === sym);
+                        if (stock) this.openTradeModal(sym, stock.price);
+                    });
                 });
                 setInterval(() => this.updateWatchlistPrices(), 4000);
             },
@@ -2680,27 +2717,9 @@ opacity: 0 !important;
 
             // Trade Modal
             initTradeModal: function() {
-                document.querySelector('#trade-modal-close')?.addEventListener('click', () => this.closeTradeModal());
-                document.querySelector('#trade-modal-overlay')?.addEventListener('click', () => this.closeTradeModal());
-
-                document.querySelector('#trade-type-buy')?.addEventListener('click', () => this.setTradeType('buy'));
-                document.querySelector('#trade-type-sell')?.addEventListener('click', () => this.setTradeType('sell'));
-
-                document.querySelectorAll('.trade-preset-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const amount = parseInt(btn.dataset.amount);
-                        document.querySelector('#trade-amount').value = amount;
-                        this.state.tradeModal.amount = amount;
-                        this.updateEstimatedShares();
-                    });
-                });
-
-                document.querySelector('#trade-amount')?.addEventListener('input', (e) => {
-                    this.state.tradeModal.amount = parseInt(e.target.value) || 0;
-                    this.updateEstimatedShares();
-                });
-
-                document.querySelector('#trade-confirm-btn')?.addEventListener('click', () => this.confirmTrade());
+                var modalInner = document.querySelector('#trade-modal .bg-white');
+                if (modalInner) this._tradeModalOriginalHTML = modalInner.innerHTML;
+                this._bindTradeModalEvents();
             },
 
             openTradeModal: function(symbol, price) {
@@ -2720,8 +2739,35 @@ opacity: 0 !important;
             },
 
             closeTradeModal: function() {
-                document.querySelector('#trade-modal')?.classList.add('hidden');
+                var modal = document.querySelector('#trade-modal');
+                if (modal) modal.classList.add('hidden');
                 this.state.tradeModal.isOpen = false;
+                // Restore original modal content if it was replaced by success animation
+                var modalInner = document.querySelector('#trade-modal .bg-white');
+                if (modalInner && this._tradeModalOriginalHTML && !document.querySelector('#trade-modal-close')) {
+                    modalInner.innerHTML = this._tradeModalOriginalHTML;
+                    this._bindTradeModalEvents();
+                }
+            },
+
+            _bindTradeModalEvents: function() {
+                document.querySelector('#trade-modal-close')?.addEventListener('click', () => this.closeTradeModal());
+                document.querySelector('#trade-modal-overlay')?.addEventListener('click', () => this.closeTradeModal());
+                document.querySelector('#trade-type-buy')?.addEventListener('click', () => this.setTradeType('buy'));
+                document.querySelector('#trade-type-sell')?.addEventListener('click', () => this.setTradeType('sell'));
+                document.querySelectorAll('.trade-preset-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const amount = parseInt(btn.dataset.amount);
+                        document.querySelector('#trade-amount').value = amount;
+                        this.state.tradeModal.amount = amount;
+                        this.updateEstimatedShares();
+                    });
+                });
+                document.querySelector('#trade-amount')?.addEventListener('input', (e) => {
+                    this.state.tradeModal.amount = parseInt(e.target.value) || 0;
+                    this.updateEstimatedShares();
+                });
+                document.querySelector('#trade-confirm-btn')?.addEventListener('click', () => this.confirmTrade());
             },
 
             setTradeType: function(type) {
@@ -3805,6 +3851,48 @@ opacity: 0 !important;
                             self.openTradeModal(symbol, 100);
                         }
                     });
+                });
+            },
+
+            initUserMenu: function() {
+                var self = this;
+                var avatar = document.getElementById('user-avatar');
+                if (!avatar) return;
+                avatar.addEventListener('click', function() {
+                    var existing = document.getElementById('user-menu-dropdown');
+                    if (existing) { existing.remove(); return; }
+                    var menu = document.createElement('div');
+                    menu.id = 'user-menu-dropdown';
+                    menu.className = 'absolute top-10 right-0 w-56 bg-white rounded-xl shadow-xl z-50';
+                    menu.style.cssText = 'border: 2px solid #000000;';
+                    menu.innerHTML = '<div class="px-4 py-3" style="border-bottom:2px solid #000000;"><p class="text-sm font-semibold text-neutral-900 font-sans">Ahmet Kaya</p><p class="text-xs text-neutral-500 font-sans">ahmet.kaya@nurol.com</p></div>'
+                        + '<div class="py-1">'
+                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-sans" data-action="profile">👤 Profilim</a>'
+                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-sans" data-action="settings">⚙️ Ayarlar</a>'
+                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-sans" data-action="api">🔑 API Anahtarları</a>'
+                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 font-sans" data-action="reports">📊 Raporlar</a>'
+                        + '</div>'
+                        + '<div style="border-top:2px solid #000000;">'
+                        + '<a href="#" class="user-menu-item block px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 font-sans" data-action="logout">🚪 Çıkış Yap</a>'
+                        + '</div>';
+                    avatar.parentElement.appendChild(menu);
+                    menu.querySelectorAll('.user-menu-item').forEach(function(item) {
+                        item.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            var action = item.dataset.action;
+                            var msgs = { profile: 'Profil sayfası yakında aktif olacak', settings: 'Ayarlar sayfası yakında aktif olacak', api: 'API yönetimi yakında aktif olacak', reports: 'Rapor oluşturuluyor...', logout: 'Oturum kapatılıyor...' };
+                            self.showToast(msgs[action] || 'Yakında aktif olacak', action === 'logout' ? 'warning' : 'info');
+                            menu.remove();
+                        });
+                    });
+                    setTimeout(function() {
+                        document.addEventListener('click', function closeMenu(e) {
+                            if (!menu.contains(e.target) && e.target !== avatar) {
+                                menu.remove();
+                                document.removeEventListener('click', closeMenu);
+                            }
+                        });
+                    }, 10);
                 });
             }
         };
